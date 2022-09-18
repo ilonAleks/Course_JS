@@ -1,0 +1,5 @@
+const userName = prompt('Как вас зовут?')
+userName1 = (String(userName))
+userName1 = userName1.toLowerCase()
+userName1 = userName1.trim()
+alert(`Вас зовут ${userName1}`)
