@@ -4,8 +4,12 @@ const courseCreatorName = 'Vladilen'
 const reasonText = 'i want to go away from russia'
 const numberOfMonth = 3
 
-let myInfoText = `Всем привет! Меня зовут ${myName}. Сейчас я изучаю язык программирования ${programmingLanguage} на курсе по ${programmingLanguage} у ${courseCreatorName}. 
-Я хочу стать веб-разработчиком, потому что ${reasonText}. До этого я изучала ${programmingLanguage} ${numberOfMonth} месяцев. Я уверена, что пройду данный курс до конца!`
+let myInfoText = `Hi all! My name is ${myName}. 
+Now I am studying the programming language ${programmingLanguage} 
+on the course ${programmingLanguage} in ${courseCreatorName}. 
+I want to become a web developer because ${reasonText}. 
+Before that, I studied ${programmingLanguage} ${numberOfMonth} months.
+I am sure that I will go through this course to the end!`
 
 console.log('myInfoText: ', myInfoText)
 
@@ -18,7 +22,7 @@ let myInfoText11 = myInfoText.replaceAll(programmingLanguage, language)
 console.log('Task 1, solution 2: ', myInfoText11)
 
 //2
-console.log('Task 2: ', myInfoText.slice(myInfoText.indexOf('Я у')))
+console.log('Task 2: ', myInfoText.slice(myInfoText.indexOf('I am su')))
 
 //3
 console.log('Task 3: ', myInfoText.length)

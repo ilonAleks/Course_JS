@@ -1,22 +1,22 @@
-let firstQuestion = confirm('JavaScript появился в 1995 году?')
+let firstQuestion = confirm('JavaScript appeared in 1995?')
 if (firstQuestion) {
-	alert('Верно!')
+	alert('Right!')
 } else {
-	alert('JavaScript появился в 1995 году.')
+	alert('JavaScript appeared in 1995.')
 }
 
 
-let secondQuestion = confirm('Спецификация JavaScript называется ECMAScript?')
+let secondQuestion = confirm('The specification JavaScript is called Ecmascript? ')
 if (secondQuestion) {
-	alert('Верно!')
+	alert('Right!')
 } else {
-	alert('Спецификация JavaScript называется ECMAScript.')
+	alert('The JavaScript specification is called Ecmascript.')
 }
 
 
-let thirdQuestion = confirm('JavaScript был создан за 1 месяц?')
+let thirdQuestion = confirm('JavaScript was created in 1 month?')
 if (thirdQuestion) {
-	alert('JavaScript был создан за 10 дней, прикинь!?')
+	alert('JavaScript was created in 10 days, can you imagine!?')
 } else {
-	alert('Верно!')
+	alert('Right!')
 }

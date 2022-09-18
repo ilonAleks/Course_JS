@@ -1,20 +1,20 @@
-let firstPrompt = prompt('Сколько будет 2 + 2?')
+let firstPrompt = prompt('What is 2 * 2?')
 if (firstPrompt == 4) {
-	alert('Если вы ответили 4, то вы правы.')
+	alert('If you answered 4, then you are right.')
 } else {
-	alert('Вы НЕ правы, правильный ответ 4.')
+	alert('You are wrong, the correct answer is 4.')
 }
 
-let secondPrompt = prompt('Чему равен корень из 9?')
+let secondPrompt = prompt('What is the root of 9?')
 if (secondPrompt == 3) {
-	alert('Ответ: если вы ответили 3, то вы правы.')
+	alert('If you answered 3, then you are right.')
 } else {
-	alert('Ответ: вы НЕ правы, правильный ответ 3.')
+	alert('You are wrong, the correct answer 3.')
 }
 
-let thirdPrompt = prompt('Сколько будет 2 в 5-й степени?')
+let thirdPrompt = prompt('How much will be 2 in the 5th degree?')
 if (thirdPrompt == 32) {
-	alert('Ответ: если вы ответили 32, то вы правы.')
+	alert('If you answered 32, then you are right.')
 } else {
-	alert('Ответ: вы НЕ правы, правильный ответ 32.')
+	alert('You are wrong, the correct answer is 32.')
 }
