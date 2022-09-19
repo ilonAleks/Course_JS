@@ -13,10 +13,19 @@ clientSpentForAllTime = Number(clientSpentForAllTime)
 
 console.log(typeof (clientSpentToday))
 console.log(typeof (clientSpentForAllTime))
+console.log(clientSpentToday)
+console.log(clientSpentForAllTime)
 
-if (typeof (clientSpentToday) != Number) {
-	alert('Сумма, которую клиент потратил за сегодня, должна быть числом! Перезагрузите страницу, чтобы повторить попытку.')
-} else { alert('ok') }
+let wer = typeof (clientSpentToday) === 'number' && clientSpentToday
+let wur = typeof (clientSpentForAllTime) === 'number' && clientSpentForAllTime
+
+console.log(wer, wur)
+
+if (wer && wur) {
+	console.log('ok')
+} else { console.log('false') }
+
+
 // else if (typeof (clientSpentForAllTime) != Number) {
 // 	alert('Сумма, которую клиент потратил за сегодня, должна быть числом! Перезагрузите страницу, чтобы повторить попытку.')
 // }
