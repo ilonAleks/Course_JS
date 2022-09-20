@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 8 Addition</title>
+</head>
+
+<body>
+	<h3>Task 8 Addition</h3>
+	<p>
+		Prior to this, you transmitted to the function such data as String, Number, Boolean. But in JavaScript function
+		parameter
+		You can convey anything, even a function. A function that is transmitted as a parameter to another function is
+		called
+		Callback. And you will work with this now.<br>
+		<br>
+		<b>First, create 2 functions</b> showSuccessMessage, which takes the parameter message and leads it to
+		console
+		through console.log; showErrorMessage, which assumes the Message parameter and takes it to the console through
+		console.error (console.error it displays a message to the console in red). These functions will be our future
+		Callbacks.<br>
+		<br>
+		<b>Now you need </b>to create another function called <b>checkTextOnErrorSymbol</b>. With it, we
+		will look for
+		text is prohibited and display an error into the console if such a symbol was found. <br>
+		<br>
+		<b>checkTextOnErrorSymbol accepts 4 parameters:</b>
+	<ol>
+		<li>text, Type of data string. It is responsible for the text in which we will look for the prohibited symbols</li>
+		<li>errorSymbol, Type of data string. It is responsible for the prohibited symbol.</li>
+		<li>successCallback. This function, which will display a successful message if there were no prohibited characters
+			found.</li>
+		<li>errorCallback. This function, which will display an error into the console, if a prohibited symbol has been
+			found.</li>
+	</ol>
+	<b>If the prohibited symbol was found </b>, then call the flask <b>errorCallback</b> and pass the message into it
+	“Found a prohibited symbol "${errorSymbol}" under the index ${i}.” (replace errorSymbol on the prohibited symbol, i -
+	on the
+	index lines in which the prohibited symbol was discovered.<br>
+	<br>
+	<b>If not a single prohibited symbol was found in the line </b>, then call the flask <b>successCallback</b> and
+	pass it into it
+	message "There are no prohibited characters in this text".<br>
+	<br>
+	Check the performance of your function on this code:<br>
+
+	const text = 'Hello! How are you! For a long time you and I have not seen each other.'<br>
+	checkTextOnErrorSymbol(text, 'а', showSuccessMessage, showErrorMessage);<br>
+	<br>
+	Для данного кода, в консоль должно быть выведено следующее:<br>
+	Found a prohibited symbol "a" under the index 9<br>
+	Found a prohibited symbol "a" under the index 15<br>
+	Found a prohibited symbol "a" under the index 19<br>
+	<br>
+	<b>Hints:</b><br>
+	<ol>
+		<li>In order to get a symbol of the line on the index, use the following record text[index].</li>
+	</ol>
+	</p>
+	<script src="8-Addit.js"></script>
+</body>
+
+</html>
