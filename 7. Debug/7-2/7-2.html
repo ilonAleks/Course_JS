@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 7-2</title>
+</head>
+
+<body>
+	<h3>Task 7-2</h3>
+	<p>
+		Well, I think you showed Peter how to write the right and clean code. Well done! <br>
+		But Peter has taught much about, since solving one problem is not enough to understand the programming language
+		JavaScript. Peter decided to practice more, completed a new task, but again failure. He cannot figure out why
+		the error pops up and does not work. <br>
+		<br>
+		<b>Your goal is the same:</b> show Peter how to correctly solve problems such as find bugs in the code and show
+		your professionalism is in this matter.<br>
+		<br>
+		<b>Look at this code:</b><br>
+		<br>
+		const temperatureInCelsius = prompt('Enter the temperature in degrees Celsius');<br>
+		<br>
+		if (temperatureInCelsius === 0) {<br>
+		alert('0 Celsius degrees - this is the temperature of freezing water')<br>
+		} else if (temperatureInCelsius > 0) {<br>
+		alert('To freeze water, the temperature should be 0 degrees Celsius or below');<br>
+		}<br>
+		<br>
+		const temperatureInFahrenheit = (temperatureIncelsius) * 9 / 5 + 32;<br>
+		alert(`%{temperatureInCelsius} Celsius degrees is %{temperatureInFahrenheit} to Fahrenheit.`);<br>
+		<br>
+		<br>
+		<b>Peter has the following errors:</b>
+	<ol>
+		<li>When he enters into a text field 0, then he does not display a message “0 Celsius degrees - this is the
+			temperature of freezing water”</li>
+		<li>The message is not displayed “%{temperatureInCelsius} Celsius degrees is %{temperatureInFahrenheit} to
+			Fahrenheit.”</li>
+		<li>In the message “%{temperatureInCelsius} Celsius degrees is %{temperatureInFahrenheit} to Fahrenheit.” data
+			from variables temperatureInCelsius and temperatureInFahrenheit for some reason they are not substituted in a
+			line.</li>
+	</ol>
+	<br>
+	<b>Correct all errors so that the program works correctly. </b> Also fulfill the following conditions: the bug should
+	be
+	fixed
+	with help console.log or debugger, at least one should be present in the code console.log or debugger.
+	</p>
+	<script src="7-2.js"></script>
+</body>
+
+</html>

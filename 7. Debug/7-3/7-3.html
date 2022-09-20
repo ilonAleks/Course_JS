@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 7-3</title>
+</head>
+
+<body>
+	<h3>Task 7-3</h3>
+	<p>
+		You just focused, decided to start writing your code and work productively. But Peter comes up to you again and
+		asks him to help. You tell him that you will help him for the last time today.<br>
+		<br>
+		<b>This program does not work for Peter now:</b><br>
+		<br>
+		const salaryOfJuniorDeveloper = 500;<br>
+		const numberOfJuniorDevelopers = 3;<br>
+		let taxPercentage = 13;<br>
+		let totalJuniorDevelopersSalary;<br>
+		<br>
+		for (let i = 0; i < numberOfJuniorDevelopers; i +=1) {<br>
+			const salaryWithTax = salaryOfJuniorDeveloper - (salaryOfJuniorDeveloper * taxPercentage / 100);<br>
+			totalJuniorDevelopersSalary += salaryWithTax;<br>
+			}<br>
+			console.log('totalJuniorDevelopersSalary', totalJuniorDevelopersSalary);<br>
+			<br>
+			In this code <b>totalJuniorDevelopersSalary</b> for some reason, it displays the meaning <b>NaN</b>.<br>
+			<br>
+			<b>Correct all errors so that the program works correctly.</b> Also fulfill the following conditions: the bug must
+			to be
+			fixed with the help console.log or debugger, at least one should be present in the code console.log or
+			debugger.
+	</p>
+	<script src="7-3.js"></script>
+</body>
+
+</html>
