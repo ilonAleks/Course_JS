@@ -1,86 +1,51 @@
 const goals = [8, 1, 1, 3, 2, -1, 5]
 
-//? task 1
+// task 1
 const number1 = goals.indexOf(Math.max(...goals)) + 1
 const numberOfGoals1 = Math.max(...goals)
 
 alert(`Самый результативный матч был под номером ${number1}. 
 В нем было забито ${numberOfGoals1} гол(ов).`)
 
-//! task 2
-// const numbers = goals.findIndex((goal) => goal === 1)
-// console.log(numbers)
+// task 2
+const copyGoals2 = Array.from(goals)
+const sortGoals2 = copyGoals2.sort((a, b) => a - b)
+const filterGoals2 = sortGoals2.filter(goal => goal > 0)
+const minNumberOfGoals = filterGoals2[filterGoals2.length - filterGoals2.length]
+let numbers = []
+for (let i = 0; i < goals.length; i++) {
+	if (goals[i] === minNumberOfGoals) {
+		numbers.push(i + 1)
+	}
+}
+alert(`Самые не результативные матчи были под номерами ${numbers}. В каждом из них было забито по ${minNumberOfGoals} мячу(а).`)
 
-// for (let i = 0; i < goals.length; i++) {
-// 	let num = 0
-// 	if (num = goals.findIndex((goal) => goal >= 1 && goal <= 3)) {
-// 		goals[num] = ''
-// 	}
-// 	console.log(num)
-// let numbers = num.indexOf[-1]
-// console.log(numbers)
-// }
 
-// const numbers = goals.reduce((goal, index) => {
-// 	goal[index] = (goal[index] || 0) + 1
-// 	return goal
-// }, [])
-// console.log(numbers[1])
+// task 3
+let copyGoals3 = Array.from(goals) //copy array goals
+let sortGoals3 = copyGoals3.sort((a, b) => a - b)
+let shiftGoals3 = sortGoals3.shift()
+let numberOfGoals3 = sortGoals3.reduce((sum, goal) => sum + goal)
+alert(`Общее количество голов за сезон равно ${numberOfGoals3}`)
 
-// const goals2 = goals.forEach((goal) => {
-// 	// return goal
-// 	console.log(goal)
-// })
-// console.log(goals2)
-
-// let str = goals.join()
-// console.log(str)
-// if (str >= 0 && str <= 2) {
-// const numbers2 = goals.indexOf()
-
-// 	console.log(numbers2)
-// }
-// const numberOfGoals2 =
-
-// alert(`Самые не результативные матчи были под номерами ${numbers}. 
-// В каждом из них было забито по numberOfGoals мячу(а).`)
-
-//! task 3
-// const goals = [8, 1, 1, 3, 2, -1, 5]
-// let numberOfGoals = goals.forEach((goal) => {
-// 	if (goal > 0) {
-// 		return goal += goal
-// 	}
-// })
-
-// const indexLuser3 = goals.findIndex((goal) => goal === -1)
-// // console.log(indexLuser3)
-// goals[indexLuser3] = ''
-// let sum = 0
-// console.log(goals)
-// for (let i = 0; i < goals.length; i++) {
-// 	sum += goals[i]
-// }
-// console.log(sum)
-// alert(`Общее количество голов за сезон равно ${numberOfGoals}`)
-
-//? task 4
+// task 4
 if (goals.find((goal) => goal === -1)) {
 	alert('Были автоматические поражения: да')
 } else {
 	alert('Были автоматические поражения: нет')
 }
 
-//! task 5
-// const indexLuser = goals.findIndex((goal) => goal === -1)
-// console.log(indexLuser)
-// goals[indexLuser] = ''
-// console.log(goals)
+// task 5
+const copyGoals5 = Array.from(goals)
+const sortGoals5 = copyGoals5.sort((a, b) => a - b)
+const filterGoals5 = sortGoals5.filter(goal => goal > 0)
+let numberOfGoals5 = sortGoals5.reduce((sum, goal) => (sum + goal))
+numberOfGoals5 = Math.floor(numberOfGoals5 / goals.length)
+alert(`Среднее количество голов за матч равно ${numberOfGoals5}`)
 
 // task 6
-const indexLuser = goals.findIndex((goal) => goal === -1)
-goals[indexLuser] = ''
-let sortGoals = goals.sort((a, b) => a - b)
-console.log(sortGoals)
-let str = sortGoals.join(', ')
-alert(`${str}`)
+let copyGoals6 = Array.from(goals)
+let sortGoals6 = copyGoals6.sort((a, b) => a - b)
+let filterGoals6 = sortGoals6.filter(goal => goal > 0)
+alert(`${filterGoals6}`)
+console.log(goals)
