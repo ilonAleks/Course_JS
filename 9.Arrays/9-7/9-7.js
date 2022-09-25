@@ -4,8 +4,8 @@ const goals = [8, 1, 1, 3, 2, -1, 5]
 const number1 = goals.indexOf(Math.max(...goals)) + 1
 const numberOfGoals1 = Math.max(...goals)
 
-alert(`Самый результативный матч был под номером ${number1}. 
-В нем было забито ${numberOfGoals1} гол(ов).`)
+alert(`The most productive match was number ${number1}.
+It was clogged ${numberOfGoals1} goals.`)
 
 // task 2
 const copyGoals2 = Array.from(goals)
@@ -18,21 +18,20 @@ for (let i = 0; i < goals.length; i++) {
 		numbers.push(i + 1)
 	}
 }
-alert(`Самые не результативные матчи были под номерами ${numbers}. В каждом из них было забито по ${minNumberOfGoals} мячу(а).`)
-
+alert(`The most non-effective matches were under numbers ${numbers}. In each of them it was clogged ${minNumberOfGoals} goals.`)
 
 // task 3
 let copyGoals3 = Array.from(goals) //copy array goals
 let sortGoals3 = copyGoals3.sort((a, b) => a - b)
 let shiftGoals3 = sortGoals3.shift()
 let numberOfGoals3 = sortGoals3.reduce((sum, goal) => sum + goal)
-alert(`Общее количество голов за сезон равно ${numberOfGoals3}`)
+alert(`The total number of goals per season is ${numberOfGoals3}`)
 
 // task 4
 if (goals.find((goal) => goal === -1)) {
-	alert('Были автоматические поражения: да')
+	alert('There were automatic defeats: Yes')
 } else {
-	alert('Были автоматические поражения: нет')
+	alert('There were automatic defeats: No')
 }
 
 // task 5
@@ -41,7 +40,7 @@ const sortGoals5 = copyGoals5.sort((a, b) => a - b)
 const filterGoals5 = sortGoals5.filter(goal => goal > 0)
 let numberOfGoals5 = sortGoals5.reduce((sum, goal) => (sum + goal))
 numberOfGoals5 = Math.floor(numberOfGoals5 / goals.length)
-alert(`Среднее количество голов за матч равно ${numberOfGoals5}`)
+alert(`The average number of goals per match is ${numberOfGoals5}`)
 
 // task 6
 let copyGoals6 = Array.from(goals)

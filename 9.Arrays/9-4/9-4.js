@@ -1,4 +1,4 @@
-let coffeeName = prompt('Поиск кофе по названию:')
+let coffeeName = prompt('Search for coffee by name:')
 
 const coffees = ['Latte', 'Cappuccino', 'Americano']
 newCoffees = coffees.join(', ')
@@ -11,7 +11,7 @@ coffeeName = coffeeName.trim()
 let coffee = newCoffees.indexOf(coffeeName)
 
 if (coffee !== -1) {
-	alert(`Держите ваш любимый кофе ${coffees[coffee]}. Он ${coffee + 1}-й по популярности в нашей кофейне.`)
+	alert(`Take your favorite coffee ${coffees[coffee]}. It is ${coffee + 1} in popularity in our coffee shop.`)
 } else {
-	alert('К сожалению, такого вида кофе нет в наличии')
+	alert('Unfortunately, this type of coffee is not available')
 }

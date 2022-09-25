@@ -11,28 +11,33 @@
 <body>
 	<h3>Task 9-2</h3>
 	<p>
-		Представьте, что мы разрабатываем систему очередей для какого-либо заведения. Например, для почты. Для этого мы
-		создали массив peopleWaiting, который отображает текущий статус очереди.<br>
+		Imagine that we are developing a queue system for any institution. For example, for mail. For this we are
+		created an array peopleWaiting, which displays the current status of the queue.<br>
 		<br>
-		<strong>peopleWaiting = ['Кристина', 'Олег', 'Кирилл', 'Мария', 'Светлана', 'Артем', 'Глеб'];</strong><br>
+		<strong>peopleWaiting = ['Christina ',' Oleg ',' Cyril ',' Maria ',' Svetlana ',' Artem ',' Gleb'];</strong><br>
 		<br>
-		По логике, следующую посылку по почте получит Кристина, после нее уже 1-м в очереди будет Олег.<br>
-		Сейчас вам необходимо реализовать следующую логику в коде шаг за шагом:
+		Logically, Christina will receive the next parcel by mail, after it the 1st in line will be Oleg. <br>
+		Now you need to realize the following logic in the code step by step:
 
-		Кристина и Олег получили посылки и ушли из очереди. Вам необходимо удалить их из массива.
-		Теперь подошла очередь к Кириллу. И неожиданно сотрудница почты говорит, что скоро у них обеденный перерыв и она
-		успеет обслужить только Кирилла. Поэтому все остальные люди, стоящие за Кириллом, решили не ждать, когда закончится
-		обед, и просто ушли из отделения почты. Вам необходимо сначала удалить Кирилла из массива peopleWaiting, а затем
-		удалить людей, которые не успели получить посылки.
-		Когда какой либо человек получает посылку, необходимо вывести в модальном окне сообщение “name получил(а) посылку. В
-		очереди осталось length человек.” (Замените name на имя человека, получившего посылку, а length - на количество
-		человек, которые остались в очереди).<br>
+		Christina and Oleg received parcels and left the queue. You need to remove them from the array.
+		Now the turn came to Cyril. And unexpectedly, an employee of the post office says that they soon have a lunch break
+		and she
+		only Cyril will have time to serve. Therefore, all other people standing behind Cyril decided not to wait until it
+		ends
+		lunch, and just left the post office. You first need to remove Cyril from an array peopleWaiting, and then
+		delete people who did not have time to get parcels.
+		When a person receives a parcel, it is necessary to display a message in the modal window “name received the
+		package. The queue remains length people.” (Replace name in the name of the person who received the parcel, and
+		length - with the number
+		the person who remained in line). <br>
 		<br>
-		Если же человек не получил посылку и ушел из очереди, то выведите в модальном окне через alert сообщение “name не
-		получил(а) посылку и ушел(ла) из очереди”.<br>
+		If a person did not receive a parcel and left the line, then bring in the modal window through the Alert the message
+		“NAME not
+		received a parcel and left from the line. ”<br>
 		<br>
-		Рекомендуется создать 2 функции: giveParcel - для выдачи посылки и удаления клиента из начала массива,
-		leaveQueueWithoutParcel - для удаления клиента, который не получил посылку, из конца списка.
+		It is recommended to create 2 functions: giveParcel - to issue a parcel and deleting a client from the start of an
+		array,
+		leaveQueueWithoutParcel - to delete a client who did not receive a parcel from the end of the list.
 	</p>
 	<script src="9-2.js"></script>
 </body>

@@ -1,23 +1,15 @@
-peopleWaiting = ['Кристина', 'Олег', 'Кирилл', 'Мария', 'Светлана', 'Артем', 'Глеб']
+peopleWaiting = ['Christina ', ' Oleg ', ' Cyril ', ' Maria ', ' Svetlana ', ' Artem ', ' Gleb']
 
 const giveParcel = () => {
 	const person = peopleWaiting.shift()
-	return alert(`${person} получил(а) посылку. В очереди осталось ${peopleWaiting.length} человек.`)
+	return alert(`${person} received the package. The queue remains ${peopleWaiting.length} people.`)
 
 }
 
 const leaveQueueWithoutParcel = () => {
 	person = peopleWaiting.pop()
-	return alert(`${person} не получил(а) посылку и ушел(ла) из очереди`)
+	return alert(`${person} not received a parcel and left from the line`)
 }
-
-// giveParcel()//Кристина
-// giveParcel()//Олег
-// giveParcel()//Кирилл
-// leaveQueueWithoutParcel()//Глеб
-// leaveQueueWithoutParcel()//Артем
-// leaveQueueWithoutParcel()//Светлана
-// leaveQueueWithoutParcel()//Мария
 
 const repeatFunction = (action, amount) => {
 	for (let i = 0; i < amount; i++) {

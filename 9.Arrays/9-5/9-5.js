@@ -3,7 +3,7 @@ const prices = [1.5, 1, 2]
 
 const updatedPrices = prices.map((price) => price + 0.5)
 
-let coffeeName = prompt('Поиск кофе по названию:')
+let coffeeName = prompt('Search for coffee by name:')
 
 newCoffees = coffees.join(', ')
 	.toLowerCase()
@@ -15,8 +15,8 @@ coffeeName = coffeeName.trim()
 let coffee = newCoffees.indexOf(coffeeName)
 
 if (coffee !== -1) {
-	alert(`Держите ваш любимый кофе ${coffees[coffee]}. Он ${coffee + 1}-й по популярности в нашей кофейне.`)
-	alert(`Кофе ${coffees[coffee]} сейчас стоит ${updatedPrices[coffee]} евро`)
+	alert(`Take your favorite coffee ${coffees[coffee]}. It is ${coffee + 1} in popularity in our coffee shop.`)
+	alert(`Coffee ${coffees[coffee]} now stands ${updatedPrices[coffee]} euro`)
 } else {
-	alert('К сожалению, такого вида кофе нет в наличии')
+	alert('Unfortunately, this type of coffee is not available')
 }
