@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 10-2</title>
+</head>
+
+<body>
+	<h3>Task 10-2</h3>
+	<p>
+		<b>Вам необходимо</b> создать функцию <b>giveJobToStudent</b>, которая принимает в себя 2 параметра:<br>
+	<ol>
+		<li>student. Объект, содержащий информацию о студенте.</li>
+		<li>jobName. Название новой работы студента.</li>
+	</ol>
+	Функция <b>giveJobToStudent</b> выводит в модальное окно сообщение “Поздравляем! У студента <b>fullName</b> появилась
+	новая работа! Теперь он jobName”, где fullName - это имя студента, а jobName - название новой работы студента.<br>
+	<br>
+	Функция <b>giveJobToStudent</b> должна возвращать новый объект студента, в котором будут все ключи из объекта
+	<b>student</b> и также появится новый ключ job со значением параметра jobName.<br>
+	<br>
+	<b>Для теста функции giveJobToStudent</b> используйте следующий код:<br>
+	<br>
+	const student = {<br>
+
+	fullName: 'Максим',<br>
+
+	experienceInMonths: 12,<br>
+
+	stack: ['HTML', 'CSS', 'JavaScript', 'React'],<br>
+
+	}<br>
+	<br>
+	const updatedStudent = giveJobToStudent(student, 'веб-разработчик');
+	</p>
+	<script src="10-2.js"></script>
+</body>
+
+</html>

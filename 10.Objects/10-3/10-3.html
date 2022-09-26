@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 10-3</title>
+</head>
+
+<body>
+	<h3>Task 10-3</h3>
+	<p>
+		<b>Вам необходимо</b> создать функцию, которая будет работать с объектами. Назовите ее <b>handleObject.</b> <br>
+		<br>
+		<b>handleObject принимает в себя 3 параметра:</b>
+	<ol>
+		<li>obj. Объект, с которым будет работать функция.</li>
+		<li>key. ключ объекта.</li>
+		<li>action. Действие, которое мы будем совершать над объектом.</li>
+	</ol>
+	<br>
+	<b>Параметр action может быть 4-мя значениями:</b>
+	<ol>
+		<li>‘get’. Если action равен ‘get’, то функция handleObject должна вернуть значение ключа key в объекте obj.</li>
+		<li>‘add’. Если action равен ‘add’, то функция handleObject должна добавить новый ключ key в объект object и
+			присвоить значение пустой строки “”. Также из функции необходимо возвратить обновленный объект obj.</li>
+		<li>‘delete’. Если action равен ‘delete’, то функция handleObject должна удалить свойство key из объекта obj и
+			возвратить обновленный объект.</li>
+	</ol>
+	<b>Если action равен любому другому значению</b>, то функция handleObject должна возвратить объект obj.<br>
+	<br>
+	Протестируйте функцию на этом коде:<br>
+	<br>
+	const student = {<br>
+	name: 'Maxim',<br>
+	programmingLanguage: 'JavaScript',<br>
+	}<br>
+	<br>
+	const result = handleObjects(student, 'programmingLanguage', 'delete');<br>
+	console.log('result', result);
+	</p>
+	<script src="10-3.js"></script>
+</body>
+
+</html>
