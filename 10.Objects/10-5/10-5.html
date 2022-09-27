@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 10-5</title>
+</head>
+
+<body>
+	<h3>Task 10-5</h3>
+	<p>
+		Вы когда-нибудь играли в лотерею? Лотерея - это игра, в которой случайным образом определяют победителя и дают ему
+		выигрыш. Сейчас ваша задача будет разработать логику для такой игры.<br>
+		<br>
+		<b>Вам необходимо</b> создать функцию <b>getWinner</b>, которая принимает в себя 2 параметра:<br>
+	<ol>
+		<li>applicants. Объект, в котором ключи - это номерки людей, по которым будет производится случайный отбор, а
+			значения -
+			это объекты кандидатов на выигрыш в лотерее.</li>
+		<li>winnerObject. Это объект, в котором хранится всего 1 ключ prize, хранящий значения размера выигрыша в лотерее.
+		</li>
+	</ol>
+
+	<b>Вам необходимо</b> случайным образом выбрать победный номерок (случайный ключ в объекте applicants) и вернуть из
+	функции
+	<b>getWinner</b> объект, в котором будут хранится свойства из <b>winnerObject</b> и объект победителя.<br>
+	<br>
+	Для получения случайного значения в диапазоне используйте следующую функцию:<br>
+	<br>
+	function getRandomNumberInRange(min, max) {<br>
+	&nbsp return Math.floor(Math.random() * (max - min)) + min;<br>
+	}<br>
+	<br>
+
+
+	Пример возвращаемого результата функции <b>getWinner</b>:<br>
+	<br>
+	const todaysWinner = {<br>
+	&nbsp prize: '10 000$',<br>
+	}<br>
+	<br>
+	const winnerApplicants = {<br>
+	&nbsp '001': {<br>
+	&nbsp &nbsp name: 'Максим',<br>
+	&nbsp &nbsp age: 25,<br>
+	&nbsp },<br>
+	&nbsp '201': {<br>
+	&nbsp &nbsp name: 'Светлана',<br>
+	&nbsp &nbsp age: 20,<br>
+	&nbsp },<br>
+	&nbsp '304': {<br>
+	&nbsp &nbsp name: 'Екатерина',<br>
+	&nbsp &nbsp age: 35,<br>
+	&nbsp },<br>
+	}<br>
+	<br>
+	const resultWinner = getWinner(winnerApplicants, todaysWinner);<br>
+	console.log('resultWinner', resultWinner); // { prize: '10 000$', name: 'Максим', age: 25 }
+	</p>
+	<script src="10-5.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 10-4</title>
+</head>
+
+<body>
+	<h3>Task 10-4</h3>
+	<p>
+		Представьте, что в полицейском участке проводится расследование. Было совершено несколько преступлений. У
+		полицейских есть другие более приоритетные задания, поэтому они попросили вас написать программу, которая будет
+		вычислять преступника по уже известным данным.<br>
+		<br>
+		<b>Ваша задача состоит в том</b>, чтобы создать функцию <b>getKiller</b>. <b>getKiller</b> принимает в себя 2
+		параметра:
+	<ol>
+		<li>suspectInfo. Это объект, в котором ключи - это подозреваемые в преступлении люди, а значения - массивы людей,
+			которых видели подозреваемые в день убийства.</li>
+		<li>deadPeople. Это массив с именами людей, которых убил преступник.</li>
+	</ol>
+
+	Преступником является тот, кто видел всех убитых людей в день убийства. Функция <b>getKiller</b> должна возвращать имя
+	преступника.<br>
+	<br>
+	Примеры результатов функции <b>getKiller</b>:<br>
+	<br>
+	getKiller(<br>
+	&nbsp {<br>
+	&nbsp &nbsp 'James': ['Jacob', 'Bill', 'Lucas'],<br>
+	&nbsp &nbsp 'Johnny': ['David', 'Kyle', 'Lucas'],<br>
+	&nbsp &nbsp 'Peter': ['Lucy', 'Kyle'],<br>
+	&nbsp }, ['Lucas', 'Bill']<br>
+	); // Убийца James<br>
+	<br>
+	getKiller(<br>
+	&nbsp {<br>
+	&nbsp &nbsp 'Brad': [],<br>
+	&nbsp &nbsp 'Megan': ['Ben', 'Kevin'],<br>
+	&nbsp &nbsp 'Finn': [],<br>
+	&nbsp },<br>
+	&nbsp ['Ben']<br>
+	); // Убийца Megan
+	</p>
+	<script src="10-4.js"></script>
+</body>
+
+</html>
