@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 10-Additional-1</title>
+</head>
+
+<body>
+	<h3>10-Additional-1</h3>
+	<p>
+		Представьте, что вы разрабатываете интернет магазин по доставке еды. Вам поставили задачу подсчета итоговой суммы
+		всех товаров в корзине.<br>
+		<br>
+		<b>Вам необходимо</b> создать функцию <b>getTotalPriceOfShoppingBag</b>, которая будет принимать в себя 1 параметр
+		shoppingBag. <b>shoppingBag</b> - это массив продуктов в корзине, состоящий из объектов, в каждом из которых
+		хранится информация о названии продукта (product) и о количестве продукта в корзине (quantity).<br>
+		<br>
+		<b>Также</b> у интернет-магазина есть глобальный объект, в котором хранится вся нужная информация о каждой единице
+		продукта:<br>
+		<br>
+		const groceries = {<br>
+		&nbsp "Orange Juice": {<br>
+		&nbsp &nbsp &nbsp price : 1.5,<br>
+		&nbsp &nbsp &nbsp discount: 10,<br>
+		},<br>
+		&nbsp "Chocolate": {<br>
+		&nbsp &nbsp &nbsp price : 2,<br>
+		&nbsp &nbsp &nbsp discount : 0,<br>
+		},<br>
+		// more items...<br>
+		}<br>
+		<br>
+		Функция <b>getTotalPriceOfShoppingBag</b> должна возвращать общую стоимость всех товаров в корзине с учетом скидок и
+		с учетом указанных клиентом количеством продуктов. Итоговое значение должно быть округлено до сотых. Это можно
+		сделать с помощью <b>toFixed</b> (<a
+			href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed"
+			target="_blank">https://developer.mozilla.org/...</a>)<br>
+		<br>
+		Посмотрите на возможножно возвращаемое значение функции <b>getTotalPriceOfShoppingBag</b>:<br>
+		<br>
+		const shoppingBag = [<br>
+		&nbsp { product: 'Chocolate', quantity: 3 },<br>
+		&nbsp { product: 'Orange Juice', quantity: 23 },<br>
+		]<br>
+		<br>
+		const totalPrice = getTotalPriceOfShoppingBag(shoppingBag);<br>
+		console.log('totalPrice', totalPrice); // Возвращает 37.05
+	</p>
+	<script src="10-Additional-1.js"></script>
+</body>
+
+</html>

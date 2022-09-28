@@ -29,6 +29,7 @@ function filterOnlineUsers(users, key, value) {
 
 	for (let i = 0; i < users.length; i++) {
 		const obj = users[i]
+		console.log(obj)
 		if (obj[key] === value) result.push(obj)
 	}
 	return result
