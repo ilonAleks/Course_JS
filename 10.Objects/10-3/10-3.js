@@ -3,32 +3,30 @@ const student = {
 	programmingLanguage: 'JavaScript',
 }
 
+const result1 = handleObject(student, 'name', 'get')
+const result2 = handleObject(student, 'age', 'add')
+const result3 = handleObject(student, 'programmingLanguage', 'delete')
+const result4 = handleObject(student, ' ', 'abcde')
+console.log('result1', result1)
+console.log('result2', result2)
+console.log('result3', result3)
+console.log('result4', result4)
+
 function handleObject(obj, key, action) {
-	if (action === 'get') {//должна вернуть значение ключа key в объекте obj
-		return Object.keys(obj)//result get ['name', 'programmingLanguage']
+	if (action === 'get') {
+		return obj[key]
 	}
-	if (action === 'add') {//должна добавить новый ключ key в объект object и присвоить значение пустой строки “”. Также из функции необходимо возвратить обновленный объект obj
-		return {
+	if (action === 'add') {
+		return obj = {
 			...obj,
 			[key]: ''
-		}//result add {name: 'Maxim', programmingLanguage: 'JavaScript', age: ''}
+		}
 	}
-	if (action === 'delete') {//должна удалить свойство key из объекта obj и возвратить обновленный объект.
-		delete obj[key]
-		return obj//result delete {name: 'Maxim'}
+	if (action === 'delete') {
+		let newObj = Object.assign({}, obj)
+		delete newObj[key]
+		return newObj
+	} else {
+		return obj
 	}
-	return obj//должна возвратить объект obj.
-	//result over {name: 'Maxim', programmingLanguage: 'JavaScript'}
 }
-
-// const result1 = handleObject(student, 'name', 'get')
-// console.log('result get', result1)
-
-// const result2 = handleObject(student, 'age', 'add')
-// console.log('result add', result2)
-
-const result4 = handleObject(student, '', 'abc')
-console.log('result over', result4)
-
-// const result3 = handleObject(student, 'programmingLanguage', 'delete')
-// console.log('result delete', result3)
