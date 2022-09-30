@@ -1,5 +1,5 @@
 const student = {
-	fullName: 'Максим',
+	fullName: 'Maxim',
 	experienceInMonths: 12,
 	stack: ['HTML', 'CSS', 'JavaScript', 'React'],
 }
@@ -7,7 +7,7 @@ const student = {
 function giveJobToStudent(student, jobName) {
 	let updatedStudent = Object.assign({}, student)
 	updatedStudent.job = jobName
-	return alert(`Поздравляем! У студента ${updatedStudent.fullName} появилась новая работа! Теперь он ${updatedStudent.job}`)
+	return alert(`Congratulations! Student ${updatedStudent.fullName} has a new job! Now he ${updatedStudent.job}`)
 }
 
-const updatedStudent = giveJobToStudent(student, 'веб-разработчик');
+const updatedStudent = giveJobToStudent(student, 'Web developer');

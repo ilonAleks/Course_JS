@@ -28,7 +28,7 @@ console.log(getKiller(
 		'Johnny': ['David', 'Kyle', 'Lucas'],
 		'Peter': ['Lucy', 'Kyle'],
 	}, ['Lucas', 'Bill']
-)) // Убийца James
+)) // Killer is James
 
 console.log(getKiller(
 	{
@@ -37,4 +37,4 @@ console.log(getKiller(
 		'Finn': [],
 	},
 	['Ben']
-)) // Убийца Megan
+)) // Killer is Megan

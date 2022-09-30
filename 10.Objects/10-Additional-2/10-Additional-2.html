@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 10-Additional-2</title>
+</head>
+
+<body>
+	<h3>Task 10-Additional-2</h3>
+	<p>
+		A customer came to you, who is the owner of one of the game web platforms. He wants you to develop for
+		His site is a new game that will conquer the hearts of many users.<br>
+		<br>
+		<b>The game has 2 players </b>: hero and enemy. They will fight each other. Each player has a health scale,
+		which initially, it is 100. With each hit, the opposite player is taken away by 10 units of health. The one wins.
+		Who is the health of more than 0.<br>
+		<br>
+		<b>Now you need to </b> create a function <b>startGame</b>, which will accept 2 parameters:
+	<ol>
+		<li>heroPlayer. The object of the player that contains the properties of NAME - the name of the hero; Health - a
+			health scale that
+			initially equal to 100; Heatenemy - a function that takes the Enemy object and takes away from the Enemy 10 object
+			Health units (Health key).</li>
+		<li>enemyPlayer. The object of the enemy, which contains the properties of NAME - the name of the hero; Health - a
+			health scale that
+			initially equal to 100; Heathero - a function that takes the Hero object and takes away from the Hero object 10
+			units
+			Health (Health key).</li>
+	</ol>
+	<br>
+	<b>Inside the function startGame you need to </b> randomly generate a number from 0 to 1. If 0 falls, then
+	need
+	call the method heatEnemy at the object <b>heroPlayer</b>, if 1 - then heatHero at <b>enemyPlayer</b>. <br>
+	<br>
+	<b>For this </b> so that the function generates random values several times and players fight until someone has
+	will end life, it is recommended to use the While cycle, which will be executed until any player has a Health property
+	Less or equal to zero.<br>
+	<br>
+	<b>After completing the cycle, it is necessary</b> determine which player won and display a message through alert
+	“${name}
+	won! He has left ${health} health”, where name and health - the values of the properties of the winner player.<br>
+	<br>
+	<b>To generate random values </b> use the following function.<br>
+	<br>
+	function getRandomNumberInRange(min, max) {<br>
+	&nbsp return Math.floor(Math.random() * (max - min)) + min;<br>
+	}<br>
+	<br>
+	<b>To verify performance </b> functions <b>startGame</b> Use this code. There are no methods in it
+	<b>heatEnemy</b> and <b>heatHero</b>, to you
+	it is necessary to implement them themselves.<br>
+	<br>
+	const hero = {<br>
+	&nbsp name: 'Batman',<br>
+	&nbsp health: 100,<br>
+	}<br>
+	<br>
+	const enemy = {<br>
+	&nbsp name: 'Joker',<br>
+	&nbsp health: 100,<br>
+	}<br>
+	startGame(hero, enemy);
+	</p>
+	<script src="10-Additional-2.js"></script>
+</body>
+
+</html>

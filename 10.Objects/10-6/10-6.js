@@ -15,10 +15,10 @@ function giveTalonsInOrder(patients, orders) {
 
 const ordersArr = [4, 2, 1, 3];
 const people = [
-	{ id: 1, name: "Максим" },
-	{ id: 2, name: "Николай" },
-	{ id: 3, name: "Ангелина" },
-	{ id: 4, name: "Виталий" },
+	{ id: 1, name: "Maxim" },
+	{ id: 2, name: "Nicholas" },
+	{ id: 3, name: "Angelina" },
+	{ id: 4, name: "Vitaly" },
 ];
 
 const result = giveTalonsInOrder(people, ordersArr);
@@ -26,10 +26,10 @@ console.log('result', result);
 
 /* Возвращает массив
 [
-	{ id: 4, name: 'Виталий' },
-	{ id: 2, name: 'Николай' },
-	{ id: 1, name: 'Максим' },
-	{ id: 3, name: 'Ангелина' }
+	{ id: 4, name: 'Vitaly' },
+	{ id: 2, name: 'Nicholas' },
+	{ id: 1, name: 'Maxim' },
+	{ id: 3, name: 'Angelina' }
 ]
 */
 

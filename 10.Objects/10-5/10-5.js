@@ -18,18 +18,18 @@ const todaysWinner = {
 
 const winnerApplicants = {
 	'001': {
-		name: 'Максим',
+		name: 'Maxim',
 		age: 25,
 	},
 	'201': {
-		name: 'Светлана',
+		name: 'Svetlana',
 		age: 20,
 	},
 	'304': {
-		name: 'Екатерина',
+		name: 'Catherine',
 		age: 35,
 	},
 }
 const resultWinner = getWinner(winnerApplicants, todaysWinner)
 console.log('resultWinner', resultWinner)
-// { prize: '10 000$', name: 'Максим', age: 25 }
+// { prize: '10 000$', name: 'Catherine', age: 35 }

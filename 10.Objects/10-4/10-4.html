@@ -11,22 +11,24 @@
 <body>
 	<h3>Task 10-4</h3>
 	<p>
-		Представьте, что в полицейском участке проводится расследование. Было совершено несколько преступлений. У
-		полицейских есть другие более приоритетные задания, поэтому они попросили вас написать программу, которая будет
-		вычислять преступника по уже известным данным.<br>
+		Imagine that an investigation is being conducted in the police station. Several crimes were committed. The police
+		have other more priority tasks, so they asked you to write a program that will be
+		Calculate the criminal according to already known data.<br>
 		<br>
-		<b>Ваша задача состоит в том</b>, чтобы создать функцию <b>getKiller</b>. <b>getKiller</b> принимает в себя 2
-		параметра:
+		<b>Your task is </b> to create a function <b>getKiller</b>. <b>getKiller</b> accepts 2
+		parameter:
 	<ol>
-		<li>suspectInfo. Это объект, в котором ключи - это подозреваемые в преступлении люди, а значения - массивы людей,
-			которых видели подозреваемые в день убийства.</li>
-		<li>deadPeople. Это массив с именами людей, которых убил преступник.</li>
+		<li>suspectInfo. This is an object in which the keys are people suspected of a crime, and the values are masses of
+			people,
+			who were seen by the suspects on the day of the murder.</li>
+		<li>deadPeople. This is an array with the names of people who were killed by the criminal.</li>
 	</ol>
 
-	Преступником является тот, кто видел всех убитых людей в день убийства. Функция <b>getKiller</b> должна возвращать имя
-	преступника.<br>
+	The criminal is the one who saw all the dead people on the day of the murder.Function <b>getKiller</b> must return the
+	name
+	criminal.<br>
 	<br>
-	Примеры результатов функции <b>getKiller</b>:<br>
+	Examples of function results <b>getKiller</b>:<br>
 	<br>
 	getKiller(<br>
 	&nbsp {<br>
@@ -34,7 +36,7 @@
 	&nbsp &nbsp 'Johnny': ['David', 'Kyle', 'Lucas'],<br>
 	&nbsp &nbsp 'Peter': ['Lucy', 'Kyle'],<br>
 	&nbsp }, ['Lucas', 'Bill']<br>
-	); // Убийца James<br>
+	); // Killer is James<br>
 	<br>
 	getKiller(<br>
 	&nbsp {<br>
@@ -43,7 +45,7 @@
 	&nbsp &nbsp 'Finn': [],<br>
 	&nbsp },<br>
 	&nbsp ['Ben']<br>
-	); // Убийца Megan
+	); // Killer is Megan
 	</p>
 	<script src="10-4.js"></script>
 </body>

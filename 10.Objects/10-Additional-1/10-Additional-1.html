@@ -11,15 +11,16 @@
 <body>
 	<h3>10-Additional-1</h3>
 	<p>
-		Представьте, что вы разрабатываете интернет магазин по доставке еды. Вам поставили задачу подсчета итоговой суммы
-		всех товаров в корзине.<br>
+		Imagine that you are developing an online food delivery store. You were set the task of calculating the total amount
+		all goods in the basket.<br>
 		<br>
-		<b>Вам необходимо</b> создать функцию <b>getTotalPriceOfShoppingBag</b>, которая будет принимать в себя 1 параметр
-		shoppingBag. <b>shoppingBag</b> - это массив продуктов в корзине, состоящий из объектов, в каждом из которых
-		хранится информация о названии продукта (product) и о количестве продукта в корзине (quantity).<br>
+		<b>You need to </b> create a function <b>getTotalPriceOfShoppingBag</b>, which will take 1 parameter
+		shoppingBag. <b>shoppingBag</b> - This is an array of products in the basket consisting of objects in each of which
+		information about the name of the product (product) and the quantity of the product in the basket are stored
+		(quantity).<br>
 		<br>
-		<b>Также</b> у интернет-магазина есть глобальный объект, в котором хранится вся нужная информация о каждой единице
-		продукта:<br>
+		<b>Also </b> the online store has a global object in which all the necessary information is stored about each unit
+		product:<br>
 		<br>
 		const groceries = {<br>
 		&nbsp "Orange Juice": {<br>
@@ -33,13 +34,14 @@
 		// more items...<br>
 		}<br>
 		<br>
-		Функция <b>getTotalPriceOfShoppingBag</b> должна возвращать общую стоимость всех товаров в корзине с учетом скидок и
-		с учетом указанных клиентом количеством продуктов. Итоговое значение должно быть округлено до сотых. Это можно
-		сделать с помощью <b>toFixed</b> (<a
+		Function <b>getTotalPriceOfShoppingBag</b> should return the total cost of all goods in the basket, taking into
+		account discounts and
+		given the number of products indicated by the client.The final value should be rounded to hundredths.It's possible
+		do it with <b>toFixed</b> (<a
 			href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed"
 			target="_blank">https://developer.mozilla.org/...</a>)<br>
 		<br>
-		Посмотрите на возможножно возвращаемое значение функции <b>getTotalPriceOfShoppingBag</b>:<br>
+		Look at the possible return value of the function <b>getTotalPriceOfShoppingBag</b>:<br>
 		<br>
 		const shoppingBag = [<br>
 		&nbsp { product: 'Chocolate', quantity: 3 },<br>
@@ -47,7 +49,7 @@
 		]<br>
 		<br>
 		const totalPrice = getTotalPriceOfShoppingBag(shoppingBag);<br>
-		console.log('totalPrice', totalPrice); // Возвращает 37.05
+		console.log('totalPrice', totalPrice); // Returns 37.05
 	</p>
 	<script src="10-Additional-1.js"></script>
 </body>
