@@ -13,7 +13,7 @@ function giveTalonsInOrder(patients, orders) {
 	return result
 }
 
-const ordersArr = [4, 2, 1, 3];
+const ordersArr = [4, 2, 1, 3]
 const people = [
 	{ id: 1, name: "Maxim" },
 	{ id: 2, name: "Nicholas" },
@@ -21,8 +21,8 @@ const people = [
 	{ id: 4, name: "Vitaly" },
 ];
 
-const result = giveTalonsInOrder(people, ordersArr);
-console.log('result', result);
+const result = giveTalonsInOrder(people, ordersArr)
+console.log('result', result)
 
 /* Возвращает массив
 [
@@ -32,10 +32,3 @@ console.log('result', result);
 	{ id: 3, name: 'Angelina' }
 ]
 */
-
-//! console.log(people[1].id)
-
-//! function giveTalonsInOrder(patients, orders) {
-//! 	return patients.sort((name1, name2) => name1[orders] > name2[orders] ? 1 : -1)
-//! 	// 4,3,2,1
-//! }

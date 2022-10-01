@@ -22,10 +22,7 @@ function getTotalPriceOfShoppingBag(shoppingBag) {
 			prod.quantity).toFixed(2))
 	}, 0)
 }
-//groceries[`${prod.product}`].price - в groceries имя из корзины Chocolate price = 2
-//groceries[`${prod.product}`].discount - в groceries имя из корзины Chocolate discount = 0
-//prod.quantity - колличество в корзине
-//toFixed(2) два знака после запятой
 
-const totalPrice = getTotalPriceOfShoppingBag(shoppingBag);
-console.log('totalPrice', totalPrice); // Returns 37.05
+const totalPrice = getTotalPriceOfShoppingBag(shoppingBag)
+console.log('totalPrice', totalPrice)
+// Returns 37.05

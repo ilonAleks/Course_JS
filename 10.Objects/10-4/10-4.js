@@ -12,9 +12,6 @@ function getKiller(suspectInfo, deadPeople) {
 			name: el[0],
 			suspectPeople: suspectPeople
 		}
-		//{name: 'James', suspect 2}
-		//{name: 'Johnny', suspect 1}
-		//{name: 'Peter', suspect 0}
 	})
 	let killer = suspect.sort((a, b) => b.suspectPeople - a.suspectPeople)
 	return killer[0].name
