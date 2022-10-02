@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 11-Additional</title>
+</head>
+
+<body>
+	<h3>Task 11-Additional</h3>
+	<p>
+		Your customer is a visa center. They have a customer database, but there is no script that would automate the
+		process
+		Visa issuing. Therefore, the visa center asked you to help you as a web developer to take this task for
+		yourself.<br>
+		<br>
+		<b>You need to </b> create a function <b>allowVisa</b>, which accepts an array of customers of the visa center.
+		<b> Each client </b> -
+		this is an object with parameters<b>firstName</b> (client's name), <b>lastName</b> (client's lastname),
+		<b>criminalRecord</b>
+		(type of data boolean,
+		is there a criminal record), <b>passportExpiration</b> (type of data string, date of expiration of the
+		passport).<br>
+		<br>
+		Function <b>allowVisa</b> must return the filtered array <b> people </b> so that it satisfies the next
+		conditions:
+	<ol>
+		<li>The current date should be less than the property passportExpiration.</li>
+		<li>The client should not have a criminal record, the value of the property criminalRecord should be equal false.
+		</li>
+	</ol>
+	<br>
+	<b>For the test of the function </b>, use this code:<br>
+	<br>
+	const peopleWithVisa = [<br>
+	&nbsp {<br>
+	&nbsp &nbsp firstName: 'Stasia',<br>
+	&nbsp &nbsp lastName: 'Ward',<br>
+	&nbsp &nbsp criminalRecord: true,<br>
+	&nbsp &nbsp passportExpiration: '19.06.2024',<br>
+	&nbsp },<br>
+	&nbsp {<br>
+	&nbsp &nbsp firstName: 'Elliot',<br>
+	&nbsp &nbsp lastName: 'Baker',<br>
+	&nbsp &nbsp criminalRecord: false,<br>
+	&nbsp &nbsp passportExpiration: '04.06.2023',<br>
+	&nbsp },<br>
+	&nbsp {<br>
+	&nbsp &nbsp firstName: 'Leighann',<br>
+	&nbsp &nbsp lastName: 'Scott',<br>
+	&nbsp &nbsp criminalRecord: true,<br>
+	&nbsp &nbsp passportExpiration: '31.07.2023',<br>
+	&nbsp },<br>
+	&nbsp {<br>
+	&nbsp &nbsp firstName: 'Nick',<br>
+	&nbsp &nbsp lastName: 'Pop',<br>
+	&nbsp &nbsp criminalRecord: false,<br>
+	&nbsp &nbsp passportExpiration: '31.12.2022',<br>
+	&nbsp },<br>
+	];<br>
+	<br>
+	const result = allowVisa(peopleWithVisa);<br>
+	console.log('result', result);<br>
+
+
+	</p>
+	<script src="11-Additional.js"></script>
+</body>
+
+</html>
