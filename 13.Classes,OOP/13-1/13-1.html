@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 13-1</title>
+</head>
+
+<body>
+	<h3>Task 13-1</h3>
+	<p>
+		Вам дана функция-конструктор, с помощью которой можно создавать экземпляры объектов.<br>
+		<br>
+		<b>Ваша задача</b> состоит в том, чтобы переписать данную функцию на класс (class).<br>
+		<br>
+		function Student(name, age) {<br>
+		&nbsp this.name = name;<br>
+		&nbsp this.age = age;<br>
+		&nbsp this.technologies = [];<br>
+		&nbsp this.status = 'Junior';<br>
+		&nbsp this.setTechnologies = function(technologies) {<br>
+		&nbsp &nbsp this.technologies = [<br>
+		&nbsp &nbsp &nbsp ...this.technologies,<br>
+		&nbsp &nbsp &nbsp ...technologies,<br>
+		&nbsp &nbsp ];<br>
+		&nbsp }<br>
+		&nbsp this.setNewStatus = function(newStatus) {<br>
+		&nbsp &nbsp this.status = newStatus;<br>
+		&nbsp }<br>
+		}<br>
+		const student = new Student('Maxim', 20);<br>
+		student.setTechnologies(['HTML', 'CSS', 'JavaScript']);<br>
+		student.setNewStatus('Middle');<br>
+		console.log(student);
+	</p>
+	<script src="13-1.js"></script>
+</body>
+
+</html>
