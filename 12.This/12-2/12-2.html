@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 12-2</title>
+</head>
+
+<body>
+	<h3>Task 12-2</h3>
+	<p>
+		У вас есть 2 объекта <b>dog</b> и <b>bird</b>, в которых содержится их описание.<br>
+		<br>
+		const dog = {<br>
+		&nbsp; name: 'Чарли',<br>
+		&nbsp; type: 'Собака',<br>
+		&nbsp; makeSound() {<br>
+		&nbsp; &nbsp; return 'Гав-Гав'<br>
+		&nbsp; }<br>
+		}<br>
+		<br>
+		const bird = {<br>
+		&nbsp; name: 'Петя',<br>
+		&nbsp; type: 'Воробей', <br>
+		&nbsp; makeSound() {<br>
+		&nbsp; &nbsp; return 'Чик-чирик';<br>
+		&nbsp; }<br>
+		}<br>
+		<br>
+		Вам необходимо создать функцию <b>makeDomestic</b>, которая будет выводить в консоль всю информацию о животном с
+		помощью
+		сообщения “type по имени name говорит sound”, где <b>name</b> - имя животного, <b>type</b> - его тип и <b>sound</b>
+		- результат вызова
+		функции makeSound.<br>
+		<br>
+		<b>Также функция makeDomestic</b> должна возвращать новый объект животного, в котором будут все параметры, которые
+		были до
+		этого (name, type, makeSound), а также новый парамет <b>isDomestic</b>, который является типом данных <b>boolean</b>
+		и показывает,
+		является ли животное домашним или нет. <br>
+		<br>
+		Чтобы указать значение для свойства <b>isDomestic</b> (true либо false) вам необходимо передать его как параметр в
+		функцию
+		<b>makeDomestic</b>.<br>
+		<br>
+		<b>Кроме этого</b> внутри функции <b>makeDomestic</b> должен использовать только <b>this</b>. Т.е. вам разрешено
+		обращаться к свойствам
+		животного только <b>this.name</b> либо <b>this.makeSound</b>, но никак не bird.name либо bird.makeSound.<br>
+		<br>
+		<b>Вам необходимо</b> решить эту задачу 3-мя способами: через <b>bind, call и apply</b>. Вызовите функцию
+		<b>makeDomestic</b> 3 раза
+		используя данные методы. При использовании bind, функция makeDomestic должна работать с объектом dog, при apply и
+		call - с объектом bird. Не забывайте передавать параметр isDomestic в функцию при ее вызове.
+	</p>
+	<script src="12-2.js"></script>
+</body>
+
+</html>

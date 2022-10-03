@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 12-1</title>
+</head>
+
+<body>
+	<h3>Task 12-1</h3>
+	<p>
+		Представьте, что вас как веб-разработчика попросили разработать веб-платформу, которая будет отслеживать прогресс
+		студентов в обучении веб-разработке.<br>
+		<br>
+		<b>Для начала вам необходимо</b> создать объект <b>student</b>, в котором будут 3 свойства:
+	<ol>
+		<li>stack. Массив из строк, где каждая строка - это технология. Изначально, массив stack должен быть равен [‘HTML’].
+		</li>
+		<li>level. Тип данных number. level отвечает за текущий уровень студента и изначально равен 1.</li>
+		<li>improveLevel. Функция, которая сначала увеличивает значение свойства level у студента на единицу. Если level
+			равен
+			2-м, то вам необходимо добавить в конец массива stack значение ‘CSS’, если 3-м - добавляете в конец stack значение
+			‘JavaScript’, 4-м - ‘React’, 5-ти - ‘NodeJS’. Если значение level стало больше 5-ти, то вам необходимо вывести в
+			модальном окне через alert сообщение “The student has learned all the technologies!”. Также функция improveLevel
+			должна
+			возвращать
+			в самом конце обновленный объект student.</li>
+	</ol>
+	<br>
+	<b>В итоге</b> значение свойства <b>stack</b> после выполнения кода ниже должно быть равно ["HTML", "CSS",
+	"JavaScript", "React",
+	"NodeJS"].<br>
+	<br>
+	student<br>
+	&nbsp .improveLevel()<br>
+	&nbsp .improveLevel()<br>
+	&nbsp .improveLevel()<br>
+	&nbsp .improveLevel()<br>
+	&nbsp .improveLevel()<br>
+	<br>
+	<b>Примечание:</b> цепочка из подряд идущих функций impoveLevel работает так, потому что improveLevel возвращает
+	объект
+	student, а у объекта student есть метод impoveLevel. <br>
+	<br>
+	<b>Посмотрите на пример:</b><br>
+	<br>
+	const student = {<br>
+	&nbsp improveLevel() {<br>
+	&nbsp &nbsp return this;<br>
+	&nbsp }<br>
+	};<br>
+	<br>
+	student<br>
+	&nbsp .improveLevel()<br>
+	&nbsp .improveLevel()<br>
+	&nbsp .improveLevel()
+	</p>
+	<script src="12-1.js"></script>
+</body>
+
+</html>
