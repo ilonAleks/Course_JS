@@ -11,48 +11,44 @@
 <body>
 	<h3>Task 12-2</h3>
 	<p>
-		У вас есть 2 объекта <b>dog</b> и <b>bird</b>, в которых содержится их описание.<br>
+		You have 2 objects <b>dog</b> and <b>bird</b>, which contains their description.<br>
 		<br>
 		const dog = {<br>
-		&nbsp; name: 'Чарли',<br>
-		&nbsp; type: 'Собака',<br>
+		&nbsp; name: 'Charlie',<br>
+		&nbsp; type: 'Dog',<br>
 		&nbsp; makeSound() {<br>
-		&nbsp; &nbsp; return 'Гав-Гав'<br>
+		&nbsp; &nbsp; return 'Woof-woof'<br>
 		&nbsp; }<br>
 		}<br>
 		<br>
 		const bird = {<br>
-		&nbsp; name: 'Петя',<br>
-		&nbsp; type: 'Воробей', <br>
+		&nbsp; name: 'Peatya',<br>
+		&nbsp; type: 'Sparrow', <br>
 		&nbsp; makeSound() {<br>
-		&nbsp; &nbsp; return 'Чик-чирик';<br>
+		&nbsp; &nbsp; return 'Chic-chiric';<br>
 		&nbsp; }<br>
 		}<br>
 		<br>
-		Вам необходимо создать функцию <b>makeDomestic</b>, которая будет выводить в консоль всю информацию о животном с
-		помощью
-		сообщения “type по имени name говорит sound”, где <b>name</b> - имя животного, <b>type</b> - его тип и <b>sound</b>
-		- результат вызова
-		функции makeSound.<br>
+		You need to create a function <b>makeDomestic</b>, which will display all the information about the animal using the
+		message to the console “type named name says sound”, where <b>name</b> - The name of the animal, <b>type</b> - its
+		type and <b>sound</b> - the result of the call of the function makeSound.<br>
 		<br>
-		<b>Также функция makeDomestic</b> должна возвращать новый объект животного, в котором будут все параметры, которые
-		были до
-		этого (name, type, makeSound), а также новый парамет <b>isDomestic</b>, который является типом данных <b>boolean</b>
-		и показывает,
-		является ли животное домашним или нет. <br>
+		<b>Also a function makeDomestic</b> must return a new object of the animal, in which there will be all the
+		parameters that were before that (name, type, makeSound), as well as a new parametr <b>isDomestic</b>, which is a
+		type of data <b>boolean</b> and it shows whether the animal is domestic or not. <br>
 		<br>
-		Чтобы указать значение для свойства <b>isDomestic</b> (true либо false) вам необходимо передать его как параметр в
-		функцию
+		To indicate the value for the property <b>isDomestic</b> (true or false) you need to transfer it as a parameter to a
+		function
 		<b>makeDomestic</b>.<br>
 		<br>
-		<b>Кроме этого</b> внутри функции <b>makeDomestic</b> должен использовать только <b>this</b>. Т.е. вам разрешено
-		обращаться к свойствам
-		животного только <b>this.name</b> либо <b>this.makeSound</b>, но никак не bird.name либо bird.makeSound.<br>
+		<b>In addition, </b> inside the function <b>makeDomestic</b> must only use <b>this</b>. That is you are allowed to
+		turn to the properties of the animal only
+		<b>this.name</b> or <b>this.makeSound</b>, but not bird.name or bird.makeSound.<br>
 		<br>
-		<b>Вам необходимо</b> решить эту задачу 3-мя способами: через <b>bind, call и apply</b>. Вызовите функцию
-		<b>makeDomestic</b> 3 раза
-		используя данные методы. При использовании bind, функция makeDomestic должна работать с объектом dog, при apply и
-		call - с объектом bird. Не забывайте передавать параметр isDomestic в функцию при ее вызове.
+		<b>You need to </b> solve this problem in 3 ways: through <b>bind, call and apply</b>. Call the function
+		<b>makeDomestic</b> 3 times
+		using these methods. Using bind, function makeDomestic should work with the object dog, at apply and
+		call - with an object bird. Do not forget to transfer the parameter isDomestic in a function when calling it.
 	</p>
 	<script src="12-2.js"></script>
 </body>

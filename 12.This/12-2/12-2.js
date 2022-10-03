@@ -1,10 +1,31 @@
-//bind
-const bindGetFullName = getFullName.bind(obj)
-bindGetFullName()
+const dog = {
+	name: 'Charlie',
+	type: 'Dog',
+	makeSound() {
+		return 'Woof-woof'
+	}
+}
+const bird = {
+	name: 'Peatya',
+	type: 'Sparrow',
+	makeSound() {
+		return 'Chic-chiric';
+	}
+}
 
-//call
-getFullName.call(obj, 30, 3)
-//сразу вызывает функцию
+function makeDomestic(boolean) {
+	console.log(`${this.type} named ${this.name} says ${this.makeSound()}`)
+	return {
+		...this,
+		isDomestic: boolean
+	}
+}
 
-//apply
-getFullName.apple(obj, [30, 3])
+const bindDog = makeDomestic.bind(dog)('true')
+console.log(bindDog)
+
+const callBird = makeDomestic.call(bird, 'false')
+console.log(callBird)
+
+const applyBird = makeDomestic.apply(bird, ['false'])
+console.log(applyBird)

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 12-Additional</title>
+</head>
+
+<body>
+	<h3>Task 12-Additional</h3>
+	<p>
+		One owner of a small startup came to you. He offers you to make a game that will amaze the game industry.
+		You certainly agree, since the proposal sounds tempting.<br>
+		<br>
+		<b>The essence of the game is </b> that there are 2 castles (attacking and defending) that are at war together.
+		User play for the attacking castle. The king of the attacking castle must every time calculate the possibilities of
+		capturing the warring
+		castle. When the possibility is large enough, you must not attack without hesitation.<br>
+		<br>
+		<b>In the code</b> you have 2 objects initially <b>attacker</b> and <b>defender</b> which are the analogies of locks
+		and which have properties responsible for the number of combat units of each type. For example, <b>archer</b> -
+		these are archers,
+		<b>footSoldiers</b> - these are
+		infantrymens, etc.<br>
+		<br>
+		const attacker = {<br>
+		&nbsp; archer: 30,<br>
+		&nbsp; footSoldier: 55,<br>
+		&nbsp; cavalry: 10,<br>
+		&nbsp; artillery: 3,<br>
+		}<br>
+		<br>
+		const defender = {<br>
+		&nbsp; archer: 33,<br>
+		&nbsp; footSoldier: 50,<br>
+		&nbsp; cavalry: 40,<br>
+		&nbsp; artillery: 10,<br>
+		}<br>
+		<br>
+		<b>In the Attacker object, you need to create 3 functions:</b>
+	<ol>
+		<li>checkChancesToWin. Checks the chances of an attacking castle to capture a defending castle.This function accepts
+			1 parameter
+			defenderObject, which is an object defender. <br>
+			checkChancesToWin The number of combat units from both castles must be verified.For example, if the attacking
+			castle has a greater value of the Archer property than that of the defender, then 1 must add 1 to the chances of
+			capture (initially the value of chances should be zero).
+			<br>The function should return an array in which the 1st element is the chances of an attacking castle for
+			capture, and the 2nd is the value of the maximum chance of capture (the number of keys in the defenderObject
+			object).That is, if the attacking castle of the properties of Archer and Cavalry has more than the defending, and
+			the other values of the properties are less, then the chances of capture should be [2, 4] (figuratively the
+			chances are 2 of 4 or 50%).
+		</li>
+		<li>improveArmy. Adds to each numerical value of the Attacker object by 5 units (updates the properties of Archer,
+			FootSoldier, Cavalry, Artillery). This function does not accept any parameters.</li>
+		<li>attack. It takes 1 parameter - this is the Defender object. First, this function checks if the chances of
+			capture (values from the function checkChancesToWin) less than 70% of the maximum chances, then it is necessary to
+			intensify (call the function improveArmy) and display a message via Alert “Our chances are equal
+			${ourArmyChances}/${maximumChances}.
+			Must be strengthened!” (ourArmyChances - the chances of an attacking castle for capture, maximumChances - the
+			maximum chance of capture). Otherwise, you need to display a message in the modal window “We intensified! We will
+			undoubtedly win! Our
+			chances are high!”.</li>
+	</ol>
+	<b>Example result </b> function of function <b>attack:</b><br>
+
+	attacker.attack(defender); // Our chances are equal 1/4. Must be strengthened!<br>
+	attacker.attack(defender); // Our chances are equal 2/4. Must be strengthened!<br>
+	attacker.attack(defender); // We intensified! We will undoubtedly win! Our chances are high!
+	</p>
+	<script src="12-Additional.js"></script>
+</body>
+
+</html>

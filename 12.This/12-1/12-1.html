@@ -11,25 +11,26 @@
 <body>
 	<h3>Task 12-1</h3>
 	<p>
-		Представьте, что вас как веб-разработчика попросили разработать веб-платформу, которая будет отслеживать прогресс
-		студентов в обучении веб-разработке.<br>
+		Imagine that you as a web developer were asked to develop a web platform that will track progress
+		students in learning web development.<br>
 		<br>
-		<b>Для начала вам необходимо</b> создать объект <b>student</b>, в котором будут 3 свойства:
+		<b>First you need to </b> create an object <b>student</b>, in which there will be 3 properties:
 	<ol>
-		<li>stack. Массив из строк, где каждая строка - это технология. Изначально, массив stack должен быть равен [‘HTML’].
+		<li>stack. The array of lines, where each line is a technology. Initially, the stack array should be equal [‘HTML’].
 		</li>
-		<li>level. Тип данных number. level отвечает за текущий уровень студента и изначально равен 1.</li>
-		<li>improveLevel. Функция, которая сначала увеличивает значение свойства level у студента на единицу. Если level
-			равен
-			2-м, то вам необходимо добавить в конец массива stack значение ‘CSS’, если 3-м - добавляете в конец stack значение
-			‘JavaScript’, 4-м - ‘React’, 5-ти - ‘NodeJS’. Если значение level стало больше 5-ти, то вам необходимо вывести в
-			модальном окне через alert сообщение “The student has learned all the technologies!”. Также функция improveLevel
-			должна
-			возвращать
-			в самом конце обновленный объект student.</li>
+		<li>level. Number data type. Level is responsible for the current level of the student and is originally equal 1.
+		</li>
+		<li>improveLevel. A function that first increases the value of the level property in a unit.
+			If Level is 2, then you need to add to the end of the stack array ‘CSS’,
+			if 3 - add to the end of the stack value ‘JavaScript’,
+			4 - ‘React’,
+			5 - ‘NodeJS’. If the Level value has become more than 5, then you need to display in the modal window through
+			Alert Message “The student has learned all the technologies!”.
+			Also a function improveLevel must return the updated object at the very end student.</li>
 	</ol>
 	<br>
-	<b>В итоге</b> значение свойства <b>stack</b> после выполнения кода ниже должно быть равно ["HTML", "CSS",
+	<b>In the end </b> the value of the property <b>stack</b> After performing the code below it should be equal to
+	["HTML", "CSS",
 	"JavaScript", "React",
 	"NodeJS"].<br>
 	<br>
@@ -40,11 +41,10 @@
 	&nbsp .improveLevel()<br>
 	&nbsp .improveLevel()<br>
 	<br>
-	<b>Примечание:</b> цепочка из подряд идущих функций impoveLevel работает так, потому что improveLevel возвращает
-	объект
-	student, а у объекта student есть метод impoveLevel. <br>
+	<b>Note: </b> a chain from a row of coming functions impoveLevel works like this because improveLevel returns
+	an object student, and the student object has a method impoveLevel. <br>
 	<br>
-	<b>Посмотрите на пример:</b><br>
+	<b>Look for an example:</b><br>
 	<br>
 	const student = {<br>
 	&nbsp improveLevel() {<br>

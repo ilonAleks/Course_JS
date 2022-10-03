@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 12-3</title>
+</head>
+
+<body>
+	<h3>Task 12-3</h3>
+	<p>
+		Object <b> footBaller </b>, in which there is some information about the football player and the actions that
+		he can
+		fulfill.<br>
+		<br>
+		const footballer = {<br>
+		&nbsp; fullName: 'Cristiano Ronaldo',<br>
+		&nbsp; attack: () => {<br>
+		&nbsp; &nbsp; console.log(`${this.fullName} now with the ball and starts the attack!`);<br>
+		&nbsp; },<br>
+		&nbsp; scoreGoal(sound) {<br>
+		&nbsp; &nbsp; console.log(`${this.fullName} scored goal! Blimey!`);<br>
+		&nbsp; &nbsp; this.celebrate(sound);<br>
+		&nbsp; },<br>
+		&nbsp; celebrate(sound) {<br>
+		&nbsp; &nbsp; console.log(sound);<br>
+		&nbsp; },<br>
+		&nbsp; goToSubstitution: function(newPlayer) {<br>
+		&nbsp; &nbsp; console.log(`${this.fullName} уходит на замену. На поле выходит ${newPlayer}`);<br>
+		&nbsp; }<br>
+		}<br>
+		<br>
+		const attack = footballer.attack;<br>
+		const score = footballer.scoreGoal;<br>
+		const substitute = footballer.goToSubstitution;<br>
+		attack()<br>
+		score('Viva!');<br>
+		substitute('Paulo Dibala')<br>
+		<br>
+		<b>Unfortunately, this code works incorrectly. </b> in some cases it displays undefined, and in others - error.<br>
+		<br>
+		<b>You need to </b> fix this code using <b>bind, call and apply</b>. Function <b>attack</b> must be fixed with
+		<b>bind, score</b> - with <b>call, substitute</b> - with <b>apply</b>.<br>
+		<br>
+		<b>Hint:</b><br>
+		do not forget that the arrow functions do not have its own this.<br>
+	</p>
+	<script src="12-3.js"></script>
+</body>
+
+</html>
