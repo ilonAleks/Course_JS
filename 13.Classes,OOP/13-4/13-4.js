@@ -1,29 +1,40 @@
 class Dictionary {
 	constructor(name) {
 		this.name = name
-		words = {}
+		this.words = {}
 	}
 	add(word, description) {
-		this.words = {
-			word: 'word',
-			description: 'description',
+		if (this.words[word]) {
+			console.log('This word is already in the dictionary')
+		} else {
+			this.words = {
+				...this.words,
+				[word]: {
+					word: word,
+					description: description
+				}
+			}
 		}
 	}
-	remove() {
-
+	remove(word) {
+		delete this.words[word]
 	}
-	get() {
-
+	get(word) {
+		return this.words[word]
 	}
 	showAllWords() {
-
+		return Object.values(this.words).map((el) => {
+			return `${el.word} - ${el.description}`
+		})
 	}
 }
 
-const dictionary = new Dictionary('Толковый словарь');
-dictionary.add('JavaScript', 'популярный язык программирования');
-dictionary.add('Веб-разработчик', 'Человек, который создает новые сервисы и сайты или поддерживает и дополняет существующие');
 
-dictionary.remove('JavaScript');
-dictionary.showAllWords();
-// Веб-разработчик - Человек, который создает новые сервисы и сайты или поддерживает и дополняет существующие
+const dictionary = new Dictionary('Explanatory dictionary')
+dictionary.add('JavaScript', 'popular programming language')
+dictionary.add('Web developer', 'a person who creates new services and sites or supports and complements the existing')
+dictionary.add('JavaScript', 'popular programming language')
+console.log(dictionary.get('JavaScript'))
+dictionary.remove('JavaScript')
+console.log(dictionary.showAllWords())
+// Web developer - a person who creates new services and sites or supports and complements the existing

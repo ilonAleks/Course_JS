@@ -26,29 +26,3 @@ console.log(getDateFormat({
 	month: 5,
 	day: 5
 },))
-
-
-// const date = new Date()
-// console.log(date)
-// Sat Oct 01 2022 21:01:02 GMT+0300 (Москва, стандартное время)
-
-// const newDate = new Date(2023, 7, 22)
-// console.log(newDate)
-// Thu Feb 10 2000 00:00:00 GMT+0300 (Москва, стандартное время)
-
-// console.log(newDate.getFullYear()) // 2000
-// console.log(newDate.getMonth()) // 1
-// console.log(newDate.getDate()) // 10
-// console.log(newDate.getDay()) // 4
-
-// newDate.setHours(23)
-// newDate.setMinutes(24)
-// newDate.setSeconds(25)
-// console.log(newDate)
-// Thu Feb 10 2000 23:24:25 GMT+0300 (Москва, стандартное время)
-
-// const date1 = new Date(2022, 4, 6)
-// let date2 = Date.now()
-// const diff = (date2 - date1.getTime()) / 1000 / 60 / 60 / 24 / 30
-// console.log(diff)
-// 4,9 month

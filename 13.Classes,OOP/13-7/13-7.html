@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 13-7</title>
+</head>
+
+<body>
+	<h3>Task 13-7</h3>
+	<p>
+		Your company creates an internal product to facilitate control over the growth of its developers. You were
+		instructed to realize such a product.<br>
+		<br>
+		<b>First you need to </b> create a class <b>Developer</b>, the designer of which will take 3 parameters:
+	<ol>
+		<li>fullName. The name of the developer.</li>
+		<li>age. Developer age.</li>
+		<li>position. The current position of the developer in the company (for example, Junior, Middle, Senior).</li>
+	</ol>
+	<br>
+	<b>Initialize all parameters </b> using <b>this</b>. Also create a field inside the designer <b>technologies</b>,
+	which by default will be equal to an empty array.<br>
+	<br>
+	Besides in class <b>Developer</b> you need to create 2 methods:
+	<ol>
+		<li>code. A method whose body is originally empty (there is nothing in curly brackets).</li>
+		<li>learnNewTechnology. This method takes 1 parameter Technology, which should be added to the end of the array
+			technologies.</li>
+	</ol>
+	<br>
+	<b>After the actions done </b> you should get a template <b>Developer</b>, thanks to which you will create
+	subsidiaries.<br>
+	<br>
+	<b>You now need to </b> create 3 subsidiaries from class <b>Developer</b>
+	<ol>
+		<li>JuniorDeveloper. The designer of this class accepts 2 parameters: fullName и age.
+			Call the parent class designer and hand over these 2 parameters there. As the 3rd we have position.
+			You need to indicate it by default. Write the meaning “Junior” as a 3rd parameter of a parent constructor call.
+			Besides reinstall the method code, so that he leads the line into the console “Junior developer writes the
+			code...”.
+			Array technologies should contain the following technologies: 'HTML', 'CSS', 'JavaScript'.</li>
+		<li>MiddleDeveloper. Do the same work in the constructor as JuniorDeveloper. Only in place position
+			submit the meaning “Middle”. Method code in class MiddleDeveloper should take a line into the console “Middle
+			developer writes the code...”. Array technologies should contain the following technologies: 'HTML', 'CSS',
+			'JavaScript',
+			‘React’.</li>
+		<li>SeniorDeveloper. Do the same work in the constructor as JuniorDeveloper. Only in place position
+			submit the meaning “Senior”. Method code in class SeniorDeveloper should take a line into the console “Senior
+			developer writes the code...”. Array technologies should contain the following technologies: 'HTML', 'CSS',
+			'JavaScript',
+			‘React’, ‘NodeJS’.</li>
+	</ol>
+	<br>
+	<b>Note:</b> When you are decide the method <b>code</b> in subsidiaries, you use the principle of polymorphism.<br>
+	<br>
+	<b>Test the written classes </b> using this code:<br>
+	<br>
+	juniorDeveloper.code(); // Junior developer writes the code...<br>
+	middleDeveloper.code(); // Middle developer writes the code...<br>
+	seniorDeveloper.code(); // Senior developer writes the code...<br>
+	<br>
+	console.log(juniorDeveloper.fullName, juniorDeveloper.age, <br>
+	juniorDeveloper.position); // 'Anastasia', 20, 'Junior'<br>
+	console.log(middleDeveloper.fullName, middleDeveloper.age, <br>
+	middleDeveloper.position); // 'Igor', 25, 'Middle'<br>
+	console.log(seniorDeveloper.fullName, seniorDeveloper.age, <br>
+	seniorDeveloper.position); // 'Maxim', 30, 'Senior'
+	</p>
+	<script src="13-7.js"></script>
+</body>
+
+</html>

@@ -11,46 +11,49 @@
 <body>
 	<h3>Task 13-4</h3>
 	<p>
-		Вам поручили задачу на проекте. Необходимо разработать словарь, в который можно добавлять слова с их описанием,
-		удалять слова и получать их.<br>
+		You were entrusted with the task on the project.
+		It is necessary to develop a dictionary in which you can add words with their description, delete words and receive
+		them.<br>
 		<br>
-		<b>Для начала</b> создайте класс <b>Dictionary</b>, конструктор которого принимает 1 параметр <b>name</b>.
-		Инициализируйте данное значение при помощи <b>this</b>. Также в конструкторе должно объявляться поле <b>words</b>,
-		которое по умолчанию должно быть пустым объектом.<br>
+		<b>To get started </b> create a class <b>Dictionary</b>, the constructor of which takes 1 parameter <b>name</b>.
+		Initialize this value with the help <b>this</b>. Also, the constructor should be declared a field <b>words</b>,
+		which by default should be an empty object.<br>
 		<br>
-		<b>Вам необходимо</b> в класс <b>Dictionary</b> добавить 3 метода:
+		<b>You need </b> to class <b>Dictionary</b> add 3 methods:
 	<ol>
-		<li>add. Данный метод принимает в себя 2 параметра: word - слово, тип данных строка; description - описание слова,
-			тип данных строка. Присвойте объекту words по ключу word (параметр метода add) значение объекта, в котором будут
-			храниться данные о слове и его описание. Пример такого объекта:<br>
+		<li>add. This method takes 2 parameters: word - word, type of data string;
+			description - Description of the word, type of data string.
+			Assign to the Words object by Word (the ADD method parameter) the value of the object in which data on the word
+			and its description will be stored. An example of such an object:<br>
 			<br>
 			{<br>
 			&nbsp word: 'word',<br>
 			&nbsp description: 'description',<br>
 			}<br>
 			<br>
-			<b>Если слово</b> уже существует в объекте <b>words</b>, то не нужно перезаписывать слово, которое уже было
-			сохранено ранее.
+			<b>If the word </b> already exists in the object <b>words</b>, You do not need to rewrite the word that has
+			already been preserved earlier.
 		</li>
-		<li>remove. Данный метод принимает в себя ключ из объекта words, по которому нужно удалить слово и удаляет это слово
-			из объекта.</li>
-		<li>get. Данный метод принимает в себя ключ из объекта words. Необходимо возвратить из метода найденное слово по
-			переданному параметру ключа.</li>
-		<li>showAllWords. Данный метод не принимает в себя никаких параметров. Его задача состоит в том, чтобы вывести все
-			слова, которые есть в объекте words, в консоль в формате “word - description” (word - само слово, description -
-			описание слова).</li>
+		<li>remove. This method takes the key from the Words object, according to which you need to remove the word and
+			deleys this word from the object.</li>
+		<li>get. This method takes the key from the Words object. It is necessary to return the word found from the method
+			according to the transmitted key parameter.</li>
+		<li>showAllWords. Данный метод не принимает в себя никаких параметров.
+			Its task is to bring all the words that are in the Words object to the console in format “word - description”
+			(word - the word, description -
+			description of the word).</li>
 	</ol>
 	<br>
-	<b>Для тестирования написанного класса</b> используйте данный код:<br>
+	<b>To test the written class </b> use this code:<br>
 	<br>
-	const dictionary = new Dictionary('Толковый словарь');<br>
-	dictionary.add('JavaScript', 'популярный язык программирования');<br>
-	dictionary.add('Веб-разработчик', 'Человек, который создает новые сервисы и сайты или поддерживает и дополняет
-	существующие');<br>
+	const dictionary = new Dictionary('Explanatory dictionary');<br>
+	dictionary.add('JavaScript', 'popular programming language');<br>
+	dictionary.add('Web developer', 'a person who creates new services and sites or supports and complements the
+	existing');<br>
 	<br>
 	dictionary.remove('JavaScript');<br>
 	dictionary.showAllWords();<br>
-	// Веб-разработчик - Человек, который создает новые сервисы и сайты или поддерживает и дополняет существующие
+	// Web developer - a person who creates new services and sites or supports and complements the existing
 	</p>
 	<script src="13-4.js"></script>
 </body>

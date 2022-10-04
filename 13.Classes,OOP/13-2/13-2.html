@@ -11,29 +11,28 @@
 <body>
 	<h3>Task 13-2</h3>
 	<p>
-		<b>Вам необходимо</b> создать класс <b>Person</b>, конструктор которого будет принимать 2 параметра:
+		<b>You need to </b> create a class <b>Person</b>, constructor of which will take 2 parameters:
 	<ol>
-		<li>name. Имя человека.</li>
-		<li>age. Количество полных лет.</li>
+		<li>name. Human name.</li>
+		<li>age. The number of full years.</li>
 	</ol>
-	<b>Также вам необходимо</b> реализовать метод <b>compareAge</b> в классе <b>Person. <br>compareAge</b> принимает в
-	себя
-	экземпляр класса <b>Person</b>
-	и сравнивает значения полных лет.<br>
+	<b>You also need to </b> to implement the method <b>compareAge</b> in class <b>Person. <br>
+		compareAge</b> accepts a class copy <b>Person</b>
+	and compares the values of the full years.<br>
 	<br>
-	Данный код должен возвращать результат в следующем формате. Если у одного <b>Person</b> количество лет больше либо
-	равно, чем
-	у другого, то выводите сообщение через alert “name1 старше, чем name2”. Иначе же “name1 младше, чем name2”.<br>
+	This code must return the result in the following format.
+	If one <b>Person</b> the number of years is more or equal than that of the other, then display the message through
+	alert “name1 older than name2”. Otherwise “name1 younger than name2”.<br>
 	<br>
-	<b>Запускайте данный код</b> для теста работы вашего класса <b>Person</b><br>
+	<b>Launch this code </b> for the test of your class <b>Person</b><br>
 	<br>
-	const person1 = new Person('Максим', 24);<br>
-	const person2 = new Person('Светлана', 36);<br>
-	const person3 = new Person('Ирина', 23);<br>
+	const person1 = new Person('Maxim', 24);<br>
+	const person2 = new Person('Svetlana', 36);<br>
+	const person3 = new Person('Irina', 23);<br>
 	<br>
-	person1.compareAge(person2); // Максим младше, чем Светлана<br>
-	person2.compareAge(person3); // Светлана старше, чем Ирина<br>
-	person3.compareAge(person1); // Ирина младше, чем Максим
+	person1.compareAge(person2); // Maxim younger than Svetlana<br>
+	person2.compareAge(person3); // Svetlana older than Irina<br>
+	person3.compareAge(person1); // Irina younger than Maxim
 	</p>
 	<script src="13-2.js"></script>
 </body>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 13-6</title>
+</head>
+
+<body>
+	<h3>Task 13-6</h3>
+	<p>
+		<b>You are well done! </b> You have implemented logic for two dictionaries and they work perfectly.
+		But then a senior developer comes to you and says that you need to use encapsulation in your code, as this is an
+		important principle of OOP.<br>
+		<br>
+		You certainly agree with the senior developer.
+		He advised you to make the fields <b> name </b> and <b> words </b> private.
+		Implement this using the sign of the lattice “#”.<br>
+		<br>
+		<b>Now you need to </b> add getters and setters for fields words and name in class <b>Dictionary</b>.
+		For name, name the getter <b>mainName</b>, and setter - <b>setMainName</b>.
+		For <b>words</b> name the getter <b>allWords</b>, and setter - <b>addNewWord</b>.
+		<b>mainName, setMainName</b> and <b>allWords</b> should be defined using keywords <b>set</b> or <b>get</b>. <br>
+		<br>
+		But <b>addNewWord</b> is necessary to create as a regular method that accepts 2 parameters:
+		<b>word</b> - word, type of data string; <b>description</b> - word description, data type string.
+		Method <b>addNewWord</b> should create a new word in the object <b>words</b> without any checks.
+		<b>addNewWord</b> realized without <b>set</b>, because <b>set</b> cannot take more than the 1st parameter.<br>
+		<br>
+		After you made the fields private and created getters and setters, you need to fix logic for classes
+		<b>Dictionary</b> and <b>HardWordsDictionary</b>.<br>
+		<br>
+		<b>Test the final code </b> on this example:<br>
+		<br>
+		const hardWordsDictionary = new HardWordsDictionary('Difficult words');<br>
+		hardWordsDictionary.add('Amateur', 'anyone who is engaged in science or art without special training, possessing
+		only superficial knowledge.');<br>
+		hardWordsDictionary.add('Neologism', 'new word or expression, as well as the new meaning of the old word.');<br>
+		hardWordsDictionary.add('Quantum', 'the indivisible part of any value in physics.');<br>
+		<br>
+		hardWordsDictionary.remove('Neologism');<br>
+		hardWordsDictionary.showAllWords();<br>
+		<br>
+		console.log(hardWordsDictionary.mainName); // Difficult words<br>
+		hardWordsDictionary.setMainName = 'New Dictionary';<br>
+		console.log(hardWordsDictionary.mainName); // New Dictionary<br>
+		console.log(hardWordsDictionary.allWords); //displays an object in which there are words Amateur and Quantum
+	</p>
+	<script src="13-6.js"></script>
+</body>
+
+</html>

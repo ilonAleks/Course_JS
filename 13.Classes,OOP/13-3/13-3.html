@@ -11,58 +11,56 @@
 <body>
 	<h3>Task 13-3</h3>
 	<p>
-		Ваш друг Артем является владельцем автосервиса. Сейчас все заявки на ремонт машин обрабатывается вручную, что
-		конечно же не очень удобно. Поэтому Артем попросил вас как веб-разработчика помочь в автоматизации данного
-		процесса.<br>
+		Your friend Artem is the owner of a car service.
+		Now all applications for repairing machines are processed manually, which of course is not very convenient.
+		Therefore, Artem asked you as a web developer to help in automation of this process.<br>
 		<br>
-		<b>Вам необходимо</b> создать класс <b>CarService</b>, в конструктор которого будут переданы 2 параметра:
+		<b>You need to </b> create a class <b>CarService</b>, in the constructor of which 2 parameters will be transmitted:
 	<ol>
-		<li>name. Название автосервиса.</li>
-		<li>workingHours. Объект, в котором хранятся ключи from и till. <br>from означает время начала рабочего дня для
-			автосервиса,
-			<br>till - время конца рабочего дня.<br> Значения времени записываются в формате “h:mm” (например, 9:00).
+		<li>name. The name of the car service.</li>
+		<li>workingHours. The object in which the keys are stored from and till. <br>
+			from means the time of the start of the working day for the car service,
+			<br>till - End of the end of the working day.<br>
+			Знtime of time is recorded in format “h:mm” (for example, 9:00).
 		</li>
 	</ol>
-	<b>Инициализируйте данные параметры</b> с помощью<b> this</b>. Также, параметр <b>workingHours</b> является
-	необязательным. Поэтому
-	создайте значение (тип данных <b>object</b>) по умолчанию. Данный объект должен называться <b>DefaultWorkingHours</b>
-	и быть
-	статическим (static). Если параметр <b>workingHours</b> не был передан, то подставьте в <b>this.workingHours</b>
-	значение из
-	<b>DefaultWorkingHours</b>, которое равно:<br>
+	<b>Initialize these parameters </b> using<b> this</b>.
+	Also, the parameter <b>workingHours</b> is optional.
+	Therefore, create a value (data type <b>object</b>) default.
+	This object should be called <b>DefaultWorkingHours</b> and be static.
+	If the parameter <b>workingHours</b> not transferred, then substitute in<b>this.workingHours</b> meaning from
+	<b>DefaultWorkingHours</b>, which is equal:<br>
 	<br>
 	static DefaultWorkingHours = {<br>
 	&nbsp from: '9:00',<br>
 	&nbsp till: '20:00',<br>
 	}<br>
 	<br>
-	<b>Добавьте</b> в класс метод под названием <b>repairCar</b>, который должен принимать в себя 1 параметр
-	<b>carName</b> (имя машины для
-	ремонта, тип данных <b>string</b>).<br>
+	<b>Add </b> to class a method called <b>repairCar</b>, which should take in 1 parameter
+	<b>carName</b> (car name for repair, data type<b>string</b>).<br>
 	<br>
-	Если <b>carName</b> не был передан, то отобразите ошибку “Вам необходимо указать название машины, чтобы ее
-	отремонтировать” в
-	консоли через <b>console.error</b>. На этом выполнение функции должно заканчиваться.<br>
+	If <b>carName</b> not transmitted, then display the error You need to specify the name of your car in order to repair
+	it”
+	in the console through <b>console.error</b>. The function of the function should end with this.<br>
 	<br>
-	Если же параметр <b>carName</b> был передан в <b>repairCar</b>, то вам необходимо сравнить текущее часы с временем
-	работы
-	автосервиса. Если текущее время (часы) не входит в диапазон работы автосервиса, то отобразите через alert сообщение “К
-	сожалению, мы сейчас закрыты. Приходите завтра”. Иначе же выводите сообщение “Сейчас отремонтируем вашу машину
-	carName! Ожидайте, пожалуйста” (carName - параметр метода repairCar).<br>
+	If the parameter <b>carName</b> was transferred to <b>repairCar</b>, Then you need to compare the current clock with
+	the time of the car service.
+	If the current time (clock) is not included in the range of the car service, then display via alert message
+	“Unfortunately, we are now closed. Come back tomorrow”. Otherwise withdraw the message
+	“Now we will repair your car carName! Please expect” (carName - parameter of the method repairCar).<br>
 	<br>
-	<b>Примечание:</b>
-	при сравнении времени берите в учет только часы, на минуты не обращайте внимание. Пусть минуты всегда
-	будут строкой “00”.<br>
+	<b>Note:</b>
+	When comparing the time, take into account only the clock, do not pay attention for minutes.
+	Let the minutes always be a line “00”.<br>
 	<br>
-	<b>Для теста работоспособности</b> класса <b>CarService</b> используйте данный код:<br>
+	<b>For the test of performance </b> class <b>CarService</b> use this code:<br>
 	<br>
 	const carService = new CarService('RepairCarNow', { from: '8:00', till: '20:00' });<br>
 	carService.repairCar('BMW');<br>
 	<br>
-	<b>Подсказка:</b> <br>
-	для того, чтобы извлечь из строки “8:00” значение часов, вы можете использовать .split(‘:’), получить первый элемент
-	из
-	полученного массива и преобразовать его к числу.
+	<b>Hint:</b> <br>
+	In order to extract from the line “8:00”, you can use the watch value .split(':'),
+	get the first element from the resulting array and transform it to the number.
 	</p>
 	<script src="13-3.js"></script>
 </body>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 13-5</title>
+</head>
+
+<body>
+	<h3>Task 13-5</h3>
+	<p>
+		In the last task, you created a dictionary. The customer is satisfied with the work done and the development team
+		too.
+		Since you have already dealt with the technology of the dictionary, you were asked to implement another dictionary.
+		The customer wants to create a new category of words “Difficult words”.<br>
+		<br>
+		<b>Use the code </b> written in the last task.
+		You need to create a daughter class <b>HardWordsDictionary</b> from the class <b>Dictionary</b>.
+		Constructor in <b>HardWordsDictionary</b> take NAME parameter also accepts and calls the parent class
+		constructor.<br>
+		<br>
+		All methods that are in <b>Dictionary</b>, should remain unchanged in <b>HardWordsDictionary</b>, except one.
+		You need to reduce the method <b>add</b>, which should work according to the same logic as <b>add</b> in
+		<b>Dictionary</b>, only the object of the word should look as follows:<br>
+		<br>
+		{<br>
+		&nbsp word: 'word',<br>
+		&nbsp description: 'description',<br>
+		&nbsp isDifficult: true,<br>
+		}<br>
+		<br>
+		<b>For class test HardWordsDictionary</b> use this code:<br>
+		<br>
+		const hardWordsDictionary = new HardWordsDictionary('Difficult words')<br>
+		hardWordsDictionary.add('Amateur', 'anyone who is engaged in science or art without special training, possessing
+		only superficial knowledge.')<br>
+		hardWordsDictionary.add('Neologism', 'new word or expression, as well as the new meaning of the old word.')<br>
+		<br>
+		hardWordsDictionary.add('Quantum', 'the indivisible part of any value in physics.')<br>
+		hardWordsDictionary.showAllWords()<br>
+		<br>
+		// Amateur - anyone who is engaged in science or art without special training, possessing only superficial
+		knowledge.<br>
+		// Quantum - the indivisible part of any value in physics.
+	</p>
+	<script src="13-5.js"></script>
+</body>
+
+</html>
