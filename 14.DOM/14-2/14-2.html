@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="14-2.css" />
 	<title>Task 14-2</title>
 </head>
 
@@ -53,6 +54,18 @@
 		<b>У вас имеются начальные файлы.</b> Используйте их для разработки логики приложения:<br>
 		<a href="https://github.com/vmschool/14" target="_blank">https://github.com/vmschool/14</a>
 	</p>
+	<div id="tasks">
+		<div class="tasks__wrapper">
+			<form class="create-task-block">
+				<input name="taskName" class="create-task-block__input default-text-input" type="text"
+					placeholder="Создайте новую задачу" value="Посмотреть урок по JavaScript">
+				<button type="submit" class="create-task-block__button default-button">
+					Создать
+				</button>
+			</form>
+			<div class="tasks-list"></div>
+		</div>
+	</div>
 	<script src="14-2.js"></script>
 </body>
 

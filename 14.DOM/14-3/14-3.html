@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="14-3.css">
+	<title>Task 14-3</title>
+</head>
+
+<body>
+	<h3>Task 14-3</h3>
+	<p>
+		Вы отлично справились с поставленной задачей и теперь все элементы отрисовываются правильно. Теперь вам хотят
+		предоставить дело посложнее. Вам необходимо реализовать логику создания новых задач при помощи формы с классом
+		“create-task-block”.<br>
+		<br>
+		<b>Используйте предыдущий код</b> и повесьте обработчик событий <b>submit</b> на форму с классом
+		<b>“create-task-block”</b>. При отправке
+		формы создавайте новую задачу в массиве <b>tasks</b> и в DOM-дереве (внутри тега с классом <b>“tasks-list”</b>). id
+		должен быть
+		для каждой задачи уникальным. Текст для задачи берется из текстового поля с классом
+		<b>“create-task-block__input”</b>.<br>
+		<br>
+		<b>У вас имеются начальные файлы.</b> Используйте их для разработки логики приложения:<br>
+		<a href="https://github.com/vmschool/14" target="_blank">https://github.com/vmschool/14</a>
+	</p>
+	<div id="tasks">
+		<div class="tasks__wrapper">
+			<form class="create-task-block">
+				<input name="taskName" class="create-task-block__input default-text-input" type="text"
+					placeholder="Создайте новую задачу" value="Посмотреть урок по JavaScript">
+				<button type="submit" class="create-task-block__button default-button">
+					Создать
+				</button>
+			</form>
+			<div class="tasks-list"></div>
+		</div>
+	</div>
+	<script src="14-3.js"></script>
+</body>
+
+</html>

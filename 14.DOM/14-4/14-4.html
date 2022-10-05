@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="14-4.css">
+	<title>Task 14-4</title>
+</head>
+
+<body>
+	<h3>Task 14-4</h3>
+	<p>
+		<b>Вы молодец!</b> Вы справились с задачей и отдали ее на код-ревью старшему разработчику. Но старший разработчик
+		обнаружил, что не нужно отправлять форму, если значение пустое либо задача с таким же названием уже существует.
+		Поэтому вас просят добавить валидацию в ваш код.<br>
+		<br>
+		Для блока с ошибкой <b>создавайте тег span</b> с классом <b>“error-message-block”</b>. Внутрь данного тега будет
+		помещаться текст с ошибкой.<br>
+		<br>
+		Если форма была отправлена с пустым полем, то отобразите ошибку “Название задачи не должно быть пустым”, добавив
+		блок с ошибкой в форму с классом <b>“create-task-block”</b>. Если же задача с введенным в поле названием уже
+		существует, то отображайте ошибку “Задача с таким названием уже существует.”<br>
+		<br>
+		Если при отправке формы ошибок не было найдено, то удалите блок с ошибкой, если он существует в DOM, и создайте
+		новую задачу в списке.<br>
+		<br>
+		<b>У вас имеются начальные файлы.</b> Используйте их для разработки логики приложения:<br>
+		<a href="https://github.com/vmschool/14" target="_blank">https://github.com/vmschool/14</a>
+	</p>
+	<div id="tasks">
+		<div class="tasks__wrapper">
+			<form class="create-task-block">
+				<input name="taskName" class="create-task-block__input default-text-input" type="text"
+					placeholder="Создайте новую задачу" value="Посмотреть урок по JavaScript">
+				<button type="submit" class="create-task-block__button default-button">
+					Создать
+				</button>
+			</form>
+			<div class="tasks-list"></div>
+		</div>
+	</div>
+	<script src="14-4.js"></script>
+</body>
+
+</html>

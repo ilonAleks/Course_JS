@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="14-5.css">
+	<title>Task 14-5</title>
+</head>
+
+<body>
+	<h3>Task 14-5</h3>
+	<p>
+		Чтобы успешно завершить все ваши задачи на проекте, осталось выполнить только удаление задач. Для этого имеется
+		кнопка “Удалить”. Но иногда пользователи могут случайно нажать на кнопку и из-за этого удалится задача. Для этого
+		обычно создаются модальные окна, которые спрашивают пользователя, действительно ли он хочет удалить задачу. Сейчас
+		вам необходимо будет реализовать такое модальное окно.<br>
+		<br>
+		Стили для модального окна и HTML-шаблон у вас уже имеются. <b>Создайте HTML-элемент модального окна</b> с помощью
+		JavaScript и добавьте его внутри тега <b>body</b>.<br>
+		<br>
+		<b>Шаблон модального окна:</b><br>
+		<xmp>
+			<div class="modal-overlay modal-overlay_hidden">
+				<div class="delete-modal">
+					<h3 class="delete-modal__question">
+						Вы действительно хотите удалить эту задачу?
+					</h3>
+					<div class="delete-modal__buttons">
+						<button class="delete-modal__button delete-modal__cancel-button">
+							Отмена
+						</button>
+						<button class="delete-modal__button delete-modal__confirm-button">
+							Удалить
+						</button>
+					</div>
+				</div>
+			</div>
+		</xmp>
+		Класс <b>“modal-overlay_hidden”</b> отвечает за открытие и закрытие модального окна. Если оно открыто, то класса
+		<b>“modal-overlay_hidden”</b> нету, если закрыто, то класс <b>“modal-overlay_hidden”</b> присутствует.<br>
+		<br>
+		<b>Вам необходимо</b> открывать модальное окно после нажатия на любую кнопку “Удалить” около каждой задачи. Повесьте
+		обработчик события <b>“click”</b> на элемент с классом <b>“tasks-list”</b>. Используйте делегирование событий для
+		того, чтобы
+		отлавливать клики на кнопки для удаления задач.<br>
+		<br>
+		В модальном окне есть 2 кнопки: “Отмена” и “Удалить”. “Отмена” закрывает модальное окно, а “Удалить” - удаляет
+		задачу
+		из массива tasks и из DOM-дерева и закрывает модальное окно.<br>
+		<br>
+		<b>Для удаления задачи</b> используйте атрибут <b>data-task-id</b>, который содержит информацию о свойстве <b>id</b>
+		объекта задачи из
+		массива <b>tasks</b>. По данному <b>id</b> вы сможете найти нужную задачу и удалить ее.<br>
+		<br>
+		<b>У вас имеются начальные файлы.</b> Используйте их для разработки логики приложения:<br>
+		<a href="https://github.com/vmschool/14" target="_blank">https://github.com/vmschool/14</a>
+	</p>
+	<div id="tasks">
+		<div class="tasks__wrapper">
+			<form class="create-task-block">
+				<input name="taskName" class="create-task-block__input default-text-input" type="text"
+					placeholder="Создайте новую задачу" value="Посмотреть урок по JavaScript">
+				<button type="submit" class="create-task-block__button default-button">
+					Создать
+				</button>
+			</form>
+			<div class="tasks-list"></div>
+		</div>
+	</div>
+	<script src="14-5.js"></script>
+</body>
+
+</html>
