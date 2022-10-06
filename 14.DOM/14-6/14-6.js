@@ -97,3 +97,40 @@ function removeTask(taskDelete) {
 
 }
 getTasksList.innerHTML = setTaskItems(tasks)
+
+//14-6
+const getTaskItems = document.querySelectorAll('.task-item')
+const getButtons = document.querySelectorAll('button')
+let isDark = false
+
+const changeTheme = ({
+	bodyBackground,
+	taskItemTextColor,
+	buttonBorder
+}) => {
+	getBody.style.background = bodyBackground
+	getTaskItems.forEach(item => item.style.color = taskItemTextColor)
+	getButtons.forEach(button => button.style.border = buttonBorder)
+}
+
+window.addEventListener('keydown', event => {
+	const { code } = event
+
+	if (code === 'Tab') {
+		event.preventDefault()
+		isDark = !isDark
+		if (isDark) {
+			changeTheme({
+				bodyBackground: '#24292E',
+				taskItemTextColor: '#ffffff',
+				buttonBorder: '1px solid #ffffff'
+			})
+		}
+	} else {
+		changeTheme({
+			bodyBackground: 'initial',
+			taskItemTextColor: 'initial',
+			buttonBorder: 'initial'
+		})
+	}
+})

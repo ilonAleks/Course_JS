@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="14-6.css">
+	<title>Task 14-6</title>
+</head>
+
+<body>
+	<h3>TAsk 14-6</h3>
+	<p>
+		Вас поздравляет заказчик и команда разработки с успешной работой на проекте. Вы молодец! Хорошо себя показали.<br>
+		<br>
+		Но тут один из разработчиков заболел и больше некому выполнить его задачу. Поэтому попросили вас подменить
+		коллегу.<br>
+		<br>
+		<b>Вам необходимо</b> реализовать смену темы с темной на светлую и наоборот. Тема должна переключаться при нажатии
+		на
+		кнопку “Tab”. Изначально тема светлая.<br>
+		<br>
+		При смене темы вам необходимо изменить стили для следующих элементов:
+	<ol>
+		<li>элемент с тегом body. Если тема темная, то свойство background должно быть значением “#24292E”, иначе -
+			“initial”.</li>
+		<li>Все элементы с классом “task-item”. Если тема темная, то свойство color должно быть “#ffffff”, иначе -
+			“initial”.</li>
+		<li>Ко всем элементам с тегом button необходимо добавить значение “1px solid #ffffff”, если тема темная, иначе -
+			“none”.</li>
+	</ol>
+	<b>Для решения данной задачи</b> используйте свойства <b>style</b> у html-элементов.<br>
+	<br>
+	<b>У вас имеются начальные файлы.</b> Используйте их для разработки логики приложения:<br>
+	<a href="https://github.com/vmschool/14" target="_blank">https://github.com/vmschool/14</a>
+	</p>
+	<div id="tasks">
+		<div class="tasks__wrapper">
+			<form class="create-task-block">
+				<input name="taskName" class="create-task-block__input default-text-input" type="text"
+					placeholder="Создайте новую задачу" value="Посмотреть урок по JavaScript">
+				<button type="submit" class="create-task-block__button default-button">
+					Создать
+				</button>
+			</form>
+			<div class="tasks-list"></div>
+		</div>
+	</div>
+	<script src="14-6.js"></script>
+</body>
+
+</html>

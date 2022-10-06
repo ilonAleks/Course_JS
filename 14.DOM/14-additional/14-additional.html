@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="14-additional.css">
+	<title>Task 14-additional</title>
+</head>
+
+<body>
+	<h3>Taks 14-additional</h3>
+	<p>
+		Выпадающий список - популярный элемент на современной веб-сайте. Вы когда-нибудь задумывались как создается такой
+		элемент? Сейчас вашей задачей будет именно реализация выпадающего списка на чистом JavaScript.<br>
+		<br>
+		Стили и HTML-шаблон для выпадающего списка у вас уже есть. Поэтому вам всего-лишь нужно добавить логику. Шаблон для
+		выпадающего списка вам необходимо создать через JavaScript, используя document.createElement.<br>
+		<br>
+		<b>Шаблон выпадающего списка:</b><br>
+		<xmp>
+			<div class="select-dropdown select-dropdown--123">
+				<button class="select-dropdown__button select-dropdown__button--123">
+					<span class="select-dropdown select-dropdown--123">Выберите Элемент</span>
+				</button>
+				<ul class="select-dropdown__list select-dropdown__list--123">
+					<li class="select-dropdown__list-item" data-value="1">JavaScript</li>
+					<li class="select-dropdown__list-item" data-value="2">NodeJS</li>
+					<li class="select-dropdown__list-item" data-value="3">ReactJS</li>
+					<li class="select-dropdown__list-item" data-value="4">HTML</li>
+					<li class="select-dropdown__list-item" data-value="5">CSS</li>
+				</ul>
+			</div>
+		</xmp>
+		<b>Для реализации выпадающего списка</b> создайте класс <b>CustomSelect</b>. Конструктор данного класса принимает 2
+		параметра:
+	<ol>
+		<li>id. Уникальный идентификатор списка. В HTML шаблоне id был подставлен как текст “123”. Поэтому параметр id
+			должен
+			быть подставлен на место данного текста.</li>
+		<li>options. Массив вариантов выбора для выпадающего списка. Массив состоит из объектов с ключами value (значение
+			option) и text (текст option, который видит пользователь).</li>
+	</ol>
+	В классе <b>CustomSelect</b> все методы и поля кроме <b>render</b> должны быть обязательно приватными. Публичный метод
+	<b>render</b>
+	принимает параметр <b>container</b>. В данный <b>container</b> должна добавляться вся верстка из шаблона выпадающего
+	списка.<br>
+	<br>
+	Чтобы реализовать открытие и закрытие списка, вам необходимо повесить обработчик событий <b>“click”</b> на элемент с
+	классом
+	<b>“select-dropdown__button”</b>. Список открыт, когда у элемента с тегом <b>ul</b> есть класс <b>“active”</b>.<br>
+	<br>
+	<b>Чтобы реализовать выбор</b> определенного <b>option</b> из выпадающего списка необходимо повесить обработчик
+	событий <b>“click”</b> на
+	все элементы с тегом <b>li</b> либо использовать делегирование событий (выберите, что вам более удобно). При клике
+	получайте
+	значение, которое хранится в атрибуте <b>“data-value”</b>. Данное значение подставляйте как текст в элемент с классом
+	<b>“select-dropdown”</b>. Кроме этого к элементу <b>li</b>, по которому произошел клик, добавляйте класс “selected”,
+	чтобы он
+	становился активным и подсвечивался другим цветом. Класс <b>“selected”</b> может быть только у одного элемента с тегом
+	<b>li</b>.<br>
+	<br>
+	<b>Чтобы получать текущее выбранное значение</b> создайте приватное поле <b>currentSelectedOption</b> и геттер для
+	него, который
+	будет называться <b>selectedValue</b>. Геттер <b>selectedValue</b> должен возвращать объект выбранного option из
+	выпадающего списка
+	(объект из массива options).<br>
+	<br>
+	<b>Для написания кода у вас есть начальные файлы.</b> Используйте их, чтобы приступить к выполнению данного
+	задания.<br>
+	<a href="https://github.com/vmschool/14_1" target="_blank">https://github.com/vmschool/14_1</a><br>
+	<br>
+	<b>Для теста написанного класса используйте данный код:</b><br>
+	<xmp>
+		const options = [
+		{ value: 1, text: 'JavaScript' },
+		{ value: 2, text: 'NodeJS' },
+		{ value: 3, text: 'ReactJS' },
+		{ value: 4, text: 'HTML' },
+		{ value: 5, text: 'CSS' },
+		];
+		const customSelect = new CustomSelect('123', options);
+		const mainContainer = document.querySelector('#container');
+		customSelect.render(mainContainer);
+	</xmp>
+	</p>
+	<h2 class="container__title">Кастомный селектор</h2>
+	<div id="container" class="container"></div>
+	<script src="14-additional.js"></script>
+</body>
+
+</html>
