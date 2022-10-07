@@ -12,30 +12,32 @@
 <body>
 	<h3>Task 14-4</h3>
 	<p>
-		<b>Вы молодец!</b> Вы справились с задачей и отдали ее на код-ревью старшему разработчику. Но старший разработчик
-		обнаружил, что не нужно отправлять форму, если значение пустое либо задача с таким же названием уже существует.
-		Поэтому вас просят добавить валидацию в ваш код.<br>
+		<b>You are well done! </b> You coped with the task and gave it to the code of the senior developer.
+		But the senior developer found that there is no need to send a form if the value is empty or the task with the same
+		name already exists.
+		Therefore, you are asked to add validation to your code.<br>
 		<br>
-		Для блока с ошибкой <b>создавайте тег span</b> с классом <b>“error-message-block”</b>. Внутрь данного тега будет
-		помещаться текст с ошибкой.<br>
+		For an error bloc <b>, create a span </b> tag with the <b> “error-me-bank” </b>.
+		A text with an error will be placed inside this tag. <br>
 		<br>
-		Если форма была отправлена с пустым полем, то отобразите ошибку “Название задачи не должно быть пустым”, добавив
-		блок с ошибкой в форму с классом <b>“create-task-block”</b>. Если же задача с введенным в поле названием уже
-		существует, то отображайте ошибку “Задача с таким названием уже существует.”<br>
+		If the form was sent with an empty field, then display the error “The name of the problem should not be empty” by
+		adding an error with an error with the class <b> “Create-Task-Block” </b>.
+		If the task with the name introduced in the field already exists, then reflect the error “The task with this name
+		already exists.”<br>
 		<br>
-		Если при отправке формы ошибок не было найдено, то удалите блок с ошибкой, если он существует в DOM, и создайте
-		новую задачу в списке.<br>
+		If there was no error form when sending the form of errors, then remove the error block if it exists in DOM and
+		create a new task in the list.<br>
 		<br>
-		<b>У вас имеются начальные файлы.</b> Используйте их для разработки логики приложения:<br>
+		<b>You have the initial files. </b> Use them to develop an application logic:<br>
 		<a href="https://github.com/vmschool/14" target="_blank">https://github.com/vmschool/14</a>
 	</p>
 	<div id="tasks">
 		<div class="tasks__wrapper">
 			<form class="create-task-block">
 				<input name="taskName" class="create-task-block__input default-text-input" type="text"
-					placeholder="Создайте новую задачу" value="Посмотреть урок по JavaScript">
+					placeholder="Create a new task" value="View JavaScript lesson">
 				<button type="submit" class="create-task-block__button default-button">
-					Создать
+					Create
 				</button>
 			</form>
 			<div class="tasks-list"></div>

@@ -12,27 +12,27 @@
 <body>
 	<h3>Task 14-3</h3>
 	<p>
-		Вы отлично справились с поставленной задачей и теперь все элементы отрисовываются правильно. Теперь вам хотят
-		предоставить дело посложнее. Вам необходимо реализовать логику создания новых задач при помощи формы с классом
+		You did a great job with the task and now all the elements are drawn correctly.
+		Now they want to provide you more difficult.
+		You need to realize the logic of creating new tasks using a form with a class
 		“create-task-block”.<br>
 		<br>
-		<b>Используйте предыдущий код</b> и повесьте обработчик событий <b>submit</b> на форму с классом
-		<b>“create-task-block”</b>. При отправке
-		формы создавайте новую задачу в массиве <b>tasks</b> и в DOM-дереве (внутри тега с классом <b>“tasks-list”</b>). id
-		должен быть
-		для каждой задачи уникальным. Текст для задачи берется из текстового поля с классом
+		<b>Use the previous code </b> and hang the events handler <b> submit </b> for the form with the class
+		<b>“create-task-block”</b>. When sending a form, create a new task in the array <b> TASKS </B> and in a DOM-brutal
+		(inside the tag with class <b>“tasks-list”</b>).
+		ID should be unique for each task.The text for the task is taken from the text field with the class
 		<b>“create-task-block__input”</b>.<br>
 		<br>
-		<b>У вас имеются начальные файлы.</b> Используйте их для разработки логики приложения:<br>
+		<b>You have the initial files. </b> Use them to develop an application logic:<br>
 		<a href="https://github.com/vmschool/14" target="_blank">https://github.com/vmschool/14</a>
 	</p>
 	<div id="tasks">
 		<div class="tasks__wrapper">
 			<form class="create-task-block">
 				<input name="taskName" class="create-task-block__input default-text-input" type="text"
-					placeholder="Создайте новую задачу" value="Посмотреть урок по JavaScript">
+					placeholder="Create a new task" value="View JavaScript lesson">
 				<button type="submit" class="create-task-block__button default-button">
-					Создать
+					Create
 				</button>
 			</form>
 			<div class="tasks-list"></div>

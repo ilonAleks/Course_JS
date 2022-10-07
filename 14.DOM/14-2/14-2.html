@@ -12,14 +12,14 @@
 <body>
 	<h3>Task 14-2</h3>
 	<p>
-		Вы вместе с командой разработки создаете приложение для контроля задач. Сейчас команда сделала только макет, чтобы
-		приложение было красивым. Вам поручили задачу отрисовать все данные о задачах при помощи JavaScript кода (способ
-		выберите самостоятельно). У вас имеется массив tasks и HTML-шаблон, по которому вам необходимо создать элементы для
-		каждой задачи.<br>
+		You, together with the development team, are creating an application to control tasks.
+		Now the team has only made a layout to make the application beautiful.
+		You were instructed to draw all the data on the tasks using JavaScript code (select the method yourself).
+		You have an array of TASKS and an HTML-glue, according to which you need to create elements for each task.<br>
 		<br>
-		<b>Добавьте все HTML-элементы</b> с задачами в тег с классом <b>“tasks-list”</b>.<br>
+		<b>Add all HTML elements </b> with tasks in the tag with class <b>“tasks-list”</b>.<br>
 		<br>
-		<b>HTML-шаблон для задачи:</b><br>
+		<b>HTML-Template for the task:</b><br>
 		<br>
 		<xmp>
 			<div class="task-item" data-task-id="1">
@@ -29,38 +29,38 @@
 							<input class="checkbox-form__checkbox" type="checkbox" id="task-1">
 							<label for="task-1"></label>
 						</form>
-						<span class="task-item__text">Посмотреть новый урок по JavaScript</span>
+						<span class="task-item__text">View new JavaScript lesson</span>
 					</div>
-					<button class="task-item__delete-button default-button delete-button" data-delete-task-id="5">Удалить</button>
+					<button class="task-item__delete-button default-button delete-button" data-delete-task-id="5">Delete</button>
 				</div>
 			</div>
 		</xmp>
-		<b>Массив задач:</b><br>
+		<b>Task array:</b><br>
 		<br>
 		<xmp>
 			const tasks = [
-			{id: 1, completed: false, text: 'Посмотреть новый урок по JavaScript'},
-			{id: 2, completed: false, text: 'Выполнить тест после урока'},
-			{id: 3, completed: false, text: 'Выполнить ДЗ после урока'},
+			{id: 1, completed: false, text: 'View new JavaScript lesson'},
+			{id: 2, completed: false, text: 'Perform a test after a lesson'},
+			{id: 3, completed: false, text: 'Perform HW after a lesson'},
 			]
 		</xmp>
 		<br>
-		Данные об id должны использоваться в <b>data-task-id</b>, в <b>id</b> у <b>input</b> и в <b>for</b> у <b>label</b>.
-		Значение свойства <b>text</b> должно
-		добавляться в тег <b>span</b> с классом <b>“task-item__text”</b>.<br>
+		ID data should be used in <b>data-task-id</b>, in <b>id</b> at <b>input</b> and in <b>for</b> at <b>label</b>.
+		The value of the property <b> text </b> should be added to the tag <b> span </b> with the class
+		<b>“task-item__text”</b>.<br>
 		<br>
-		Примечание: атрибут <b>for</b> в JavaScript коде пишется как <b>htmlFor</b>.<br>
+		Note: The attribute <b> for </b> in JavaScript code is written as <b>htmlFor</b>.<br>
 		<br>
-		<b>У вас имеются начальные файлы.</b> Используйте их для разработки логики приложения:<br>
+		<b>You have the initial files. </b> Use them to develop an application logic:<br>
 		<a href="https://github.com/vmschool/14" target="_blank">https://github.com/vmschool/14</a>
 	</p>
 	<div id="tasks">
 		<div class="tasks__wrapper">
 			<form class="create-task-block">
 				<input name="taskName" class="create-task-block__input default-text-input" type="text"
-					placeholder="Создайте новую задачу" value="Посмотреть урок по JavaScript">
+					placeholder="Create a new task" value="View JavaScript lesson">
 				<button type="submit" class="create-task-block__button default-button">
-					Создать
+					Create
 				</button>
 			</form>
 			<div class="tasks-list"></div>

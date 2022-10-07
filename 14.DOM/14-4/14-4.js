@@ -2,9 +2,9 @@ const getTasksList = document.querySelector('.tasks-list')
 const getForm = document.querySelector('.create-task-block')
 
 const tasks = [
-	{ id: 1, completed: false, text: 'Посмотреть новый урок по JavaScript' },
-	{ id: 2, completed: false, text: 'Выполнить тест после урока' },
-	{ id: 3, completed: false, text: 'Выполнить ДЗ после урока' },
+	{ id: 1, completed: false, text: 'View new JavaScript lesson' },
+	{ id: 2, completed: false, text: 'Perform a test after a lesson' },
+	{ id: 3, completed: false, text: 'Perform HW after a lesson' },
 ]
 
 getForm.addEventListener('submit', (event) => {
@@ -16,10 +16,10 @@ getForm.addEventListener('submit', (event) => {
 	const setSpan = document.createElement('span')
 	setSpan.className = 'error-message-block'
 	if (!inputValue) {
-		setSpan.textContent = 'Название задачи не должно быть пустым'
+		setSpan.textContent = 'The name of the task should not be empty'
 		getForm.append(setSpan)
 	} else if (getTextTasks.includes(inputValue)) {
-		setSpan.textContent = 'Задача с таким названием уже существует'
+		setSpan.textContent = 'The task with this name already exists'
 		getForm.append(setSpan)
 	} else {
 		tasks.push({ id: tasks.length + 1, completed: false, text: `${inputValue}` })
@@ -43,7 +43,7 @@ function setTaskItems(tasks) {
 		</form> 
 		<span class="task-item__text">${task.text}</span>
 	</div>
-	<button class="task-item__delete-button default-button delete-button" data-delete-task-id="5">Удалить</button>
+	<button class="task-item__delete-button default-button delete-button" data-delete-task-id="5">Delete</button>
 </div>
 </div>`
 	}).join('')

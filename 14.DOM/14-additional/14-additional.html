@@ -12,17 +12,19 @@
 <body>
 	<h3>Taks 14-additional</h3>
 	<p>
-		Выпадающий список - популярный элемент на современной веб-сайте. Вы когда-нибудь задумывались как создается такой
-		элемент? Сейчас вашей задачей будет именно реализация выпадающего списка на чистом JavaScript.<br>
+		A falling list is a popular element on a modern website.
+		Have you ever wondered how such an element is created?
+		Now your task will be the implementation of the drop -down list on the clean JavaScript.<br>
 		<br>
-		Стили и HTML-шаблон для выпадающего списка у вас уже есть. Поэтому вам всего-лишь нужно добавить логику. Шаблон для
-		выпадающего списка вам необходимо создать через JavaScript, используя document.createElement.<br>
+		You already have styles and an HTML challenger for a drop-down list.
+		Therefore, you just need to add logic.
+		You need to create a template for a drop -down list through JavaScript using document.createElement.<br>
 		<br>
-		<b>Шаблон выпадающего списка:</b><br>
+		<b>The trim of the drop -down list:</b><br>
 		<xmp>
 			<div class="select-dropdown select-dropdown--123">
 				<button class="select-dropdown__button select-dropdown__button--123">
-					<span class="select-dropdown select-dropdown--123">Выберите Элемент</span>
+					<span class="select-dropdown select-dropdown--123"> Select element</span>
 				</button>
 				<ul class="select-dropdown__list select-dropdown__list--123">
 					<li class="select-dropdown__list-item" data-value="1">JavaScript</li>
@@ -33,45 +35,42 @@
 				</ul>
 			</div>
 		</xmp>
-		<b>Для реализации выпадающего списка</b> создайте класс <b>CustomSelect</b>. Конструктор данного класса принимает 2
-		параметра:
+		<b>To implement the drop -down list </b> create a class <b>CustomSelect</b>.
+		The designer of this class accepts 2 parameters:
 	<ol>
-		<li>id. Уникальный идентификатор списка. В HTML шаблоне id был подставлен как текст “123”. Поэтому параметр id
-			должен
-			быть подставлен на место данного текста.</li>
-		<li>options. Массив вариантов выбора для выпадающего списка. Массив состоит из объектов с ключами value (значение
-			option) и text (текст option, который видит пользователь).</li>
+		<li>id. Unique list identifier.In the HTML, ID template was substituted as the text “123”.
+			Therefore, the ID parameter must be substituted in place of this text.</li>
+		<li>options. An array of choice for a drop -down list.
+			The array consists of objects with Value keys (Option) and Text (Option text that the user sees).</li>
 	</ol>
-	В классе <b>CustomSelect</b> все методы и поля кроме <b>render</b> должны быть обязательно приватными. Публичный метод
-	<b>render</b>
-	принимает параметр <b>container</b>. В данный <b>container</b> должна добавляться вся верстка из шаблона выпадающего
-	списка.<br>
+	In class <b>CustomSelect</b> All methods and fields except <b>render</b> must be private.
+	Public method <b>render</b> Accepts the parameter <b>container</b>.
+	In this <b>container</b> The whole layout from the template list template should be added.<br>
 	<br>
-	Чтобы реализовать открытие и закрытие списка, вам необходимо повесить обработчик событий <b>“click”</b> на элемент с
-	классом
-	<b>“select-dropdown__button”</b>. Список открыт, когда у элемента с тегом <b>ul</b> есть класс <b>“active”</b>.<br>
+	To implement the opening and closing of the list, you need to hang the events handler <b> “click” </b> on the element
+	with the class
+	<b>“select-dropdown__button”</b>. The list is open when the element with a tag <b>ul</b> has class
+	<b>“active”</b>.<br>
 	<br>
-	<b>Чтобы реализовать выбор</b> определенного <b>option</b> из выпадающего списка необходимо повесить обработчик
-	событий <b>“click”</b> на
-	все элементы с тегом <b>li</b> либо использовать делегирование событий (выберите, что вам более удобно). При клике
-	получайте
-	значение, которое хранится в атрибуте <b>“data-value”</b>. Данное значение подставляйте как текст в элемент с классом
-	<b>“select-dropdown”</b>. Кроме этого к элементу <b>li</b>, по которому произошел клик, добавляйте класс “selected”,
-	чтобы он
-	становился активным и подсвечивался другим цветом. Класс <b>“selected”</b> может быть только у одного элемента с тегом
+	<b>To implement the choice </b> of a certain <b>option</b> From the drop -down list, it is necessary to hang an event
+	handler <b>“click”</b> on the
+	all elements with tag <b>li</b> or use the delegation of events (Choose that you are more convenient).
+	When clicking, get a value stored in the attribute <b>“data-value”</b>.
+	Substitute this value as a text in an element with a class <b>“select-dropdown”</b>.
+	In addition to the element <b>li</b>, on which the click occurred, add the class “selected”,
+	So that it becomes active and illuminated by another color.
+	Class <b>“selected”</b> can only have one element with a tag
 	<b>li</b>.<br>
 	<br>
-	<b>Чтобы получать текущее выбранное значение</b> создайте приватное поле <b>currentSelectedOption</b> и геттер для
-	него, который
-	будет называться <b>selectedValue</b>. Геттер <b>selectedValue</b> должен возвращать объект выбранного option из
-	выпадающего списка
-	(объект из массива options).<br>
+	<b>To receive the current selected value </b> create a private field <b>currentSelectedOption</b>
+	and getter for him, which will be called <b>selectedValue</b>.
+	Getter <b>selectedValue</b> must return the object of the selected Option from the drop -down list (an object from an
+	array options).<br>
 	<br>
-	<b>Для написания кода у вас есть начальные файлы.</b> Используйте их, чтобы приступить к выполнению данного
-	задания.<br>
+	<b>You have the initial files. </b> Use them to develop an application logic:<br>
 	<a href="https://github.com/vmschool/14_1" target="_blank">https://github.com/vmschool/14_1</a><br>
 	<br>
-	<b>Для теста написанного класса используйте данный код:</b><br>
+	<b>For the written class test, use this code:</b><br>
 	<xmp>
 		const options = [
 		{ value: 1, text: 'JavaScript' },
@@ -85,7 +84,7 @@
 		customSelect.render(mainContainer);
 	</xmp>
 	</p>
-	<h2 class="container__title">Кастомный селектор</h2>
+	<h2 class="container__title">Castle selector</h2>
 	<div id="container" class="container"></div>
 	<script src="14-additional.js"></script>
 </body>

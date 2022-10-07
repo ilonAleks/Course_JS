@@ -12,58 +12,59 @@
 <body>
 	<h3>Task 14-5</h3>
 	<p>
-		Чтобы успешно завершить все ваши задачи на проекте, осталось выполнить только удаление задач. Для этого имеется
-		кнопка “Удалить”. Но иногда пользователи могут случайно нажать на кнопку и из-за этого удалится задача. Для этого
-		обычно создаются модальные окна, которые спрашивают пользователя, действительно ли он хочет удалить задачу. Сейчас
-		вам необходимо будет реализовать такое модальное окно.<br>
+		In order to successfully complete all your tasks on the project, it remains only to complete the deletion of tasks.
+		To do this, there is a “delete” button.
+		But sometimes users can accidentally press the button and the task will be removed because of this.
+		For this, modal windows are usually created that ask the user, whether he really wants to remove the task.
+		Now you will need to implement such a modal window.<br>
 		<br>
-		Стили для модального окна и HTML-шаблон у вас уже имеются. <b>Создайте HTML-элемент модального окна</b> с помощью
-		JavaScript и добавьте его внутри тега <b>body</b>.<br>
+		You already have styles for the modal window and the HTML step.
+		<b> Create the HTML-element of the modal window </b> using JavaScript and add it inside the tag <b>body</b>.<br>
 		<br>
-		<b>Шаблон модального окна:</b><br>
+		<b>Modal window template:</b><br>
 		<xmp>
 			<div class="modal-overlay modal-overlay_hidden">
 				<div class="delete-modal">
 					<h3 class="delete-modal__question">
-						Вы действительно хотите удалить эту задачу?
+						Do you really want to delete this task?
 					</h3>
 					<div class="delete-modal__buttons">
 						<button class="delete-modal__button delete-modal__cancel-button">
-							Отмена
+							Cancel
 						</button>
 						<button class="delete-modal__button delete-modal__confirm-button">
-							Удалить
+							Delete
 						</button>
 					</div>
 				</div>
 			</div>
 		</xmp>
-		Класс <b>“modal-overlay_hidden”</b> отвечает за открытие и закрытие модального окна. Если оно открыто, то класса
-		<b>“modal-overlay_hidden”</b> нету, если закрыто, то класс <b>“modal-overlay_hidden”</b> присутствует.<br>
+		Class <b> “modal-overlay_hidden” </b> is responsible for the opening and closing of the modal window.
+		If it is open, then the class <b> “modal-overlay_hidden” </b> is not, if closed, then the class <b>
+			“modal-overlay_hidden” </b> is present.<br>
 		<br>
-		<b>Вам необходимо</b> открывать модальное окно после нажатия на любую кнопку “Удалить” около каждой задачи. Повесьте
-		обработчик события <b>“click”</b> на элемент с классом <b>“tasks-list”</b>. Используйте делегирование событий для
-		того, чтобы
-		отлавливать клики на кнопки для удаления задач.<br>
+		<b>You need to </b> open a modal window after clicking on any button “Delete” near each task.
+		Hang the processor of the event <b> “click” </b> on the element with the class <b> “Tasks-list” </b>.
+		Use delegation of events to catch clicks on buttons to delete tasks.<br>
 		<br>
-		В модальном окне есть 2 кнопки: “Отмена” и “Удалить”. “Отмена” закрывает модальное окно, а “Удалить” - удаляет
-		задачу
-		из массива tasks и из DOM-дерева и закрывает модальное окно.<br>
+		There are 2 buttons in the modal window: “cancel” and “delete”.
+		“Cancel” closes the modal window, and “delete” - removes the task from the TASKS array and from DOM -Derev and
+		closes the modal window.<br>
 		<br>
-		<b>Для удаления задачи</b> используйте атрибут <b>data-task-id</b>, который содержит информацию о свойстве <b>id</b>
-		объекта задачи из
-		массива <b>tasks</b>. По данному <b>id</b> вы сможете найти нужную задачу и удалить ее.<br>
+		<b>To delete the task </b> use the attribute <b>data-task-id</b>, which contains information about the property <b>
+			id </b> object of the task from array <b>tasks</b>.
+		According to this <b> id </b> you can find the desired task and delete it.<br>
 		<br>
-		<b>У вас имеются начальные файлы.</b> Используйте их для разработки логики приложения:<br>
+		<b>You have the initial files. </b> Use them to develop an application logic:<br>
 		<a href="https://github.com/vmschool/14" target="_blank">https://github.com/vmschool/14</a>
 	</p>
 	<div id="tasks">
 		<div class="tasks__wrapper">
 			<form class="create-task-block">
 				<input name="taskName" class="create-task-block__input default-text-input" type="text"
-					placeholder="Создайте новую задачу" value="Посмотреть урок по JavaScript">
+					placeholder="Create a new task" value="View JavaScript lesson">
 				<button type="submit" class="create-task-block__button default-button">
-					Создать
+					Create
 				</button>
 			</form>
 			<div class="tasks-list"></div>

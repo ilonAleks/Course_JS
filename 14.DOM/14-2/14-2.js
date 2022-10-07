@@ -1,7 +1,7 @@
 const tasks = [
-	{ id: 1, completed: false, text: 'Посмотреть новый урок по JavaScript' },
-	{ id: 2, completed: false, text: 'Выполнить тест после урока' },
-	{ id: 3, completed: false, text: 'Выполнить ДЗ после урока' },
+	{ id: 1, completed: false, text: 'View new JavaScript lesson' },
+	{ id: 2, completed: false, text: 'Perform a test after a lesson' },
+	{ id: 3, completed: false, text: 'Perform HW after a lesson' },
 ]
 const getTasksList = document.querySelector('.tasks-list')
 let taskItems = tasks.map(task => {
@@ -14,7 +14,7 @@ let taskItems = tasks.map(task => {
 		</form> 
 		<span class="task-item__text">${task.text}</span>
 	</div>
-	<button class="task-item__delete-button default-button delete-button" data-delete-task-id="5">Удалить</button>
+	<button class="task-item__delete-button default-button delete-button" data-delete-task-id="5">Delete</button>
 </div>
 </div>`
 })

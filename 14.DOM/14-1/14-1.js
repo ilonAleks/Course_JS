@@ -1,15 +1,15 @@
 // 1 innerHTML
 document.querySelector('.inBody').innerHTML = `<form className="create-user-form">
 <label>
-		Имя
-		<input type="text" name="userName" placeholder="Введите ваше имя"/>
+		Name
+		<input type="text" name="userName" placeholder="Enter your name"/>
 </label>
 <label>
-		Пароль
-		<input type="password" name="password" placeholder="Придумайте Пароль"/>
+		Password
+		<input type="password" name="password" placeholder="Create Password"/>
 </label>
 <button type="submit">
-		Подтвердить
+		Confirm
 </button>
 </form>`
 
@@ -18,24 +18,24 @@ const setForm = document.createElement('form')
 setForm.className = 'create-user-form'
 
 const setLabel1 = document.createElement('label')
-setLabel1.textContent = 'Имя'
+setLabel1.textContent = 'Name'
 
 const setLabel2 = document.createElement('label')
-setLabel2.textContent = 'Пароль'
+setLabel2.textContent = 'Password'
 
 const setInput1 = document.createElement('input')
 setInput1.type = 'text'
 setInput1.name = 'userName'
-setInput1.placeholder = 'Введите ваше имя'
+setInput1.placeholder = 'Enter your name'
 
 const setInput2 = document.createElement('input')
 setInput2.type = 'password'
 setInput2.name = 'password'
-setInput2.placeholder = 'Придумайте Пароль'
+setInput2.placeholder = 'Create Password'
 
 const setButton = document.createElement('button')
 setButton.className = 'submit'
-setButton.textContent = 'Подтвердить'
+setButton.textContent = 'Confirm'
 
 const getClass = document.querySelector('.inBody')
 getClass.insertAdjacentElement('afterbegin', setForm)
