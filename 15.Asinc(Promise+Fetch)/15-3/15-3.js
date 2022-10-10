@@ -9,7 +9,7 @@ body.append(ul)
 const span = document.createElement('span')
 span.id = 'loader'
 span.hidden = true
-span.textContent = 'Loading...'
+span.textContent = 'Download...'
 ul.append(span)
 
 const createFotoElement = (url, title) => {

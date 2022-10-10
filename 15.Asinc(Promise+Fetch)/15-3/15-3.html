@@ -11,6 +11,41 @@
 <body>
 	<h3>Task 15-3</h3>
 	<p>
+		Imagine that you have a new project, where there is the following functionality: a display of a photograph that
+		booted the fastest. <br>
+		<br>
+		<b>Create a function getFastestLoadedPhoto</b>, which takes 1 parameter <b>ids</b>, which is an array of <b>id</b>
+		parameters at the
+		<b>photo</b> object. To get information about the photo, <b>you need</b> to use the following URL <a
+			href='https://jsonplaceholder.typicode.com/photos/1'>https: //jsonplaceholder.typico
+			...</a> (1 - this is ID photos).Using an <b>ids</b> array, receive photographs that loaded the fastest at a
+		<b>fetch</b>
+		request. To
+		solve the problem, use <b>Promise.race</b>.<br>
+		<br>
+		For convenience, <b>you need to add</b> an <b>span</b> element with the text <b>“Download ...”</b> before loading
+		the photo, and hide
+		this element after downloading data.<br>
+		<br>
+		<b>To create a HTML element photo, use this template:</b><br>
+		<xmp>
+			<li class="photo-item">
+				<img class="photo-item__image" src="https://via.placeholder.com/600/92c952" />
+				<h3 class="photo-item__title">
+					accusamus beatae ad facilis cum similique qui sunt
+				</h3>
+			</li>
+		</xmp>
+		In <b>src</b>, <b>img</b> should be substituted with the value of the <b>url</b> property in photography, and in the
+		tag <b>h3</b> the value of
+		the <b>title</b> property. Add the final photo to an element with <b>id</b> equal <b>“data-container”</b>.<br>
+		<br>
+		<b>For the test of the function getFastestLoadedPhoto Use this code:</b><br>
+		getFastestLoadedPhoto([60, 12, 55])<br>
+		<br>
+		<b>Note:</b> Be sure to not forget to prescribe <b>catch</b> blocks. In it simply take an error to the console with
+		the help
+		<b>console.error</b>.
 
 	</p>
 	<script src="15-3.js"></script>

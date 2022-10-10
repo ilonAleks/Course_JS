@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 15-additional</title>
+</head>
+
+<body>
+	<h3>Task 15-additional</h3>
+	<p>
+		You, together with the development team, create a social network where you can share posts and leave comments on the
+		post. So far, the project is at an early stage and therefore you need to work only with the drawing of the necessary
+		elements.<br>
+		<br>
+		<b>You need</b> to create a <b>renderPost</b> function, which will take 1 parameter <b>postId</b>. With
+		<b>postId</b> you need to get a post. For example, using this URL <a
+			href='https://jsonplaceholder.typicode.com/posts/1'>https: //jsonplaceholder.typico...</a>
+		you will receive data about a post with <b>id</b> equal to 1.<br>
+		<br>
+		<b>After</b> you receive post data, <b>you need to get</b> all the comments for a particular post. To, for example,
+		to extract comments for a post with an id of 1, you need to use the following url <a
+			href='https://jsonplaceholder.typicode.com/comments?postId=1'>https:
+			//jsonplaceholder.typico...</a><br>
+		<br>
+		<b>To display information about post and comments on the page, use this template:</b><br>
+		<xmp>
+			<div id="post" class="post">
+				<h1 class="post__title">The post's name</h1>
+				<p class="post__text">Tht post's text</p>
+				<b class="post__comments-text">Comments</b>
+				<div class="post__comments">
+					<div class="post-comment">
+						<span class="post-comment__author">
+							maxim@gmail.com
+						</span>
+						<span class="post-comment__text">
+							laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo
+							necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium
+						</span>
+					</div>
+				</div>
+			</div>
+		</xmp>
+		Each class is responsible for specific information:<br>
+		“post__title” - the value of the property of the Title in the post;<br>
+		“post__text” - the value of the Body property at the post;<br>
+		“post-comment__author” The value of the Email property of the comment;<br>
+		“post-comment__text” value of the Body property in comment;<br>
+		<br>
+		<b>Test the Renderpost function by causing this code:</b><br>
+		<xmp>
+			renderPost (1);<br>
+		</xmp>
+		<b>Note:</b> Be sure to not forget to prescribe <b>catch</b> blocks. In it, just take an error to the console using
+		<b>console.eroor</b>.
+	</p>
+	<script src="15-additional.js"></script>
+</body>
+
+</html>
