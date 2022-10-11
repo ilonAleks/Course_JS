@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 16-1</title>
+</head>
+
+<body>
+	<h3>Task 16-1</h3>
+	<p>
+		<b>It is required to rewrite this code </b> that uses <b>then, catch and finally</b>, to the code that uses
+		exclusively <b>async await and try, catch, finally</b>.<br>
+		<br>
+		const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';<br>
+		let isLoading = false;<br>
+		const createNewPost = () => {<br>
+		&nbsp isLoading = true;<br>
+		&nbsp fetch(POSTS_URL, {<br>
+		&nbsp &nbsp method: 'POST',<br>
+		&nbsp })<br>
+		&nbsp &nbsp .then((response) => response.json())<br>
+		&nbsp &nbsp .then((result) => {<br>
+		&nbsp &nbsp &nbsp console.log('result', result)<br>
+		&nbsp &nbsp })<br>
+		&nbsp &nbsp .catch((error) => {<br>
+		&nbsp &nbsp &nbsp console.log('error', error)<br>
+		&nbsp &nbsp })<br>
+		&nbsp &nbsp .finally(() => {<br>
+		&nbsp &nbsp &nbsp isLoading = false;<br>
+		&nbsp &nbsp });<br>
+		};<br>
+		createNewPost();
+	</p>
+	<script src="16-1.js"></script>
+</body>
+
+</html>

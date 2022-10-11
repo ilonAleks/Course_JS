@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 16-2</title>
+</head>
+
+<body>
+	<h3>Task 16-2</h3>
+	<p>
+		<b>It is required to rewrite this code </b> that uses <b>then and catch</b>, to the code that uses exclusively
+		<b>async await and try, catch</b>.<br>
+		<br>
+		const TODOS_URL = 'https://jsonplaceholder.typicode.com/todos';<br>
+		<br>
+		const getTodosByIds = (ids) => {<br>
+		&nbsp const requests = ids.map((id) => fetch(`${TODOS_URL}/${id}`));<br>
+		&nbsp Promise.all(requests)<br>
+		&nbsp &nbsp .then((responses) => {<br>
+		&nbsp &nbsp &nbsp const dataResults = responses.map((data) => data.json());<br>
+		&nbsp &nbsp &nbsp return Promise.all(dataResults)<br>
+		&nbsp &nbsp })<br>
+		&nbsp &nbsp .then((allTasks) => {<br>
+		&nbsp &nbsp &nbsp console.log(allTasks);<br>
+		&nbsp &nbsp })<br>
+		&nbsp &nbsp .catch((error) => {<br>
+		&nbsp &nbsp &nbsp console.log(error);<br>
+		&nbsp &nbsp })<br>
+		}<br>
+		<br>
+		getTodosByIds([43, 21, 55, 100, 10]);
+
+	</p>
+	<script src="16-2.js"></script>
+</body>
+
+</html>
