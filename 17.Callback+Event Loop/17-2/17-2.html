@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 17-2</title>
+</head>
+
+<body>
+	<h3>Task 17-2</h3>
+	<p>
+		<b>Write </b> in what order the information will be displayed to the console. Do not call the code, <b> try
+			yourself</b>
+		write the correct answer <b> on a leaflet or in notes</b>.<br>
+		<xmp>
+			function runCode() {
+			console.log('before promise')
+			return new Promise((resolve) => {
+			setTimeout(() => {
+			console.log('Zero Promise')
+
+			resolve()
+			}, 0)
+			})
+			}
+
+			setTimeout(() => {
+			console.log('Zero')
+			}, 0)
+
+			runCode().then(() => console.log('Zero Promise Invoked'))
+
+			console.log('One')
+		</xmp><br>
+		<b>My answer:</b><br>
+		before promise<br>
+		One<br>
+		Zero<br>
+		Zero Promise<br>
+		Zero Promise Invoked
+	</p>
+	<script src="17-2.js"></script>
+</body>
+
+</html>

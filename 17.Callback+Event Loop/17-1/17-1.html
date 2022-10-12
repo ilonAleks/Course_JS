@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 17-1</title>
+</head>
+
+<body>
+	<h3>Task 17-1</h3>
+	<p>
+		<b>Write </b> in what order the information will be displayed to the console. Do not call the code, <b> try
+			yourself</b>
+		write the correct answer <b> on a leaflet or in notes</b>.<br>
+		<xmp>
+			setTimeout(() => {
+			console.log('setTimeout');
+			}, 0);
+
+			const promise = new Promise((resolve) => {
+			console.log('Promise');
+			resolve();
+			});
+
+			promise.then(() => {
+			console.log('Promise resolve');
+			});
+
+			console.log('End');
+
+		</xmp><br>
+		<b>My answer:</b><br>
+		Promise<br>
+		End<br>
+		Promise resolve<br>
+		setTimeout
+	</p>
+	<script src="17-1.js"></script>
+</body>
+
+</html>
