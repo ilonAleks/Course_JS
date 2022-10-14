@@ -24,10 +24,7 @@ const createPostElement = (post) => {
 	divComs.className = 'post__comments'
 
 	body.append(div)
-	div.append(h1)
-	div.append(p)
-	div.append(b)
-	div.append(divComs)
+	div.append(h1, p, b, divComs)
 }
 
 const createCommentElement = (comment) => {

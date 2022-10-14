@@ -22,8 +22,7 @@ const createFotoElement = (url, title) => {
 	h3.className = 'photo-item__title'
 	h3.textContent = title
 	ul.append(li)
-	li.append(img)
-	li.append(h3)
+	li.append(img, h3)
 
 	return li
 }
