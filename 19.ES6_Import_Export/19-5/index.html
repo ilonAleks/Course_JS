@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task 19-5</title>
 </head>
+
 <body>
-    
+    <h3>Task 19-5</h3>
+    <p>
+        <b>Congratulations!</b> You have almost completely implemented the donation application. You now have the logic
+        of creating donations and rendering all the necessary HTML elements.<br>
+        <br>
+        Now it remains to work a little with the quality of the written code.<br>
+        <br>
+        To begin with, let's note that we have all the amounts written in dollars "$". And imagine that a customer comes
+        and says: "Let's all the amounts be in euros." With the current implementation, you will have to fix the dollar
+        sign to the euro in all possible files, which is of course inconvenient. There is a solution for this. Create a
+        global value and use it throughout the project.<br>
+        <br>
+        Therefore, in the <b>core folder</b>, create a <b>constants folder</b>. In the <b>constants folder</b>, create a
+        <b>settings.js</b> file that will store the <b>Settings</b> object. In this object, create a currency key, which
+        will have the value <b>“$”</b>. Export Settings and then use import to replace all "$" signs in the files with
+        Settings.currency.<br>
+        <br>
+        <b>After the work done</b>, you can safely change the value of the currency property in the <b>Settings</b>
+        object, and the currency will change throughout the project.<br>
+        <br>
+        <b>Condition:</b> when importing, you must use the <b>as</b> keyword at least once. For example, import { Object
+        as Obj }.
+    </p>
 </body>
+
 </html>

@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task 19-6</title>
 </head>
+
 <body>
-    
+    <h3>Task 19-6</h3>
+    <p>
+        The project is almost ready and it remains to do only a few important things.
+        Now you will need to create auxiliary functions that will be used globally according to the project.<br>
+
+        <b>To get started </b> create a folder <b>utils в core</b>. In <b>utils</b> create a file index.js.
+        This file will be stored all auxiliary functions that relate to the project.<br>
+
+        The first auxiliary function should be called <b>calculateSumOfNumbers</b>.
+        It is accepted as an array parameter <b>numbers</b>, which consists exclusively of numbers.
+        Function <b>calculateSumOfNumbers</b> considers the sum of all elements of the array and returns its final
+        value.<br>
+
+        The second function will be responsible for the conversion of the date.
+        What is the function <b>getFormattedTime</b>.
+        She takes one parameter <b>date</b>, which is an object <b>Date</b>.
+        Initially <b>new Date()</b> when converting to a line, approximately such a value returns <b>“Tue Jul 06 2021
+            14:00:05 GMT+0300 (Moscow
+            Standard Time)”</b>.
+        Function <b>getFormattedTime</b> should transform it to this value <b>“July
+            6th 2021, 2:00:05 pm”</b>.
+        This can be done using the library <b>momentjs</b>.<br>
+        moment(date).format('MMMM Do YYYY, h:mm:ss a')<br>
+        Install <b>momentjs <a href='https://momentjs.com/'>(https://momentjs.com/)</a> and implement the function
+            <b>getFormattedTime</b>.<br>
+
+            After you need to export these functions and use in the code.<br>
+
+            Let's start with <b>calculateSumOfNumbers</b>.
+            Create in the file <b>app.js</b> array <b>mockDonates</b> and pass it as a value in <b>donates</b> at the
+            object <b>state</b>.<br>
+            const mockDonates = [<br>
+            { amount: 4, date: new Date() },<br>
+            { amount: 20, date: new Date() },<br>
+            { amount: 3, date: new Date() },<br>
+            { amount: 1, date: new Date() },<br>
+            ];<br>
+
+            Since we have initial values <b>donates</b> but <b>totalAmount</b> by default it costs like 0,
+            then it is necessary to calculate the initial amount of all donates and rewrite the value
+            <b>totalAmount</b>.
+            The already created will help you with this function <b>calculateSumOfNumbers</b>.<br>
+
+            Second auxiliary function <b>getFormattedTime</b> нou need to use for elements with classes
+            <b>“donate-item”</b>.
+            Before that, the text in these elements looked as follows “Tue Jul 06 2021 14:00:05
+            GMT+0300 (Moscow Standard Time) - 4$”.
+            Using <b>getFormattedTime</b> The text should become so “July 6th 2021, 2:00:05 pm - 4$”.
+
+            <b>Condition:</b> цhen importing you need to use the design <b>“import * as”</b>.
+
+    </p>
 </body>
+
 </html>

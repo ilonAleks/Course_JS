@@ -17,7 +17,7 @@ export default class App {
 	constructor() {
 		this.state = {
 			donates: mockDonates,
-			totalAmount: utils.calculateSumOfNumbers(this.totalAmount)
+			totalAmount: utils.calculateSumOfNumbers(mockDonates.map(donat => donat.amount))
 		}
 		this.#DonateForm = new DonateForm(this.state.totalAmount, this.createNewDonate.bind(this))
 		this.#DonatList = new DonateList(this.state.donates)

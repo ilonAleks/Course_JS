@@ -15,7 +15,7 @@ body {
 
     display: flex;
     justify-content: space-evenly;
-    
+
     flex-wrap: wrap;
     padding: 20px;
     overflow: hidden;
@@ -103,7 +103,7 @@ body {
     background: none;
     transition: 0.3s ease;
     box-shadow: none;
-    
+
     margin-top: 30px;
 }
 

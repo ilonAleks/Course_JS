@@ -10,6 +10,80 @@
 
 <body>
 	<h3>Task 18-4</h3>
+	<p>
+		<b>You are well done!</b> Even webpack.js is up to you! Now you need to deal with the same points that were when
+		using
+		rollup.js:<br>
+	<ol>
+		<li>Connecting styles;</li>
+		<li>Working with pictures;</li>
+		<li>Code support by other browsers;</li>
+		<li>Run the project on the local server (localhost).</li>
+	</ol>
+	<b>You need</b> to install some plugins as <b>devDependencies</b> and add some code to the config file.<br>
+	<ol>
+		<li>Use “css-loader” <a
+				href="https://www.npmjs.com/package/css-loader">(https://www.npmjs.com/package/css-loader)</a> and
+			“style-loader”
+			<a href="https://www.npmjs.com/package/style-loader">(https://www.npmjs.com/package/style-loader)</a> to include
+			styles.
+		</li>
+		<li>To work with images, add this code to <b>webpack.config.js</b><br>
+			<xmp>
+				module: {
+				rules: [
+				{
+				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+				type: 'asset/resource',
+				},
+				{
+				test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+				type: 'asset/inline',
+				},
+				],
+				},
+			</xmp>
+		</li>
+		<li>To translate JavaScript into code that even older browsers support, use the <b>"babel-loader"</b>
+			<a href="https://www.npmjs.com/package/babel-loader">(https://www.npmjs.com/package/babel-loader)</a>.
+		</li>
+		<li>To run the project on a local server, you will need the <b>“webpack-dev-server”</b> plugin
+			<a href="https://www.npmjs.com/package/webpack-dev-server">(https://www.npmjs.com/package/webpack-dev-server)</a>.
+			To configure it, add this code to
+			webpack.config.js:
+			<xmp>
+				devServer: {
+				open: true
+				compression: true
+				port: 4000
+				},</xmp>
+		</li>
+	</ol>
+	<b>Also</b>, in order for webpack to process HTML and automatically include JavaScript in it, you need to install the
+	<b>html-webpack-plugin</b> <a
+		href="https://www.npmjs.com/package/html-webpack-plugin">(https://www.npmjs.com/package/html-webpack-plugin)</a>.
+	Add this code to
+	webpack.config.js to
+	configure this package:
+	<xmp>
+		plugins: [
+		new HtmlWebpackPlugin({
+		template: 'index.html'
+		}),
+		]</xmp>
+	<b>Then</b> add the code that you wrote when using <b>rollup.js</b> to the <b>index.js</b> file. Also don't forget to
+	add the image to
+	<b>assets</b> and copy the <b>index.css</b> file with styles.<br>
+	<br>
+	<b>In addition</b>, replace the commands in <b>package.json</b> with the following:<br>
+	"start": "webpack serve",<br>
+	"prod": "webpack"<br>
+	<b>Then</b> run the <b>"start"</b> command. If you did everything correctly and followed the instructions in the
+	plugin installation
+	links, then you should have a local server open. You should also have an image from <b>assets</b> displayed and all
+	styles
+	applied. If something went wrong, then you may have an error. In this case, you need to find it and fix it.
+	</p>
 	<script src="./build/build.js"></script>
 </body>
 

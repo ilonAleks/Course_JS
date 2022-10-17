@@ -13,7 +13,7 @@ export class DonateForm {
 
 		const label = document.createElement('label')
 		label.className = 'donate-form__input-label'
-		label.textContent = 'Введите сумму в $'
+		label.textContent = 'Enter the amount in $'
 
 		const input = document.createElement('input')
 		input.className = 'donate-form__donate-input'
@@ -26,7 +26,7 @@ export class DonateForm {
 		const button = document.createElement('button')
 		button.className = 'donate-form__submit-button'
 		button.type = 'submit'
-		button.textContent = 'Задонатить'
+		button.textContent = 'Donate now'
 
 		this.#form.append(h1, label, button)
 		label.append(input)
