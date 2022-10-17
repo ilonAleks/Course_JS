@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task 19-3</title>
 </head>
+
 <body>
-    
+    <h3>Task 19-3</h3>
+    <p>
+        <b>You are well done!</b> You are creating a cool donation service step by step and you are doing well.<br>
+        <b>Now you will need</b> to draw a list of all donations that users of the service will make.<br>
+
+        In the <b>modules</b> folder, create a <b>donate-list.js</b> file and implement the <b>DonateList</b> class in
+        it. The constructor of this class must accept an array of <b>donates</b>. This array consists of objects that
+        have the keys <b>date</b> (the date the donation was created) and amount (the amount of the donation). Also in
+        the <b>DonateList</b> class, implement the <b>render</b> method, which will render the HTML template below.
+        <xmp>
+            <div class="donates-container">
+                <h2 class="donates-container__title">List of donations</h2>
+                <div class="donates-container__donates">
+                    <div class="donate-item">July 6th 2021, 10:28:49 am - <b>$4</b></div>
+                    <div class="donate-item">July 6th 2021, 10:28:49 am - <b>$20</b></div>
+                    <div class="donate-item">July 6th 2021, 10:28:49 am - <b>$3</b></div>
+                    <div class="donate-item">July 6th 2021, 10:28:49 am - <b>$1</b></div>
+                </div>
+            </div>
+        </xmp>
+        This HTML element is responsible for the donate element:
+        <xmp>
+            <div class="donate-item">July 6th 2021, 10:28:49 am - <b>$4</b></div>
+        </xmp>
+
+        <br><br><br>
+        Here “July 6th 2021, 10:28:49 am” is the value of the <b>date</b> property from the <b>donates</b> array object,
+        and “4$” is the value of the <b>amount</b> property from the <b>donates</b> array object.<br>
+
+        Export the <b>DonateList</b> (export) class. Then import it into the <b>app.js</b> file.<br>
+        Through the <b>run</b> method of the <b>App</b> class and with the help of <b>DonateList</b>, you need to place
+        the entire layout of the donations list inside the element with the <b>body</b> tag.<br>
+
+        To test the rendering of the list of donations, use this <b>donates</b> array.<br>
+        const mockDonates = [<br>
+        { amount: 4, date: new Date() },<br>
+        { amount: 20, date: new Date() },<br>
+        { amount: 3, date: new Date() },<br>
+        { amount: 1, date: new Date() },<br>
+        ];<br>
+        <b>Note 1:</b> to separate the logic, it is allowed to create your own fields and methods in the
+        <b>DonateList</b> class. Make them private whenever possible so that you can write pure OOP code and apply the
+        principle of encapsulation.<br>
+
+        <b>Note 2:</b> now you have the date text in the donation HTML element will not be displayed as in the HTML
+        template. Don't worry, it's normal. You will develop this logic later.
+    </p>
 </body>
+
 </html>

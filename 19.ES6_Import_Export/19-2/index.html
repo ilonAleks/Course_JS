@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task 19-2</title>
 </head>
+
 <body>
-    
+    <h3>Task 19-2</h3>
+    <p>
+        <b>Congratulations!</b> You have created the initial structure of your project and practiced <b>import and
+            export</b>.<br>
+        <br>
+        <b>Now you will need</b> to implement the form for creating donations. In the <b>modules</b> folder, create a
+        <b>donate-form.js</b> file. In this file, you need to create a <b>DonateForm</b> class with a <b>render</b>
+        method that will return the final form HTML element. Export the <b>DonateForm</b> class.<br>
+        <br>
+        Inside the <b>DonateForm</b> class, you need to implement the HTML structure below using
+        <b>document.createElement</b>. To separate the logic, you can create your own fields and methods in the class.
+        Make them private whenever possible so that you can write pure OOP code and apply the principle of
+        encapsulation.
+        <xmp>
+            <form class="donate-form">
+                <h1 id="total-amount">$28</h1>
+                <label class="donate-form__input-label">
+                    Enter amount in $
+                    <input class="donate-form_donate-input" name="amount" type="number" max="100" min="0" required="">
+                </label>
+                <button class="donate-form__submit-button" type="submit">
+                    Donate now
+                </button>
+            </form>
+        </xmp>
+        <b>After</b> you implement the HTML form template rendering logic, you need to import the <b>DonateForm</b>
+        class in <b>app.js</b>. Through the <b>run</b> method of the <b>App</b> class and using <b>DonateForm</b>, you
+        need to place the entire
+        layout of the form inside an element with the <b>body</b> tag.
+    </p>
 </body>
+
 </html>

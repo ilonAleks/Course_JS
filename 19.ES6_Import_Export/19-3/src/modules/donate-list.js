@@ -10,7 +10,7 @@ export class DonateList {
 	render() {
 		const h2 = document.createElement('h2')
 		h2.className = 'donates-container__donates'
-		h2.textContent = 'Список донатов'
+		h2.textContent = 'List of Donates'
 
 		const divDonates = document.createElement('div')
 		divDonates.className = 'donates-container__donates'

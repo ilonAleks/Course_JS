@@ -1,4 +1,5 @@
 import * as utils from '../core/utils/index.js'
+import { Settings } from '../core/constants/settings'
 
 export class DonateList {
 	#divContainer
@@ -7,7 +8,7 @@ export class DonateList {
 		this.donates = donates
 		this.#divContainer = document.createElement('div')
 		this.#divContainer.className = 'donates-container'
-		this.donate.date = utils.getFormattedTime(date)
+
 	}
 
 	render() {
@@ -21,7 +22,7 @@ export class DonateList {
 		this.donates.map((donate) => {
 			const donateItem = document.createElement('div')
 			donateItem.className = 'donate-item'
-			donateItem.innerHTML = `${donate.date} - <b>${donate.amount}</b>`
+			donateItem.innerHTML = `${this.#getTime(donate.date)} - <b>${donate.amount}${Settings.currency}</b>`
 			divDonates.append(donateItem)
 		})
 
@@ -37,8 +38,12 @@ export class DonateList {
 		updatedDonates.map((donate) => {
 			const donateItem = document.createElement('div')
 			donateItem.className = 'donate-item'
-			donateItem.innerHTML = `${donate.date} - <b>${donate.amount}</b>`
+			donateItem.innerHTML = `${this.#getTime(donate.date)} - <b>${donate.amount}${Settings.currency}</b>`
 			divDonates.append(donateItem)
 		})
+	}
+
+	#getTime(date) {
+		return utils.getFormattedTime(date)
 	}
 }

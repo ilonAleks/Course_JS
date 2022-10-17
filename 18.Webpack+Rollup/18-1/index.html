@@ -10,6 +10,27 @@
 
 <body>
 	<h3>Task 18-1</h3>
+	<p>
+		You have been assigned to a project where you are the main developer. No one has written the code yet, and therefore
+		your task is to make the basic configuration of the project from an empty folder.<br>
+		<br>
+		To do this, use <b>rollup.js</b>. Now in the project folder create 3 files: index.html, index.css and index.js. Add
+		some basic html markup to <b>index.html</b>. Next, create a <b>package.json</b> file with the <b>npm init -y</b>
+		command. Also in index.js add a line of code <b>console.log('Hello World!');</b><br>
+		<br>
+		<b>Now, following the rollup.js documentation</b> (<a
+			href="https://rollupjs.org/guide/en/">https://rollupjs.org/guide/en/</a>) tutorial video, install <b>rollup</b> as
+		a package and create the <b>rollup.config.js</b> config file. In <b>rollup.config.js</b> , add the basic
+		configuration to run the project. Entry, output and watch properties will suffice for this. Don't add any plugins
+		yet.<br>
+		<br>
+		<b>Then</b> in the package.json file create 2 commands <b>"build"</b> and <b>"start"</b>.<br>
+		"build": "rollup -c",<br>
+		"start": "rollup -c -w"<br>
+		<b>Then</b> run the <b>"start"</b> command. You should generate a JS file, the name of which you specified in the
+		<b>“output”</b> property in the <b>rollup.config.js</b> file. If the file is not generated, then you may have done
+		something wrong and you have an error. In this case, you need to find it and fix it.
+	</p>
 	<script src="./bundle.js"></script>
 </body>
 

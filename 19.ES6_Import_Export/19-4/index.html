@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task 19-4</title>
 </head>
+
 <body>
-    
+    <h3>Task 19-4</h3>
+    <p>
+        You've done a pretty good job of rendering data, and you've had a lot of practice with import/export. Now it's
+        time to add some logic and event handlers.<br>
+        <br>
+        <b>First, you need</b> to create a global state that will store all the important project data. To do this, in
+        the constructor of the <b>App</b> class, create a <b>state</b> object (this.state), which will have 2
+        properties:<br>
+    <ol>
+        <li>donates. An array of donations that will be passed to the constructor of the DonateList class. By default,
+            the value must be an empty array.</li>
+        <li>totalAmount. The total amount of donations (data type number). By default, the value must be the empty
+            number zero.</li>
+    </ol>
+    Pass <b>the donates</b> array from <b>state</b> to the constructor of the <b>DonateList</b> class. And the value of
+    the <b>totalAmount</b> property in the constructor of the <b>DonateForm</b> class.<br>
+    Then, in the constructor of the <b>DonateForm</b> class, add the <b>totalAmount</b> parameter and initialize it with
+    <b>this</b>.<br>
+    Also, in <b>DonateForm</b>, create an <b>updateTotalAmount</b> method that will accept the <b>newAmount</b>
+    parameter and place the text <b>“newAmount$”</b> (newAmount is the parameter of the updateTotalAmount method) in the
+    element with the id <b>“total-amount”</b>. Pass the initial value of the total amount passed as text to the element
+    with the id <b>“total-amount”</b>. As a result, initially you will get “$0”.<br>
+    <br>
+    Also in the <b>DonateList</b> class, you need to create the <b>updateDonates</b> method, which will take the
+    <b>updatedDonates</b> parameter (the new donates array). This method should clear the element with the
+    <b>“donates-container__donates”</b> class and draw all new donations from the <b>updatedDonates</b> array in it.<br>
+    <br>
+    <b>Now you have almost everything</b> to implement the logic of creating a new donation element. After creating each
+    donation, you need to update the <b>state</b> object in the <b>App</b> class and HTML elements.<br>
+    <br>
+    <b>To update the state</b>, create a <b>createNewDonate</b> method in the <b>App</b> class. This method accepts the
+    <b>newDonate</b> parameter, which is a new <b>donates</b> array object. In the <b>createNewDonate</b> method, you
+    need to add <b>newDonate</b> to the <b>donates</b> array from <b>state</b>, update the <b>totalAmount</b> from
+    <b>state</b>, and call the <b>updateDonates</b> methods on <b>DonateList</b> and <b>updateTotalAmount</b> on
+    <b>DonateForm</b>.<br>
+    <br>
+    <b>After that</b>, pass <b>createNewDonate</b> as a parameter to <b>DonateForm</b>. Don't forget to also initialize
+    this parameter with this in the constructor of the <b>DonateForm</b> class.<br>
+    <b>Note:</b> do not forget that when you pass functions or methods as parameters to other functions, you may lose
+    <b>this</b>. Therefore, you need to assign <b>this</b> via <b>bind</b>.<br>
+    <br>
+    <b>Hint: this</b> will be lost when passing the <b>createNewDonate</b> method as a parameter to <b>DonateForm</b>.
+    Therefore, you need to pass this method as <b>this.createNewDonate.bind(this)</b>. Here <b>"bind(this)"</b> binds
+    the <b>App</b> class context for the <b>createNewDonate</b> method.<br>
+    <br>
+    After that, you need to hang the <b>“submit”</b> event handler on the element with the <b>“donate-form”</b> class.
+    In this handler, you need to create a new donation object (with the date and amount keys) and call the
+    <b>createNewDonate</b> method that you passed to the constructor before. Also, after creating each donation, the
+    text field with the <b>“donate-form__donate-input”</b> class must be empty.
+    </p>
 </body>
+
 </html>
