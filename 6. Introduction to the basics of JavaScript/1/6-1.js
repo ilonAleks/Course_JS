@@ -20,3 +20,4 @@ const enter = (userLogin === existedUserLogin
 	&& userPassword === existedUserPassword)
 	? alert(`Welcome, ${userLogin}!`)
 	: alert('Login and (or) password is entered incorrectly!')
+
