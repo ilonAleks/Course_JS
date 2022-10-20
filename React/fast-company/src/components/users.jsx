@@ -9,21 +9,25 @@ const Users = () => {
 
   const renderPhrase = (num) => {
     const lastNum = Number(num.toString().slice(-1));
-    if (num > 4 && num < 15) return "человек тусанут";
-    if (num === 1) return "человек тусанет";
-    if (lastNum === 1) return "человек тусанут";
-    return "человека тусанут";
+    if (num > 4 && num < 15) return "человек тусанет";
+    if ([2, 3, 4].indexOf(lastNum) >= 0) return "человека тусанут";
+    if (lastNum === 1) return "человек тусанет";
+    return "человек тусанет";
   };
 
   return (
     <>
-      <span
-        className={"badge text-bg-" + (users.length > 0 ? "primary" : "danger")}
-      >
-        {users.length > 0
-          ? `${users.length} ${renderPhrase(users.length)} с тобой сегодня`
-          : "Никто с тобой не тусанет"}
-      </span>
+      <h3>
+        <span
+          className={
+            "badge text-bg-" + (users.length > 0 ? "primary" : "danger")
+          }
+        >
+          {users.length > 0
+            ? `${users.length} ${renderPhrase(users.length)} с тобой сегодня`
+            : "Никто с тобой не тусанет"}
+        </span>
+      </h3>
       {users.length > 0 && (
         <table class="table">
           <thead>
