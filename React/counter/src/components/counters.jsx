@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Counter from "./counter.jsx";
 
 const Counters = ({ onReset, counters, ...rest }) => {
