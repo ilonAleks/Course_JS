@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Counter = (props) => {
-  console.log(props);
-  const [value, setValue] = useState(props.value);
-
-  const tags = ["tag1", "tag2", "tag3"];
+  // const tags = ["tag1", "tag2", "tag3"];
 
   const formValue = () => {
-    return value === 0 ? "Ноль" : value;
+    return props.value === 0 ? "Ноль" : props.value;
   };
 
   const getClasses = () => {
     let classes = "badge m-2 bg-";
-    classes += value === 0 ? "danger" : "primary";
+    classes += props.value === 0 ? "danger" : "primary";
     return classes;
   };
 
@@ -21,27 +18,21 @@ const Counter = (props) => {
   //   return tags.map((tag) => <li key={tag}>{tag}</li>);
   // };
 
-  const handleIncrement = (productId) => {
-    console.log(productId);
-    setValue(value + 1);
-  };
-
-  const handleDecrement = () => {
-    if (value > 0) setValue(value - 1);
-  };
-
   return (
     <>
       {/* {renderTags()} */}
       <h5>{props.name}</h5>
       <span className={getClasses()}>{formValue()}</span>
       <button
-        onClick={() => handleIncrement({ id: 1 })}
-        className="btn btn-secondary btn-sm"
+        onClick={() => props.onIncrement(props.id, props.value)}
+        className="btn btn-secondary btn-sm m-1"
       >
         Increment
       </button>
-      <button onClick={handleDecrement} className="btn btn-secondary btn-sm">
+      <button
+        onClick={() => props.onDecrement(props.id)}
+        className="btn btn-secondary btn-sm m-1"
+      >
         Decrement
       </button>
       <button

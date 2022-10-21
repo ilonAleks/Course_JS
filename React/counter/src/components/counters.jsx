@@ -15,14 +15,36 @@ const Counters = () => {
     const newCounters = counters.filter((c) => c.id !== counterId);
     setCounters(newCounters);
   };
+
+  const handleIncrement = (counterId, value) => {
+    const newCounters = [...counters];
+    const elIndex = newCounters.findIndex((c) => c.id === counterId);
+    newCounters[elIndex].value = value + 1;
+    setCounters(newCounters);
+  };
+
+  const handleDecrement = (counterId) => {
+    const newCounters = [...counters];
+    const elIndex = newCounters.findIndex((c) => c.id === counterId);
+    if (newCounters[elIndex].value > 0) newCounters[elIndex].value -= 1;
+    setCounters(newCounters);
+  };
+
   const handleReset = () => setCounters(state);
+
   return (
     <div>
       <button className="btn btn-primary btn-sm m-2" onClick={handleReset}>
         Reset
       </button>
       {counters.map((counter) => (
-        <Counter key={counter.id} {...counter} onDelete={handleDelete} />
+        <Counter
+          key={counter.id}
+          {...counter}
+          onDelete={handleDelete}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+        />
       ))}
     </div>
   );
