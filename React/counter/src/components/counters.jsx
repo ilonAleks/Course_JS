@@ -16,10 +16,10 @@ const Counters = () => {
     setCounters(newCounters);
   };
 
-  const handleIncrement = (counterId, value) => {
+  const handleIncrement = (counterId) => {
     const newCounters = [...counters];
     const elIndex = newCounters.findIndex((c) => c.id === counterId);
-    newCounters[elIndex].value = value + 1;
+    newCounters[elIndex].value += 1;
     setCounters(newCounters);
   };
 

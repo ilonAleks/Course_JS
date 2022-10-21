@@ -24,7 +24,7 @@ const Counter = (props) => {
       <h5>{props.name}</h5>
       <span className={getClasses()}>{formValue()}</span>
       <button
-        onClick={() => props.onIncrement(props.id, props.value)}
+        onClick={() => props.onIncrement(props.id)}
         className="btn btn-secondary btn-sm m-1"
       >
         Increment
