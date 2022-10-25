@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
-import User from "./user.jsx";
+import _ from "lodash";
+import PropTypes from "prop-types";
+
 import Pagination from "./pagination.jsx";
 import { paginate } from "../utils/paginate.js";
-import PropTypes from "prop-types";
 import GroupList from "./grouplist.jsx";
 import API from "../API/index.js";
 import Navbar from "./navbar.jsx";
+import UsersTable from "./usersTable.jsx";
 
 const Users = ({ users: allUsers, ...rest }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [professions, setProfessions] = useState();
     const [selectedProf, setSelectedProf] = useState();
+    const [sortBy, setSortBy] = useState({ iter: "name", order: "asc" });
 
-    const pageSize = 2;
+    const pageSize = 8;
 
     useEffect(() => {
         API.professions.fetchAll().then((data) => setProfessions(data));
@@ -32,9 +35,21 @@ const Users = ({ users: allUsers, ...rest }) => {
     const handleNextPage = (pageIndex, pageCount) => {
         if (pageIndex < pageCount) return setCurrentPage(pageIndex + 1);
     };
-    // const filtredUsers = selectedProf
-    //     ? allUsers.filter((user) => user.profession === selectedProf)
-    //     : allUsers;
+
+    const handleProfessionSelect = (item) => {
+        setSelectedProf(item);
+    };
+
+    const handleSort = (item) => {
+        if (sortBy.iter === item) {
+            setSortBy((prevState) => ({
+                ...prevState,
+                order: prevState.order === "asc" ? "desc" : "asc"
+            }));
+        } else {
+            setSortBy({ iter: item, order: "asc" });
+        }
+    };
 
     const filtredUsers = selectedProf
         ? allUsers.filter(
@@ -43,15 +58,15 @@ const Users = ({ users: allUsers, ...rest }) => {
                   JSON.stringify(selectedProf)
           )
         : allUsers;
-    const count = filtredUsers.length;
-    const users = paginate(filtredUsers, currentPage, pageSize);
 
-    const handleProfessionSelect = (item) => {
-        setSelectedProf(item);
-    };
+    const count = filtredUsers.length;
+    const sortedUsers = _.orderBy(filtredUsers, [sortBy.iter], [sortBy.order]);
+    const users = paginate(sortedUsers, currentPage, pageSize);
+
     const clearFilter = () => {
         setSelectedProf();
     };
+
     return (
         <div className="d-flex">
             <div className="d-flex flex-column flex-shrink-0 p-3">
@@ -74,24 +89,7 @@ const Users = ({ users: allUsers, ...rest }) => {
             <div className="d-flex flex-column">
                 <Navbar length={count} />
                 {count > 0 && (
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Имя</th>
-                                <th scope="col">Качества</th>
-                                <th scope="col">Профессия</th>
-                                <th scope="col">Встретился, раз</th>
-                                <th scope="col">Оценка</th>
-                                <th scope="col">Избранное</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {users.map((user) => (
-                                <User key={user._id} {...rest} {...user} />
-                            ))}
-                        </tbody>
-                    </table>
+                    <UsersTable users={users} onSort={handleSort} {...rest} />
                 )}
                 <div className="d-flex justify-content-center">
                     <Pagination
