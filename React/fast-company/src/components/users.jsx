@@ -13,7 +13,7 @@ const Users = ({ users: allUsers, ...rest }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [professions, setProfessions] = useState();
     const [selectedProf, setSelectedProf] = useState();
-    const [sortBy, setSortBy] = useState({ iter: "name", order: "asc" });
+    const [sortBy, setSortBy] = useState({ path: "name", order: "asc" });
 
     const pageSize = 8;
 
@@ -41,14 +41,7 @@ const Users = ({ users: allUsers, ...rest }) => {
     };
 
     const handleSort = (item) => {
-        if (sortBy.iter === item) {
-            setSortBy((prevState) => ({
-                ...prevState,
-                order: prevState.order === "asc" ? "desc" : "asc"
-            }));
-        } else {
-            setSortBy({ iter: item, order: "asc" });
-        }
+        setSortBy(item);
     };
 
     const filtredUsers = selectedProf
@@ -60,7 +53,7 @@ const Users = ({ users: allUsers, ...rest }) => {
         : allUsers;
 
     const count = filtredUsers.length;
-    const sortedUsers = _.orderBy(filtredUsers, [sortBy.iter], [sortBy.order]);
+    const sortedUsers = _.orderBy(filtredUsers, [sortBy.path], [sortBy.order]);
     const users = paginate(sortedUsers, currentPage, pageSize);
 
     const clearFilter = () => {
@@ -89,7 +82,12 @@ const Users = ({ users: allUsers, ...rest }) => {
             <div className="d-flex flex-column">
                 <Navbar length={count} />
                 {count > 0 && (
-                    <UsersTable users={users} onSort={handleSort} {...rest} />
+                    <UsersTable
+                        users={users}
+                        onSort={handleSort}
+                        {...rest}
+                        selectedSort={sortBy}
+                    />
                 )}
                 <div className="d-flex justify-content-center">
                     <Pagination
