@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TableHeader from "./tableHeader.jsx";
-import TableBody from "./tableBody.jsx";
+// import TableHeader from "./tableHeader.jsx";
+// import TableBody from "./tableBody.jsx";
 import Bookmark from "./bookmark.jsx";
+import QualitiesList from "./qualitiesList.jsx";
+import Table from "./table.jsx";
 
 const UsersTable = ({
     users,
@@ -14,7 +16,10 @@ const UsersTable = ({
 }) => {
     const columns = {
         name: { path: "name", name: "Имя" },
-        qualities: { name: "Качества" },
+        qualities: {
+            name: "Качества",
+            component: (user) => <QualitiesList qualities={user.qualities} />
+        },
         profession: { path: "profession.name", name: "Профессия" },
         completedMeetings: {
             path: "completedMeetings",
@@ -43,10 +48,17 @@ const UsersTable = ({
         }
     };
     return (
-        <table className="table">
-            <TableHeader {...{ onSort, selectedSort, columns }} />
-            <TableBody {...{ data: users, columns }} />
-        </table>
+        <Table
+            onSort={onSort}
+            selectedSort={selectedSort}
+            columns={columns}
+            data={users}
+        />
+
+        // <Table>
+        //     <TableHeader {...{ onSort, selectedSort, columns }} />
+        //     <TableBody {...{ data: users, columns }} />
+        // </Table>
     );
 };
 
