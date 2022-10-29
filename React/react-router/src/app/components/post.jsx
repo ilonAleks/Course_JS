@@ -1,12 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
-const Post = ({ id, posts, history }) => {
+const Post = ({ id, posts }) => {
+  const history = useHistory();
   const getPostById = (id) => {
     return posts.find((post) => post.id.toString() === id);
   };
   const post = getPostById(id);
   const handleSave = () => {
-    history.replace("/posts");
+    history.push("/posts");
   };
   return (
     <>
