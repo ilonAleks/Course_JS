@@ -1,18 +1,11 @@
 import NavBar from "./components/navbar";
-import { Route, Switch } from "react-router-dom";
-import Dashboard from "./components/dashboard";
-import Login from "./components/login";
-// import Posts from "./components/posts";
-import Home from "./components/home";
-import Stats from "./components/stats";
-import PostsList from "./components/postsList";
-import Post from "./components/post";
-
-const posts = [
-  { id: 1, label: "post 1" },
-  { id: 2, label: "post 2" },
-  { id: 3, label: "post 3" },
-];
+import { Route, Switch, Redirect } from "react-router-dom";
+import Dashboard from "./components/dashboard.jsx";
+import Login from "./components/login.jsx";
+import Posts from "./components/posts.jsx";
+import Home from "./components/home.jsx";
+import Stats from "./components/stats.jsx";
+import NotFound from "./components/notFound.jsx";
 
 function App() {
   return (
@@ -28,14 +21,10 @@ function App() {
           // render={(props) => <Dashboard isAdmin={false} {...props} />}
         />
         <Route path="/login" component={Login} />
-        <Route
-          path="/posts/:postId"
-          render={(props) => <Post posts={posts} {...props} />}
-        />
-        <Route
-          path="/posts"
-          render={(props) => <PostsList posts={posts} {...props} />}
-        />
+        <Route path="/posts/:postId?" component={Posts} />
+        <Route path="/404" component={NotFound} />
+        <Redirect from="/admin" to="/dashboard" />
+        <Redirect to="/404" />
       </Switch>
     </div>
   );
