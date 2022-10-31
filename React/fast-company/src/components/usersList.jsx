@@ -6,10 +6,10 @@ import Pagination from "./pagination.jsx";
 import { paginate } from "../utils/paginate.js";
 import GroupList from "./grouplist.jsx";
 import API from "../API/index.js";
-import Navbar from "./navbar.jsx";
+import SearchStatus from "./searchStatus.jsx";
 import UsersTable from "./usersTable.jsx";
 
-const Users = () => {
+const UsersList = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [professions, setProfessions] = useState();
     const [selectedProf, setSelectedProf] = useState();
@@ -105,7 +105,7 @@ const Users = () => {
                     )}
                 </div>
                 <div className="d-flex flex-column">
-                    <Navbar length={count} />
+                    <SearchStatus length={count} />
                     {count > 0 && (
                         <UsersTable
                             users={usersCrop}
@@ -131,10 +131,10 @@ const Users = () => {
     }
     return "Loading...";
 };
-Users.propTypes = {
+UsersList.propTypes = {
     users: PropTypes.array,
-    onDelete: PropTypes.func.isRequired,
-    onToggleBookmark: PropTypes.func.isRequired
+    onDelete: PropTypes.func,
+    onToggleBookmark: PropTypes.func
 };
 
-export default Users;
+export default UsersList;

@@ -17,7 +17,7 @@ const Table = ({ onSort, selectedSort, columns, data, children }) => {
 };
 Table.propTypes = {
     onSort: PropTypes.func,
-    selectedSort: PropTypes.func,
+    selectedSort: PropTypes.object,
     columns: PropTypes.object,
     data: PropTypes.array,
     children: PropTypes.array
