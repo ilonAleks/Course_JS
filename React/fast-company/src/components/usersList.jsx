@@ -13,6 +13,7 @@ const UsersList = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [professions, setProfessions] = useState();
     const [selectedProf, setSelectedProf] = useState();
+    const [searchQuery, setSearchQuery] = useState("");
     const [sortBy, setSortBy] = useState({ path: "name", order: "asc" });
 
     const pageSize = 8;
@@ -42,8 +43,12 @@ const UsersList = () => {
     }, []);
     useEffect(() => {
         setCurrentPage(1);
-    }, [selectedProf]);
+    }, [selectedProf, searchQuery]);
 
+    function handleSearchQuery({ target }) {
+        setSelectedProf(undefined);
+        setSearchQuery(target.value);
+    }
     const handlePageChange = (pageIndex) => {
         setCurrentPage(pageIndex);
     };
@@ -57,6 +62,7 @@ const UsersList = () => {
     };
 
     const handleProfessionSelect = (item) => {
+        if (searchQuery !== "") setSearchQuery("");
         setSelectedProf(item);
     };
 
@@ -65,7 +71,14 @@ const UsersList = () => {
     };
 
     if (users) {
-        const filtredUsers = selectedProf
+        const filtredUsers = searchQuery
+            ? users.filter(
+                  (user) =>
+                      user.name
+                          .toLowerCase()
+                          .indexOf(searchQuery.toLowerCase()) !== -1
+              )
+            : selectedProf
             ? users.filter(
                   (user) =>
                       JSON.stringify(user.profession) ===
@@ -106,6 +119,18 @@ const UsersList = () => {
                 </div>
                 <div className="d-flex flex-column">
                     <SearchStatus length={count} />
+                    <div className="input-group mb-3">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Search..."
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            onChange={handleSearchQuery}
+                            value={searchQuery}
+                        />
+                    </div>
+                    {/* /[а-яА-Я]+/g; */}
                     {count > 0 && (
                         <UsersTable
                             users={usersCrop}
