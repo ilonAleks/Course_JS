@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
 import TextField from "../components/textField.jsx";
 import validator from "../utils/validator.js";
 
 const Card = () => {
+  const history = useHistory();
+  const [errors, setErrors] = useState({});
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
-    dateBirthday: "",
+    year: "",
     portfolio: "",
   });
-  const [errors, setErrors] = useState({});
-
-  const handleChange = ({ target }) => {
-    setData((prevState) => ({
-      ...prevState,
-      [target.name]: target.value,
-    }));
-  };
+  const [isUser, setIsUser] = useState(false);
+  const dataUser = "data";
 
   const validation = {
     firstName: {
@@ -25,7 +22,7 @@ const Card = () => {
     lastName: {
       isRequired: { message: "Поле 'Фамилия' обязательно для заполнения" },
     },
-    dateBirthday: {
+    year: {
       isRequired: { message: "Поле 'Год рождения' обязательно для заполнения" },
       isDate: { message: "Поле 'Год рождения' не корректно" },
     },
@@ -34,6 +31,14 @@ const Card = () => {
       isUrl: { message: "Поле 'Портфолио' должно быть ссылкой" },
     },
   };
+
+  useEffect(() => {
+    const dataLocal = localStorage.getItem(dataUser);
+    if (dataLocal) {
+      setData(JSON.parse(dataLocal));
+      setIsUser(true);
+    }
+  }, []);
 
   useEffect(() => {
     validate();
@@ -45,17 +50,30 @@ const Card = () => {
     return Object.keys(errors).length === 0;
   };
 
+  const handleChange = ({ target }) => {
+    setData((prevState) => ({
+      ...prevState,
+      [target.name]: target.value,
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const isValid = validate();
     if (!isValid) return;
+    localStorage.setItem(dataUser, JSON.stringify(data));
+    alert("Обновлено!");
+    history.push("/");
     console.log(data);
   };
+
+  const isValid = Object.keys(errors.length) === 0;
+
   return (
     <div className="container mt-5">
       <div className="row">
         <div className="col-md-10 offset-md-1 shadow p-4">
-          <h1>Создать</h1>
+          <h1>{isUser ? "Редактировать" : "Создать"}</h1>
           <form onSubmit={handleSubmit}>
             <TextField
               label="Имя"
@@ -74,10 +92,10 @@ const Card = () => {
             <TextField
               type="number"
               label="Год рождения"
-              name="dateBirthday"
-              value={data.dateBirthday}
+              name="year"
+              value={data.year}
               onChange={handleChange}
-              error={errors.dateBirthday}
+              error={errors.year}
             />
             <TextField
               label="Портфолио"
@@ -86,7 +104,18 @@ const Card = () => {
               onChange={handleChange}
               error={errors.portfolio}
             />
-            <button className="btn btn-success w-20 mx-auto">Создать</button>
+            {isUser && (
+              <Link to="/" className="btn btn-primary w-20 mx-auto">
+                Назад
+              </Link>
+            )}
+            <button
+              type="submit"
+              className="btn btn-success w-20 mx-auto"
+              disabled={!isValid}
+            >
+              {isUser ? "Обновить" : "Создать"}
+            </button>
           </form>
         </div>
       </div>
@@ -95,4 +124,3 @@ const Card = () => {
 };
 
 export default Card;
-// label, type, name, value, onChange

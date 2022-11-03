@@ -18,15 +18,6 @@ export default function validator(data, config) {
         statusValidate = !urlRegExp.test(data);
         break;
       }
-      // case "isConteinDigit": {
-      //   const digitRegExp = /\d+/g;
-      //   statusValidate = !digitRegExp.test(data);
-      //   break;
-      // }
-      // case "minLength": {
-      //   statusValidate = data.length < config.value;
-      //   break;
-      // }
       default:
         break;
     }
