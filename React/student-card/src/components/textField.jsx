@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const TextField = ({ label, type, name, value, onChange, error }) => {
   function getInputClasses() {
@@ -7,7 +8,7 @@ const TextField = ({ label, type, name, value, onChange, error }) => {
   return (
     <div className="mb-4 ">
       <label htmlFor={name}>{label}</label>
-      <div className="input-group has-validation">
+      <div className="input-group">
         <input
           type={type}
           id={name}
@@ -25,4 +26,12 @@ TextField.defaultProps = {
   type: "text",
 };
 
+TextField.propTypes = {
+  label: PropTypes.string,
+  type: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  error: PropTypes.string,
+};
 export default TextField;

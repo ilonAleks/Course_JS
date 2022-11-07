@@ -1,3 +1,13 @@
+export const calculateAge = (year) => {
+  return new Date().getFullYear() - Number(year);
+};
+
+export function plural(number) {
+  const lastNum = Number(number.toString().slice(-1));
+  if ([2, 3, 4].indexOf(lastNum) >= 0) return " года";
+  if (lastNum === 1) return " год";
+  return " лет";
+}
 export default function validator(data, config) {
   const errors = {};
   function validate(validateMethod, data, config) {

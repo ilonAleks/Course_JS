@@ -6,12 +6,14 @@ import Card from "./layouts/card.jsx";
 
 function App() {
   return (
-    <div>
-      <Switch>
-        <Route path="/card" component={Card} />
-        <Route path="/" component={Main} />
-        <Redirect to="/" />
-      </Switch>
+    <div className="container my-3">
+      <div className="row">
+        <Switch>
+          <Route path="/card" exact component={Card} />
+          <Route path="/" exact component={Main} />
+          <Redirect to="/" />
+        </Switch>
+      </div>
     </div>
   );
 }
