@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from "react";
 import TextField from "../common/form/textField.jsx";
 import validator from "../../utils/validator.js";
+import API from "../../API";
+import SelectField from "../common/form/selectField.jsx";
 
 const RegisterForm = () => {
-    const [data, setData] = useState({ email: "", password: "" });
+    const [data, setData] = useState({
+        email: "",
+        password: "",
+        profession: ""
+    });
     const [errors, setErrors] = useState({});
+
+    const [professions, setProfessions] = useState();
+    useEffect(() => {
+        API.professions.fetchAll().then((data) => setProfessions(data));
+    }, []);
 
     const handleChange = ({ target }) => {
         setData((prevState) => ({
@@ -29,6 +40,11 @@ const RegisterForm = () => {
                 message: "Password must be longer than 8 symbols",
                 value: 8
             }
+        },
+        profession: {
+            isRequired: {
+                message: "Necessarily choose your profession"
+            }
         }
     };
     useEffect(() => {
@@ -46,7 +62,7 @@ const RegisterForm = () => {
         if (!isValid) return;
         console.log(data);
     };
-    const valid = Object.keys(errors).length === 0;
+    const isValid = Object.keys(errors).length === 0;
     return (
         <form onSubmit={handleSubmit}>
             <TextField
@@ -64,7 +80,19 @@ const RegisterForm = () => {
                 onChange={handleChange}
                 error={errors.password}
             />
-            <button disabled={!valid} className="btn btn-success w-100 mx-auto">
+            <SelectField
+                label="Choose your profession"
+                value={data.profession}
+                onChange={handleChange}
+                defaultOption="Choose..."
+                options={professions}
+                error={errors.profession}
+                name="profession"
+            />
+            <button
+                disabled={!isValid}
+                className="btn btn-success w-100 mx-auto"
+            >
                 Submit
             </button>
         </form>
