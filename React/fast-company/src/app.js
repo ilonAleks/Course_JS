@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
-import Navbar from "./components/navbar.jsx";
+import Navbar from "./components/ui/navbar.jsx";
 import Users from "./layouts/users.jsx";
 import Main from "./layouts/main.jsx";
 import Login from "./layouts/login.jsx";

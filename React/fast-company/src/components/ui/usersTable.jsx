@@ -1,19 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-// import TableHeader from "./tableHeader.jsx";
-// import TableBody from "./tableBody.jsx";
-import Bookmark from "./bookmark.jsx";
-import QualitiesList from "./qualitiesList.jsx";
-import Table from "./table.jsx";
+import Bookmark from "../common/bookmark.jsx";
+import Qualities from "./qualities";
+import Table from "../common/table";
 
 const UsersTable = ({
     users,
     onSort,
     selectedSort,
     onToggleBookmark,
-    onDelete,
-    ...rest
+    onDelete
 }) => {
     const columns = {
         name: {
@@ -25,7 +22,7 @@ const UsersTable = ({
         },
         qualities: {
             name: "Качества",
-            component: (user) => <QualitiesList qualities={user.qualities} />
+            component: (user) => <Qualities qualities={user.qualities} />
         },
         profession: { path: "profession.name", name: "Профессия" },
         completedMeetings: {
@@ -61,11 +58,6 @@ const UsersTable = ({
             columns={columns}
             data={users}
         />
-
-        // <Table>
-        //     <TableHeader {...{ onSort, selectedSort, columns }} />
-        //     <TableBody {...{ data: users, columns }} />
-        // </Table>
     );
 };
 
