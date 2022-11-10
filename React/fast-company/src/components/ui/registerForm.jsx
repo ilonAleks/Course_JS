@@ -3,16 +3,27 @@ import TextField from "../common/form/textField.jsx";
 import validator from "../../utils/validator.js";
 import API from "../../API";
 import SelectField from "../common/form/selectField.jsx";
+import RadioField from "../common/form/radioField.jsx";
 
 const RegisterForm = () => {
     const [data, setData] = useState({
         email: "",
         password: "",
-        profession: ""
+        profession: "",
+        sex: "male"
     });
     const [errors, setErrors] = useState({});
 
     const [professions, setProfessions] = useState();
+
+    const getProfessionById = (id) => {
+        for (const prof of professions) {
+            if (prof.value === id) {
+                return { _id: prof.value, name: prof.label };
+            }
+        }
+    };
+
     useEffect(() => {
         API.professions.fetchAll().then((data) => setProfessions(data));
     }, []);
@@ -60,7 +71,11 @@ const RegisterForm = () => {
         e.preventDefault();
         const isValid = validate();
         if (!isValid) return;
-        console.log(data);
+        const { profession } = data;
+        console.log({
+            ...data,
+            profession: getProfessionById(profession)
+        });
     };
     const isValid = Object.keys(errors).length === 0;
     return (
@@ -88,6 +103,16 @@ const RegisterForm = () => {
                 options={professions}
                 error={errors.profession}
                 name="profession"
+            />
+            <RadioField
+                value={data.sex}
+                onChange={handleChange}
+                options={[
+                    { name: "male", value: "male" },
+                    { name: "female", value: "female" },
+                    { name: "other", value: "other" }
+                ]}
+                name="sex"
             />
             <button
                 disabled={!isValid}
