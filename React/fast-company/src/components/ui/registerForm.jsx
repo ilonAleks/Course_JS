@@ -130,6 +130,7 @@ const RegisterForm = () => {
                 options={qualities}
                 onChange={handleChange}
                 name="qualities"
+                defaulValue={data.qualities}
                 label="Choose your qualities"
             />
             <CheckBoxField

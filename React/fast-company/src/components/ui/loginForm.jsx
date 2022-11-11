@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TextField from "../common/form/textField.jsx";
-// import validator from "../../utils/validator.js";
+import validator from "../../utils/validator.js";
 import CheckBoxField from "../common/form/checkBoxField.jsx";
-import * as yup from "yup"; // package.json "yup": "^0.32.11"
 
 const LoginForm = () => {
     const [data, setData] = useState({
@@ -19,56 +18,32 @@ const LoginForm = () => {
         }));
     };
 
-    const validatSchema = yup.object().shape({
-        password: yup
-            .string()
-            .required("Password is requires to fill")
-            .matches(
-                /(?=.*[A-Z])/,
-                "Password must have at least one capital letter"
-            )
-            .matches(/(?=.*[0-9])/, "Password must have at least one digit")
-            .matches(
-                /(?=.*[!@#$%^&*?])/,
-                "Password must have at least one of !@#$%^&*?"
-            )
-            .matches(/(?=.{8,})/, "Password must be longer than 8 symbols"),
-        email: yup
-            .string()
-            .required("Email is requires to fill")
-            .email("Email not correctly")
-    });
-
-    // const validatorConfig = {
-    //     email: {
-    //         isRequired: { message: "Email is requires to fill" },
-    //         isEmail: { message: "Email not correctly" }
-    //     },
-    //     password: {
-    //         isRequired: { message: "Password is requires to fill" },
-    //         isCapitalSymbol: {
-    //             message: "Password must have at least one capital letter"
-    //         },
-    //         isConteinDigit: {
-    //             message: "Password must have at least one digit"
-    //         },
-    //         minLength: {
-    //             message: "Password must be longer than 8 symbols",
-    //             value: 8
-    //         }
-    //     }
-    // };
+    const validatorConfig = {
+        email: {
+            isRequired: { message: "Email is requires to fill" },
+            isEmail: { message: "Email not correctly" }
+        },
+        password: {
+            isRequired: { message: "Password is requires to fill" },
+            isCapitalSymbol: {
+                message: "Password must have at least one capital letter"
+            },
+            isConteinDigit: {
+                message: "Password must have at least one digit"
+            },
+            minLength: {
+                message: "Password must be longer than 8 symbols",
+                value: 8
+            }
+        }
+    };
     useEffect(() => {
         validate();
     }, [data]);
 
     const validate = () => {
-        // const errors = validator(data, validatorConfig);
-        validatSchema
-            .validate(data)
-            .then(() => setErrors({}))
-            .catch((err) => setErrors({ [err.path]: err.message }));
-        // setErrors(errors);
+        const errors = validator(data, validatorConfig);
+        setErrors(errors);
         return Object.keys(errors).length === 0;
     };
     const handleSubmit = (e) => {
