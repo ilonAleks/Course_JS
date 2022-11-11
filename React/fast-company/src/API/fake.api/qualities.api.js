@@ -30,7 +30,6 @@ const qualities = {
         color: "dark"
     }
 };
-
 const fetchAll = () =>
     new Promise((resolve) => {
         window.setTimeout(function () {

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import API from "../../../API";
 import PropTypes from "prop-types";
-
 import Qualities from "../../ui/qualities";
 
 const UserPage = ({ userId }) => {
@@ -14,6 +13,9 @@ const UserPage = ({ userId }) => {
     const toUsers = () => {
         history.push("/users");
     };
+    const toEdit = () => {
+        history.push(history.location.pathname + "/edit");
+    };
     if (user) {
         return (
             <div>
@@ -22,7 +24,8 @@ const UserPage = ({ userId }) => {
                 <Qualities qualities={user.qualities} />
                 <p>Встретился, раз: {user.completedMeetings}</p>
                 <h3>Оценка: {user.rate}</h3>
-                <button onClick={toUsers}>Все пользователи</button>
+                <button onClick={toEdit}>Edit</button>
+                <button onClick={toUsers}>Go to users</button>
             </div>
         );
     } else {
