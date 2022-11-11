@@ -40,7 +40,6 @@ CheckBoxField.propTypes = {
 
 export default CheckBoxField;
 
-// Uncaught Invariant
-// Violation:
+// Uncaught Invariant Violation:
 // Calling PropTypes validators directly is not supported by the `prop-types` package.
 // Use `PropTypes.checkPropTypes()` to call them
