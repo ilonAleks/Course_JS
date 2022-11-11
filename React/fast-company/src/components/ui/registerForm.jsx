@@ -5,6 +5,7 @@ import API from "../../API";
 import SelectField from "../common/form/selectField.jsx";
 import RadioField from "../common/form/radioField.jsx";
 import MultiSelectField from "../common/form/multiSelectField.jsx";
+import CheckBoxField from "../common/form/checkBoxField.jsx";
 
 const RegisterForm = () => {
     const [data, setData] = useState({
@@ -12,7 +13,8 @@ const RegisterForm = () => {
         password: "",
         profession: "",
         sex: "male",
-        qualities: []
+        qualities: [],
+        license: false
     });
     const [errors, setErrors] = useState({});
     const [qualities, setQualities] = useState({});
@@ -58,6 +60,12 @@ const RegisterForm = () => {
         profession: {
             isRequired: {
                 message: "Necessarily choose your profession"
+            }
+        },
+        license: {
+            isRequired: {
+                message:
+                    "You can not use the service without a license agreement confirmation"
             }
         }
     };
@@ -124,6 +132,14 @@ const RegisterForm = () => {
                 name="qualities"
                 label="Choose your qualities"
             />
+            <CheckBoxField
+                value={data.license}
+                onChange={handleChange}
+                name="license"
+                error={errors.license}
+            >
+                Read the <a>license agreement</a>
+            </CheckBoxField>
             <button
                 disabled={!isValid}
                 className="btn btn-success w-100 mx-auto"
