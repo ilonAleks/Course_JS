@@ -23,7 +23,7 @@ const EditUserPage = () => {
     const [professions, setProfessions] = useState({});
 
     const getProfessionById = (id) => {
-        for (const prof of professions) {
+        for (const prof in professions) {
             const profData = professions[prof];
             if (profData._id === id) return profData;
         }
@@ -62,7 +62,7 @@ const EditUserPage = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        API.users.getById(userId).then(({ profession, ...data }) =>
+        API.users.getById(userId).then(({ profession, qualities, ...data }) =>
             setData((prevState) => ({
                 ...prevState,
                 ...data,
@@ -70,8 +70,8 @@ const EditUserPage = () => {
                 profession: profession._id
             }))
         );
-        API.professions.fetchAll().then((data) => setProfessions(data));
         API.qualities.fetchAll().then((data) => setQualities(data));
+        API.professions.fetchAll().then((data) => setProfessions(data));
     }, []);
 
     useEffect(() => {
@@ -132,7 +132,7 @@ const EditUserPage = () => {
                                 defaultOption="Choose..."
                                 options={professions}
                                 error={errors.profession}
-                                name="profession"
+                                // name="profession"
                             />
                             <RadioField
                                 value={data.sex}
@@ -149,10 +149,12 @@ const EditUserPage = () => {
                                 options={qualities}
                                 onChange={handleChange}
                                 name="qualities"
-                                defaulValue={data.qualities}
+                                defaultValue={data.qualities}
                                 label="Choose your qualities"
+                                values
                             />
                             <button
+                                type="submit"
                                 disabled={!isValid}
                                 className="btn btn-success w-100 mx-auto"
                             >

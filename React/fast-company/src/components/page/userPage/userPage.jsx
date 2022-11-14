@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import API from "../../../API";
 import PropTypes from "prop-types";
+
+import API from "../../../API";
 import Qualities from "../../ui/qualities";
 
 const UserPage = ({ userId }) => {
