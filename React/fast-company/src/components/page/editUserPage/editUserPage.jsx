@@ -89,7 +89,8 @@ const EditUserPage = () => {
             }
         }
     };
-    useEffect(() => validate(), [data]);
+
+    useEffect(() => validate, [data]);
 
     const handleChange = (target) => {
         setData((prevState) => ({
