@@ -10,9 +10,13 @@ const SelectField = ({
     error,
     name
 }) => {
+    const handleChange = ({ target }) => {
+        onChange({ name: target.name, value: target.value });
+    };
     const getInputClasses = () => {
         return "form-select" + (error ? " is-invalid" : "");
     };
+
     const optionsArray =
         !Array.isArray(options) && typeof options === "object"
             ? Object.keys(options).map((optionName) => ({
@@ -21,18 +25,14 @@ const SelectField = ({
               }))
             : options;
 
-    const handleChange = ({ target }) => {
-        onChange({ name: target.name, value: target.value });
-    };
-
     return (
         <div className="mb-4">
-            <label htmlFor={name} className="form-label">
+            <label htmlFor="validationCustom04" className="form-label">
                 {label}
             </label>
             <select
                 className={getInputClasses()}
-                id={name}
+                id="validationCustom04"
                 name={name}
                 value={value}
                 onChange={handleChange}
@@ -42,7 +42,7 @@ const SelectField = ({
                 </option>
                 {optionsArray &&
                     optionsArray.map((option) => (
-                        <option value={option._id} key={option.value}>
+                        <option value={option.value} key={option.value}>
                             {option.name}
                         </option>
                     ))}
@@ -50,51 +50,7 @@ const SelectField = ({
             {error && <div className="invalid-feedback">{error}</div>}
         </div>
     );
-    //
-    //
-    //
-    //
-    //
-    //
-    // const handleChange = ({ target }) => {
-    //     onChange({ name: target.name, value: target.value });
-    // };
-    // const getInputClasses = () => {
-    //     return "form-select" + (error ? " is-invalid" : "");
-    // };
-
-    // const optionsArray =
-    //     !Array.isArray(options) && typeof options === "object"
-    //         ? Object.values(options)
-    //         : options;
-
-    // return (
-    //     <div className="mb-4">
-    //         <label htmlFor={name} className="form-label">
-    //             {label}
-    //         </label>
-    //         <select
-    //             className={getInputClasses()}
-    //             id={name}
-    //             name={name}
-    //             value={value}
-    //             onChange={handleChange}
-    //         >
-    //             <option disabled value="">
-    //                 {defaultOption}
-    //             </option>
-    //             {optionsArray &&
-    //                 optionsArray.map((option) => (
-    //                     <option value={option.value} key={option.value}>
-    //                         {option.label}
-    //                     </option>
-    //                 ))}
-    //         </select>
-    //         {error && <div className="invalid-feedback">{error}</div>}
-    //     </div>
-    // );
 };
-
 SelectField.propTypes = {
     defaultOption: PropTypes.string,
     label: PropTypes.string,
