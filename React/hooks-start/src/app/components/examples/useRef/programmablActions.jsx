@@ -22,7 +22,12 @@ const ProgrammablActionsExample = () => {
             <label htmlFor="email" className="form-label">
                 Email
             </label>
-            <input ref={inputRef} type="email" className="form-control" />
+            <input
+                ref={inputRef}
+                type="email"
+                className="form-control"
+                id="email"
+            />
             <button className="btn btn-primary" onClick={handleClick}>
                 Focus for input
             </button>

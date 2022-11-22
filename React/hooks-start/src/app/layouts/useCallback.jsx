@@ -24,6 +24,11 @@ const UseCalbackExample = () => {
                     <figcaption>
                         <cite title="reactjs.org">reactjs.org</cite>
                     </figcaption>
+                    <p>
+                        С помощью него можно предотвращать ненужные рендендеры
+                        дочерних компонентов, которым мы передаем callback
+                        функцию.
+                    </p>
                 </BlockQuoteWrapper>
             </Collapse>
 
@@ -31,6 +36,10 @@ const UseCalbackExample = () => {
                 <i className="bi bi-lightbulb"></i>{" "}
                 <code>useCallback(fn, deps)</code> ~{" "}
                 <code>useMemo(() =&gt; fn, deps)</code>
+                <p>
+                    useCallback хранит целую функцию внутри, а useMemo -
+                    результат функции
+                </p>
             </CardWrapper>
             <Divider />
             <Subtitle>Examples</Subtitle>
