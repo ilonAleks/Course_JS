@@ -3,7 +3,7 @@ import CollapseWrapper from "../common/collapse";
 const UseRefExercise = () => {
     const divRef = useRef();
     const handleChangeStyle = () => {
-        //! Изменить содежимое блока на "text"
+        divRef.current.children[0].innerText = "text";
         divRef.current.style.width = "80px";
         divRef.current.style.height = "150px";
     };
