@@ -28,7 +28,7 @@ const EditUserPage = () => {
                 profession: getProfessionById(profession)
             })
             .then((data) => history.push(`/users/${data._id}`));
-        console.log(data, "DATA");
+        // console.log("DATA", data);
     };
     useEffect(() => {
         setIsLoading(true);
