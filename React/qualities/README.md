@@ -1,3 +1,6 @@
+Перед запуском запустить в консоли server npm run dev
+далее запустить npm start этот проект
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
