@@ -1,5 +1,9 @@
 import axios from "axios";
 import logger from "./logService";
+// import { toast } from "react-toastify";
+import config from "../config.json";
+
+axios.defaults.baseURL = config.apiEndpoint;
 
 axios.interceptors.response.use(
   (res) => res,
@@ -10,6 +14,8 @@ axios.interceptors.response.use(
       error.response.status < 500;
     if (expectedError) {
       logger.log(error);
+      // toast.error("Something was wrong");
+      // toast("Expected error");
       console.log("Expected error");
     }
     return Promise.reject(error);

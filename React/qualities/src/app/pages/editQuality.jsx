@@ -6,7 +6,7 @@ import httpService from "../services/httpService.js";
 const EditQualityPage = () => {
   const [quality, setQuality] = useState(null);
   const id = useParams().id;
-  const qualityEndPoint = `http://localhost:4000/api/v1/quality/${id}`;
+  const qualityEndPoint = `quality/${id}`;
 
   const handleSubmit = async (data) => {
     try {
