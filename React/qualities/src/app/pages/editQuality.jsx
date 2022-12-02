@@ -5,25 +5,23 @@ import qualityService from "../services/qualityService";
 
 const EditQualityPage = () => {
   const [quality, setQuality] = useState(null);
-  const [errors, setErrors] = useState(null);
   const id = useParams().id;
   const updateQuality = async (content) => {
     try {
       const data = await qualityService.update(id, content);
       return data.content;
     } catch (error) {
-      const { message, code } = error.response.data;
-      setErrors({ message, code });
+      const { message } = error.response.data;
       console.error(message);
     }
   };
   const getQuality = async () => {
     try {
       const data = await qualityService.get(id);
-
       return data.content;
     } catch (error) {
-      console.log("Unexpected error");
+      const { message } = error.response.data;
+      console.error(message);
     }
   };
   const handleSubmit = (data) => {
