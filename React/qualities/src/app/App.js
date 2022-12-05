@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Container from "./components/common/container";
 import NavBar from "./components/ui/NavBar";
