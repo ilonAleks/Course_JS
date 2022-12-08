@@ -18,8 +18,7 @@ export const QualitiesProvider = ({ children }) => {
         setQualities(content);
         setIsLoading(false);
       } catch (error) {
-        const { message } = error.response.data;
-        setError(message);
+        errorCather(error);
       }
     };
     getQualities();
@@ -42,8 +41,7 @@ export const QualitiesProvider = ({ children }) => {
       );
       return content;
     } catch (error) {
-      const { message } = error.response.data;
-      setError(message);
+      errorCather(error);
     }
   };
 
@@ -53,26 +51,33 @@ export const QualitiesProvider = ({ children }) => {
       setQualities((prevState) => [...prevState, content]);
       return content;
     } catch (error) {
-      const { message } = error.response.data;
-      setError(message);
+      errorCather(error);
     }
   };
 
   const deleteQuality = async (id) => {
     prevState.current = qualities;
-
-    setQualities((prevState) => {
-      return prevState.filter((item) => item._id !== id);
-    });
-
     try {
-      await qualityService.delete(id);
+      const { content } = await qualityService.delete(id);
+      setQualities((prevState) => {
+        return prevState.filter((item) => item._id !== content._id);
+      });
     } catch (error) {
-      const { message } = error.response.data;
-      setError(message);
-      setQualities(prevState.current);
+      errorCather(error);
     }
   };
+
+  useEffect(() => {
+    if (error !== null) {
+      console.error(error);
+      setError(null);
+    }
+  }, [error]);
+
+  function errorCather(error) {
+    const { message } = error.response.data;
+    setError(message);
+  }
   return (
     <QualitiesContext.Provider
       value={{
