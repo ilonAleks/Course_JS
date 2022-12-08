@@ -10,7 +10,7 @@ const QualitiesListPage = () => {
     history.push(`/edit/${param}`);
   };
   const handleDelete = (id) => {
-    deleteQuality(id);
+    return deleteQuality(id);
   };
   return (
     <>

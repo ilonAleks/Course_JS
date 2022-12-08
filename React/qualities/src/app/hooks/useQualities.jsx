@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import qualityService from "../services/qualityService";
 
 const QualitiesContext = React.createContext();
@@ -10,6 +10,7 @@ export const QualitiesProvider = ({ children }) => {
   const [qualities, setQualities] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const prevState = useRef();
   useEffect(() => {
     const getQualities = async () => {
       try {
@@ -58,15 +59,18 @@ export const QualitiesProvider = ({ children }) => {
   };
 
   const deleteQuality = async (id) => {
+    prevState.current = qualities;
+
+    setQualities((prevState) => {
+      return prevState.filter((item) => item._id !== id);
+    });
+
     try {
-      const { content } = await qualityService.delete(id);
-      setQualities((prevState) => {
-        return prevState.filter((item) => item._id !== content._id);
-      });
-      return content;
+      await qualityService.delete(id);
     } catch (error) {
       const { message } = error.response.data;
       setError(message);
+      setQualities(prevState.current);
     }
   };
   return (
