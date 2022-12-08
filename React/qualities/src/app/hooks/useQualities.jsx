@@ -45,6 +45,7 @@ export const QualitiesProvider = ({ children }) => {
       setError(message);
     }
   };
+
   const addQuality = async (data) => {
     try {
       const { content } = await qualityService.create(data);
@@ -55,9 +56,28 @@ export const QualitiesProvider = ({ children }) => {
       setError(message);
     }
   };
+
+  const deleteQuality = async (id) => {
+    try {
+      const { content } = await qualityService.delete(id);
+      setQualities((prevState) => {
+        return prevState.filter((item) => item._id !== content._id);
+      });
+      return content;
+    } catch (error) {
+      const { message } = error.response.data;
+      setError(message);
+    }
+  };
   return (
     <QualitiesContext.Provider
-      value={{ qualities, getQuality, updateQuality, addQuality }}
+      value={{
+        qualities,
+        getQuality,
+        updateQuality,
+        addQuality,
+        deleteQuality,
+      }}
     >
       {!isLoading ? children : <h1>Qualities loading...</h1>}
     </QualitiesContext.Provider>
