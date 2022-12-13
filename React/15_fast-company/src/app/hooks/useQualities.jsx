@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import PropTypes from "prop-types";
-import qualityService from "../service/qualitiesService";
+import qualityService from "../services/qaulity.service";
 
 const QualitiesContex = React.createContext();
 
@@ -13,6 +13,7 @@ export const QualitiesProvider = ({ children }) => {
     const [qualities, setQualities] = useState([]);
     const [error, setError] = useState(null);
     const [isLoading, setLoading] = useState(true);
+
     useEffect(() => {
         const getQualities = async () => {
             try {
@@ -41,7 +42,13 @@ export const QualitiesProvider = ({ children }) => {
     }, [error]);
 
     return (
-        <QualitiesContex.Provider value={{ getQuality, isLoading, qualities }}>
+        <QualitiesContex.Provider
+            value={{
+                qualities,
+                getQuality,
+                isLoading
+            }}
+        >
             {children}
         </QualitiesContex.Provider>
     );
