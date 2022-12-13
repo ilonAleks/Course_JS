@@ -11,45 +11,43 @@ export const useUser = () => {
 
 const UserProvider = ({ children }) => {
     const [users, setUsers] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
     useEffect(() => {
         getUsers();
     }, []);
+    async function getUsers() {
+        try {
+            const { content } = await userService.get();
+            setUsers(content);
+            setLoading(false);
+        } catch (error) {
+            errorCatcher(error);
+        }
+    }
     useEffect(() => {
         if (error !== null) {
             toast(error);
             setError(null);
         }
     }, [error]);
-    async function getUsers() {
-        try {
-            const { content } = await userService.get();
-            setUsers(content);
-            setIsLoading(false);
-        } catch (error) {
-            errorCather(error);
-        }
-    }
-
-    function errorCather(error) {
+    function errorCatcher(error) {
         const { message } = error.response.data;
+
         setError(message);
-        setIsLoading(false);
     }
     return (
         <UserContext.Provider value={{ users }}>
-            {!isLoading ? children : "Loading..."}
+            {!isLoading ? children : "Loading...."}
         </UserContext.Provider>
     );
 };
 
 UserProvider.propTypes = {
-    children: PropTypes.oneOfType(
+    children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
-    )
+    ])
 };
 
 export default UserProvider;
