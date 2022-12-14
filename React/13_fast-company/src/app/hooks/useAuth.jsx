@@ -40,7 +40,21 @@ const AuthProvider = ({ children }) => {
             console.log(data);
         } catch (error) {
             errorCatcher(error);
+            const { code, message } = error.response.data.error;
+            console.log(code, message);
+            if (code === 400) {
+                if (
+                    message ===
+                    "API key not valid. Please pass a valid API key."
+                ) {
+                    const errorObject = {
+                        email: "Пользователь с таким EMAIL уже существует"
+                    };
+                    throw errorObject;
+                }
+            }
         }
+        // throw new Error();
     }
 
     async function createUser(data) {
