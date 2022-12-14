@@ -28,6 +28,10 @@ http.interceptors.request.use(
                     localId: data.user_id
                 });
             }
+            const accessToken = localStorageService.getAccessToken();
+            if (accessToken) {
+                config.params = { ...config.params, auth: accessToken };
+            }
         }
         return config;
     },
@@ -54,7 +58,7 @@ http.interceptors.response.use(
             error.response &&
             error.response.status >= 400 &&
             error.response.status < 500;
-        if (expectedError) {
+        if (!expectedError) {
             toast.error("Something was wrong. Try it later");
             console.log(error);
         }
