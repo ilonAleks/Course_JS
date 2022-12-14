@@ -20,6 +20,7 @@ export const useAuth = () => {
 const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState();
     const [error, setError] = useState(null);
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
         if (error !== null) {
@@ -112,11 +113,15 @@ const AuthProvider = ({ children }) => {
             setCurrentUser(content);
         } catch (error) {
             errorCatcher(error);
+        } finally {
+            setLoading(false);
         }
     }
     useEffect(() => {
         if (localStorageService.getAccessToken()) {
             getUserData();
+        } else {
+            setLoading(false);
         }
     }, []);
     async function createUser(data) {
@@ -131,7 +136,7 @@ const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={{ singUp, logIn, currentUser }}>
-            {children}
+            {!isLoading ? children : "Loading.."}
         </AuthContext.Provider>
     );
 };
