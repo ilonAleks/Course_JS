@@ -43,10 +43,7 @@ const AuthProvider = ({ children }) => {
             const { code, message } = error.response.data.error;
             console.log(code, message);
             if (code === 400) {
-                if (
-                    message ===
-                    "API key not valid. Please pass a valid API key."
-                ) {
+                if (message === "EMAIL_EXISTS") {
                     const errorObject = {
                         email: "Пользователь с таким EMAIL уже существует"
                     };
@@ -54,7 +51,6 @@ const AuthProvider = ({ children }) => {
                 }
             }
         }
-        // throw new Error();
     }
 
     async function createUser(data) {

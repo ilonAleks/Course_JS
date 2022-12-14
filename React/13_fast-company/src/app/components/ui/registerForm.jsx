@@ -8,8 +8,10 @@ import CheckBoxField from "../common/form/checkBoxField";
 import { useQualities } from "../../hooks/useQualities";
 import { useProfessions } from "../../hooks/useProfessions";
 import { useAuth } from "../../hooks/useAuth";
+import { useHistory } from "react-router-dom";
 
 const RegisterForm = () => {
+    const history = useHistory();
     const [data, setData] = useState({
         email: "",
         password: "",
@@ -48,7 +50,7 @@ const RegisterForm = () => {
         },
         password: {
             isRequired: {
-                message: "Пароль обязательна для заполнения"
+                message: "Пароль обязателен для заполнения"
             },
             isCapitalSymbol: {
                 message: "Пароль должен содержать хотя бы одну заглавную букву"
@@ -57,7 +59,7 @@ const RegisterForm = () => {
                 message: "Пароль должен содержать хотя бы одно число"
             },
             min: {
-                message: "Пароль должен состаять миниму из 8 символов",
+                message: "Пароль должен состоять минимум из 8 символов",
                 value: 8
             }
         },
@@ -69,7 +71,7 @@ const RegisterForm = () => {
         licence: {
             isRequired: {
                 message:
-                    "Вы не можете использовать наш сервис без подтреврждения лицензионного соглашения"
+                    "Вы не можете использовать наш сервис без подтверждения лицензионного соглашения"
             }
         }
     };
@@ -93,6 +95,7 @@ const RegisterForm = () => {
         };
         try {
             await singUp(newData);
+            history.push("/");
         } catch (error) {
             setErrors(error);
         }
