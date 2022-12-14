@@ -4,6 +4,7 @@ import axios from "axios";
 import userService from "../service/userService";
 import { toast } from "react-toastify";
 import localStorageService, { setTokens } from "../service/localStorageService";
+import { useHistory } from "react-router-dom";
 
 export const httpAuth = axios.create({
     baseURL: "https://identitytoolkit.googleapis.com/v1/",
@@ -21,6 +22,7 @@ const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState();
     const [error, setError] = useState(null);
     const [isLoading, setLoading] = useState(true);
+    const history = useHistory();
 
     useEffect(() => {
         if (error !== null) {
@@ -133,9 +135,13 @@ const AuthProvider = ({ children }) => {
             errorCatcher(error);
         }
     }
-
+    function logOut() {
+        localStorageService.removeAuthData();
+        setCurrentUser(null);
+        history.push("/");
+    }
     return (
-        <AuthContext.Provider value={{ singUp, logIn, currentUser }}>
+        <AuthContext.Provider value={{ singUp, logIn, logOut, currentUser }}>
             {!isLoading ? children : "Loading.."}
         </AuthContext.Provider>
     );
