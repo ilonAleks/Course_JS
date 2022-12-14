@@ -53,7 +53,7 @@ const LoginForm = () => {
         // console.log(data);
         try {
             await logIn(data);
-            history.push("/users");
+            history.push("/");
         } catch (error) {
             setEnterError(error.message);
         }
