@@ -5,7 +5,12 @@ import userService from "../service/userService";
 import { toast } from "react-toastify";
 import { setTokens } from "../service/localStorageService";
 
-const httpAuth = axios.create();
+const httpAuth = axios.create({
+    baseURL: "https://identitytoolkit.googleapis.com/v1/",
+    params: {
+        key: process.env.REACT_APP_FIREBASE_KEY
+    }
+});
 const AuthContext = React.createContext();
 
 export const useAuth = () => {
@@ -26,18 +31,59 @@ const AuthProvider = ({ children }) => {
         const { message } = error.response.data;
         setError(message);
     }
+    async function logIn({ email, password }) {
+        try {
+            const { data } = await httpAuth.post(
+                `accounts:signInWithPassword`,
+                {
+                    email,
+                    password,
+                    returnSecureToken: true
+                }
+            );
+            setTokens(data);
+            // console.log(data);
+        } catch (error) {
+            errorCatcher(error);
+            const { code, message } = error.response.data.error;
+            // console.log(code, message);
+            if (code === 400) {
+                switch (message) {
+                    case "INVALID_PASSWORD":
+                        throw new Error(
+                            "EMAIL или пароль введены неверно. Повторите попытку"
+                        );
+                    default:
+                        throw new Error(
+                            "Слишком много попыток входа. Повторите попытку позже"
+                        );
+                }
+                // if (message === "INVALID_PASSWORD") {
+                //     throw new Error(
+                //         "EMAIL или пароль введены неверно. Повторите попытку"
+                //     );
+                // }
+                // if (
+                //     message ===
+                //     "TOO_MANY_ATTEMPTS_TRY_LATER : Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later."
+                // ) {
+                //     throw new Error(
+                //         "Слишком много попыток входа. Повторите попытку позже"
+                //     );
+                // }
+            }
+        }
+    }
 
     async function singUp({ email, password, ...rest }) {
-        const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.REACT_APP_FIREBASE_KEY}`;
         try {
-            const { data } = await httpAuth.post(url, {
+            const { data } = await httpAuth.post(`accounts:signUp`, {
                 email,
                 password,
                 returnSecureToken: true
             });
             setTokens(data);
             await createUser({ _id: data.localId, email, ...rest });
-            console.log(data);
         } catch (error) {
             errorCatcher(error);
             const { code, message } = error.response.data.error;
@@ -63,7 +109,7 @@ const AuthProvider = ({ children }) => {
     }
 
     return (
-        <AuthContext.Provider value={{ singUp, currentUser }}>
+        <AuthContext.Provider value={{ singUp, logIn, currentUser }}>
             {children}
         </AuthContext.Provider>
     );
