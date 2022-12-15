@@ -54,7 +54,7 @@ const LoginForm = () => {
         try {
             await logIn(data);
             history.push(
-                history.location.state.from.pathname
+                history.location.state
                     ? history.location.state.from.pathname
                     : "/"
             );

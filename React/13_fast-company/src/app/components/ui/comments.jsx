@@ -1,6 +1,5 @@
 import React from "react";
 import { orderBy } from "lodash";
-
 import CommentsList, { AddCommentForm } from "../common/comments";
 import { useComments } from "../../hooks/useComments";
 
@@ -9,14 +8,14 @@ const Comments = () => {
 
     const handleSubmit = (data) => {
         createComment(data);
-        // api.comments
-        //     .add({ ...data, pageId: userId })
-        //     .then((data) => setComments([...comments, data]));
     };
+
     const handleRemoveComment = (id) => {
         removeComment(id);
     };
+
     const sortedComments = orderBy(comments, ["created_at"], ["desc"]);
+
     return (
         <>
             <div className="card mb-2">
