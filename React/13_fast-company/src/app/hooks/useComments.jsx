@@ -2,8 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import { useAuth } from "./useAuth";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
+import commentService from "../service/commentService";
 
 const CommentsContext = React.createContext();
 
@@ -12,15 +13,28 @@ export const useComments = () => {
 };
 
 export const CommentsProvider = ({ children }) => {
-    // const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     const [comments, setComments] = useState([]);
-    // const [error, setError] = useState(null);
+    const [error, setError] = useState(null);
     const { userId } = useParams();
     const { currentUser } = useAuth();
 
     useEffect(() => {
+        if (error !== null) {
+            toast(error);
+            setError(null);
+        }
+    }, [error]);
+
+    useEffect(() => {
         setComments(null);
+        setIsLoading(false);
     }, []);
+
+    function errorCatcher(error) {
+        const { message } = error.response.data;
+        setError(message);
+    }
 
     async function createComment(data) {
         const comment = {
@@ -30,10 +44,20 @@ export const CommentsProvider = ({ children }) => {
             created_at: Date.now(),
             userId: currentUser._id
         };
+        try {
+            const { content } = await commentService.createComment(comment);
+            // setIsLoading(false);
+            // setComments();
+            console.log(content);
+        } catch (error) {
+            errorCatcher(error);
+        }
         console.log(comment);
     }
     return (
-        <CommentsContext.Provider value={{ comments, createComment }}>
+        <CommentsContext.Provider
+            value={{ isLoading, comments, createComment }}
+        >
             {children}
         </CommentsContext.Provider>
     );
