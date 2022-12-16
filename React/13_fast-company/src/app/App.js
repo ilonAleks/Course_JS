@@ -17,6 +17,7 @@ function App() {
         <div>
             <AuthProvider>
                 <NavBar />
+
                 <QualitiesProvider>
                     <ProfessionsProvider>
                         <Switch>
@@ -32,6 +33,7 @@ function App() {
                     </ProfessionsProvider>
                 </QualitiesProvider>
             </AuthProvider>
+
             <ToastContainer />
         </div>
     );

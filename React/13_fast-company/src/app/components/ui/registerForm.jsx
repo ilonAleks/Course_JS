@@ -21,14 +21,14 @@ const RegisterForm = () => {
         qualities: [],
         licence: false
     });
-    const { singUp } = useAuth();
+    const { signUp } = useAuth();
     const { qualities } = useQualities();
     const qualitiesList = qualities.map((q) => ({
         label: q.name,
         value: q._id
     }));
     const { professions } = useProfessions();
-    const professionList = professions.map((p) => ({
+    const professionsList = professions.map((p) => ({
         label: p.name,
         value: p._id
     }));
@@ -54,13 +54,13 @@ const RegisterForm = () => {
                 message: "Имя обязательно для заполнения"
             },
             min: {
-                message: "Имя должно состоять минимум из 3 символов",
+                message: "Имя должено состаять миниму из 3 символов",
                 value: 3
             }
         },
         password: {
             isRequired: {
-                message: "Пароль обязателен для заполнения"
+                message: "Пароль обязательна для заполнения"
             },
             isCapitalSymbol: {
                 message: "Пароль должен содержать хотя бы одну заглавную букву"
@@ -69,7 +69,7 @@ const RegisterForm = () => {
                 message: "Пароль должен содержать хотя бы одно число"
             },
             min: {
-                message: "Пароль должен состоять минимум из 8 символов",
+                message: "Пароль должен состаять миниму из 8 символов",
                 value: 8
             }
         },
@@ -81,7 +81,7 @@ const RegisterForm = () => {
         licence: {
             isRequired: {
                 message:
-                    "Вы не можете использовать наш сервис без подтверждения лицензионного соглашения"
+                    "Вы не можете использовать наш сервис без подтреврждения лицензионного соглашения"
             }
         }
     };
@@ -104,7 +104,7 @@ const RegisterForm = () => {
             qualities: data.qualities.map((q) => q.value)
         };
         try {
-            await singUp(newData);
+            await signUp(newData);
             history.push("/");
         } catch (error) {
             setErrors(error);
@@ -137,9 +137,9 @@ const RegisterForm = () => {
             />
             <SelectField
                 label="Выбери свою профессию"
-                name="profession"
                 defaultOption="Choose..."
-                options={professionList}
+                name="profession"
+                options={professionsList}
                 onChange={handleChange}
                 value={data.profession}
                 error={errors.profession}

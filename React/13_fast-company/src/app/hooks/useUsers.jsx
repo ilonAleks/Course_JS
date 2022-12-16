@@ -12,10 +12,9 @@ export const useUser = () => {
 
 const UserProvider = ({ children }) => {
     const [users, setUsers] = useState([]);
+    const { currentUser } = useAuth();
     const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const { currentUser } = useAuth();
-
     useEffect(() => {
         getUsers();
     }, []);
@@ -28,7 +27,6 @@ const UserProvider = ({ children }) => {
             errorCatcher(error);
         }
     }
-
     useEffect(() => {
         if (!isLoading) {
             const newUsers = [...users];
@@ -39,7 +37,6 @@ const UserProvider = ({ children }) => {
             setUsers(newUsers);
         }
     }, [currentUser]);
-
     useEffect(() => {
         if (error !== null) {
             toast(error);
@@ -51,7 +48,6 @@ const UserProvider = ({ children }) => {
 
         setError(message);
     }
-
     function getUserById(userId) {
         return users.find((u) => u._id === userId);
     }

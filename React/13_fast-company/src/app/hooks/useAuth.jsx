@@ -19,21 +19,11 @@ export const useAuth = () => {
 };
 
 const AuthProvider = ({ children }) => {
-    const [currentUser, setCurrentUser] = useState();
+    const [currentUser, setUser] = useState();
     const [error, setError] = useState(null);
     const [isLoading, setLoading] = useState(true);
     const history = useHistory();
 
-    useEffect(() => {
-        if (error !== null) {
-            toast(error);
-            setError(null);
-        }
-    }, [error]);
-    function errorCatcher(error) {
-        const { message } = error.response.data;
-        setError(message);
-    }
     async function logIn({ email, password }) {
         try {
             const { data } = await httpAuth.post(
@@ -49,38 +39,38 @@ const AuthProvider = ({ children }) => {
         } catch (error) {
             errorCatcher(error);
             const { code, message } = error.response.data.error;
-            // console.log(code, message);
             if (code === 400) {
                 switch (message) {
                     case "INVALID_PASSWORD":
-                        throw new Error(
-                            "EMAIL или пароль введены неверно. Повторите попытку"
-                        );
+                        throw new Error("Email или пароль введены некорректно");
+
                     default:
                         throw new Error(
-                            "Слишком много попыток входа. Повторите попытку позже"
+                            "Слишком много попыток входа. Попробуйте позднее"
                         );
                 }
-                // if (message === "INVALID_PASSWORD") {
-                //     throw new Error(
-                //         "EMAIL или пароль введены неверно. Повторите попытку"
-                //     );
-                // }
-                // if (
-                //     message ===
-                //     "TOO_MANY_ATTEMPTS_TRY_LATER : Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later."
-                // ) {
-                //     throw new Error(
-                //         "Слишком много попыток входа. Повторите попытку позже"
-                //     );
-                // }
             }
         }
+    }
+    function logOut() {
+        localStorageService.removeAuthData();
+        setUser(null);
+        history.push("/");
     }
     function randomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
-    async function singUp({ email, password, ...rest }) {
+    async function updateUserData(data) {
+        const { content } = await userService.update(data);
+        setUser(content);
+        try {
+            const { content } = await userService.update(data);
+            setUser(content);
+        } catch (error) {
+            errorCatcher(error);
+        }
+    }
+    async function signUp({ email, password, ...rest }) {
         try {
             const { data } = await httpAuth.post(`accounts:signUp`, {
                 email,
@@ -92,7 +82,7 @@ const AuthProvider = ({ children }) => {
                 _id: data.localId,
                 email,
                 rate: randomInt(1, 5),
-                completedMeetings: randomInt(0, 300),
+                completedMeetings: randomInt(0, 200),
                 image: `https://avatars.dicebear.com/api/avataaars/${(
                     Math.random() + 1
                 )
@@ -103,21 +93,32 @@ const AuthProvider = ({ children }) => {
         } catch (error) {
             errorCatcher(error);
             const { code, message } = error.response.data.error;
-            console.log(code, message);
             if (code === 400) {
                 if (message === "EMAIL_EXISTS") {
                     const errorObject = {
-                        email: "Пользователь с таким EMAIL уже существует"
+                        email: "Пользователь с таким Email уже существует"
                     };
                     throw errorObject;
                 }
             }
         }
     }
+    async function createUser(data) {
+        try {
+            const { content } = await userService.create(data);
+            setUser(content);
+        } catch (error) {
+            errorCatcher(error);
+        }
+    }
+    function errorCatcher(error) {
+        const { message } = error.response.data;
+        setError(message);
+    }
     async function getUserData() {
         try {
             const { content } = await userService.getCurrentUser();
-            setCurrentUser(content);
+            setUser(content);
         } catch (error) {
             errorCatcher(error);
         } finally {
@@ -131,22 +132,17 @@ const AuthProvider = ({ children }) => {
             setLoading(false);
         }
     }, []);
-    async function createUser(data) {
-        try {
-            const { content } = await userService.create(data);
-            setCurrentUser(content);
-        } catch (error) {
-            errorCatcher(error);
+    useEffect(() => {
+        if (error !== null) {
+            toast(error);
+            setError(null);
         }
-    }
-    function logOut() {
-        localStorageService.removeAuthData();
-        setCurrentUser(null);
-        history.push("/");
-    }
+    }, [error]);
     return (
-        <AuthContext.Provider value={{ singUp, logIn, logOut, currentUser }}>
-            {!isLoading ? children : "Loading.."}
+        <AuthContext.Provider
+            value={{ signUp, logIn, currentUser, logOut, updateUserData }}
+        >
+            {!isLoading ? children : "Loading..."}
         </AuthContext.Provider>
     );
 };

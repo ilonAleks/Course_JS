@@ -11,19 +11,18 @@ import { useProfessions } from "../../../hooks/useProfessions";
 import { useAuth } from "../../../hooks/useAuth";
 
 const UsersListPage = () => {
-    const [currentPage, setCurrentPage] = useState(1);
+    const { users } = useUser();
+    const { currentUser } = useAuth();
     const { isLoading: professionsLoading, professions } = useProfessions();
+    const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedProf, setSelectedProf] = useState();
     const [sortBy, setSortBy] = useState({ path: "name", order: "asc" });
     const pageSize = 8;
 
-    const { users } = useUser();
-    const { currentUser } = useAuth();
-
     const handleDelete = (userId) => {
+        console.log("delete user");
         // setUsers(users.filter((user) => user._id !== userId));
-        console.log(userId);
     };
     const handleToggleBookMark = (id) => {
         const newArray = users.map((user) => {
@@ -94,7 +93,7 @@ const UsersListPage = () => {
                         className="btn btn-secondary mt-2"
                         onClick={clearFilter}
                     >
-                        Очистить
+                        Очиститть
                     </button>
                 </div>
             )}
@@ -128,7 +127,6 @@ const UsersListPage = () => {
         </div>
     );
 };
-
 UsersListPage.propTypes = {
     users: PropTypes.array
 };
