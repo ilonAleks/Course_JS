@@ -8,8 +8,14 @@ const App = () => {
   const square = (num) => num * num;
   const half = (num) => num / 2;
 
-  const mathCompose = compose(half, square, double);
-  const mathPipe = pipe(double, square, half);
+  const divide = (num2) => {
+    return function (num1) {
+      return num1 / num2;
+    };
+  };
+
+  const mathCompose = compose(divide(3), half, square, double);
+  const mathPipe = pipe(double, square, half, divide(3));
   return (
     <>
       <h1>{half(square(double(x)))}</h1>
