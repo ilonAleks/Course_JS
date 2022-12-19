@@ -1,8 +1,9 @@
 import { legacy_createStore, compose, applyMiddleware } from "redux";
 import { logger } from "./middleware/loger";
+import { thunk } from "./middleware/thunk";
 import taskReducer from "./task";
 
-const middlewareEnhancer = applyMiddleware(logger);
+const middlewareEnhancer = applyMiddleware(logger, thunk);
 
 function configureStore() {
   return legacy_createStore(
