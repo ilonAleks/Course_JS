@@ -12,7 +12,9 @@ import {
 const store = configureStore();
 
 const App = (params) => {
-  const state = useSelector((state) => state);
+  const state = useSelector((state) => state.entities);
+  const isLoading = useSelector((state) => state.isLoading);
+  const error = useSelector((state) => state.error);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,6 +29,12 @@ const App = (params) => {
     dispatch(taskDeleted(taskId));
   };
 
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+  if (error) {
+    return <p>{error}</p>;
+  }
   return (
     <>
       <h1>App</h1>
