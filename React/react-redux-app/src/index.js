@@ -10,12 +10,14 @@ import {
 
 const store = configureStore();
 
-const App = () => {
+const App = (params) => {
   const [state, setState] = useState(store.getState());
 
   useEffect(() => {
     store.dispatch(getTasks());
-    store.subscribe(() => setState(store.getState()));
+    store.subscribe(() => {
+      setState(store.getState());
+    });
   }, []);
 
   const changeTitle = (taskId) => {
