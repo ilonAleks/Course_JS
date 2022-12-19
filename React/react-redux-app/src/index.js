@@ -10,6 +10,7 @@ import {
   getTasks,
   loadTasks,
   getTasksLoadingStatus,
+  createTask,
 } from "./store/task";
 
 const store = configureStore();
@@ -32,6 +33,11 @@ const App = (params) => {
     dispatch(taskDeleted(taskId));
   };
 
+  const addNewTask = () => {
+    dispatch(
+      createTask({ userId: 1, title: "Some new task", completed: false })
+    );
+  };
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
@@ -41,6 +47,7 @@ const App = (params) => {
   return (
     <>
       <h1>App</h1>
+      <button onClick={() => addNewTask()}>Create Task</button>
       <ul>
         {state.map((el) => (
           <li key={el.id}>
