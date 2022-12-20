@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import qualitiesService from "../service/qualitiesService";
+import isOutdated from "../utils/isOutdated";
 
 const qualitiesSlice = createSlice({
     name: "qualities",
@@ -24,13 +25,6 @@ const qualitiesSlice = createSlice({
         }
     }
 });
-
-function isOutdated(date) {
-    if (Date.now() - date > 10 * 60 * 1000) {
-        return true;
-    }
-    return false;
-}
 
 const { reducer: qualitiesReducer, actions } = qualitiesSlice;
 const { qualitiesRequested, qualitiesReceved, qualitiesRequestFailed } =
