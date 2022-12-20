@@ -7,7 +7,6 @@ import Main from "./layouts/main";
 import NavBar from "./components/ui/navBar";
 import { ToastContainer } from "react-toastify";
 import { ProfessionsProvider } from "./hooks/useProfessions";
-import { QualitiesProvider } from "./hooks/useQualities";
 import AuthProvider from "./hooks/useAuth";
 import ProtectedRoute from "./components/common/protectedRoute";
 import LogOut from "./layouts/logOut";
@@ -26,20 +25,18 @@ function App() {
             <AuthProvider>
                 <NavBar />
 
-                <QualitiesProvider>
-                    <ProfessionsProvider>
-                        <Switch>
-                            <ProtectedRoute
-                                path="/users/:userId?/:edit?"
-                                component={Users}
-                            />
-                            <Route path="/login/:type?" component={Login} />
-                            <Route path="/logout" component={LogOut} />
-                            <Route path="/" exact component={Main} />
-                            <Redirect to="/" />
-                        </Switch>
-                    </ProfessionsProvider>
-                </QualitiesProvider>
+                <ProfessionsProvider>
+                    <Switch>
+                        <ProtectedRoute
+                            path="/users/:userId?/:edit?"
+                            component={Users}
+                        />
+                        <Route path="/login/:type?" component={Login} />
+                        <Route path="/logout" component={LogOut} />
+                        <Route path="/" exact component={Main} />
+                        <Redirect to="/" />
+                    </Switch>
+                </ProfessionsProvider>
             </AuthProvider>
 
             <ToastContainer />
