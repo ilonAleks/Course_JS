@@ -52,6 +52,21 @@ const authRequested = createAction("users/authRequested");
 const userCreateRequested = createAction("users/userCreateRequested");
 const createUserFaild = createAction("users/createUserFaild");
 
+export const logIn =
+    ({ payload, redirect }) =>
+    async (dispatch) => {
+        const { email, password } = payload;
+        dispatch(authRequested());
+        try {
+            const data = await authService.logIn({ email, password });
+            dispatch(authRequesSuccess({ userId: data.localId }));
+            localStorageService.setTokens(data);
+            history.push(redirect);
+        } catch (error) {
+            dispatch(authRequesFaild(error.message));
+        }
+    };
+
 export const singUp =
     ({ email, password, ...rest }) =>
     async (dispatch) => {
