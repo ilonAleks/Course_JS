@@ -9,20 +9,23 @@ import { ToastContainer } from "react-toastify";
 import AuthProvider from "./hooks/useAuth";
 import ProtectedRoute from "./components/common/protectedRoute";
 import LogOut from "./layouts/logOut";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loadQualitiesList } from "./store/qualities";
 import { loadProfessionsList } from "./store/professions";
-import { loadUsersList } from "./store/users";
+import { getIsLoggedIn, loadUsersList } from "./store/users";
 
 function App() {
     const dispatch = useDispatch();
-
+    const isLoggedIn = useSelector(getIsLoggedIn());
+    // const usersStatusLoading =useSelector
     useEffect(() => {
         dispatch(loadQualitiesList());
         dispatch(loadProfessionsList());
-        dispatch(loadUsersList());
-    }, []);
-
+        if (isLoggedIn) {
+            dispatch(loadUsersList());
+        }
+    }, [isLoggedIn]);
+    // if (usersStatusLoading) return "loading";
     return (
         <div>
             <AuthProvider>

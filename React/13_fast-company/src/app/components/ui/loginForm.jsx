@@ -8,6 +8,8 @@ import { logIn } from "../../store/users";
 
 const LoginForm = () => {
     const history = useHistory();
+    const dispatch = useDispatch();
+
     const [data, setData] = useState({
         email: "",
         password: "",
@@ -22,7 +24,6 @@ const LoginForm = () => {
         }));
         setEnterError(null);
     };
-    const dispatch = useDispatch();
 
     const validatorConfog = {
         email: {
