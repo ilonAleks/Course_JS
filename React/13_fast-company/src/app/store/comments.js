@@ -63,6 +63,7 @@ export const createComment = (payload) => async (dispatch, getState) => {
         created_at: Date.now(),
         userId: getCurrentUserId()(getState())
     };
+    console.log(comment);
     try {
         const { content } = await commentService.createComment(comment);
         dispatch(commentCreated(content));
