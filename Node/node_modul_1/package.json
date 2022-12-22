@@ -15,6 +15,7 @@
   "dependencies": {
     "@types/node": "^18.11.17",
     "@types/yargs": "^17.0.17",
+    "chalk": "^4.1.2",
     "yargs": "^17.6.2"
   }
 }
