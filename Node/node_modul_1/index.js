@@ -1,17 +1,38 @@
-// require("./module");
+const yargs = require("yargs");
+const pkg = require("./package.json");
 
-// const person = {
-//   name: "Ilona",
-//   age: 33,
-// };
+yargs.version(pkg.version);
+//node index.js --version => 1.0.0
 
-// function getName(p) {
-//   return p.name;
-// }
+yargs.command({
+  command: "add",
+  describe: "Add new note to list",
+  builder: {
+    title: { type: "string", describe: "Note title", demandOption: true },
+  },
+  handler({ title }) {
+    console.log("Add command:", title);
+  },
+});
+// node index.js add => Add command
 
-// console.log(getName(person));
+// node index.js add --help => Options:
+// --title    Note title
 
-// console.log(__filename);
-// console.log(__dirname);
+//node index.js add --title=Hello =>
+// Add command:  Hello
 
-console.log(process.argv);
+yargs.command({
+  command: "list",
+  describe: "Print all notes",
+  handler() {
+    console.log("List command");
+  },
+});
+//node index.js list => List command
+
+yargs.parse();
+
+//node index.js help => Commands:
+// index.js add   Add new note to list
+// index.js list  Print all notes

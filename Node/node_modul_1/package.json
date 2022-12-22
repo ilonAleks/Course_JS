@@ -1,0 +1,20 @@
+{
+  "name": "node_modul_1",
+  "version": "1.0.1",
+  "description": "this is simple NodeJS application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "ilonaleks <rogilona@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.11.17",
+    "@types/yargs": "^17.0.17",
+    "yargs": "^17.6.2"
+  }
+}
