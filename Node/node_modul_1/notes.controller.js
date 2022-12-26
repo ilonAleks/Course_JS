@@ -14,7 +14,7 @@ async function addNote(title) {
 
   notes.push(note);
   await saveNotes(notes);
-  console.log(chalk.green.inverse("Note with Chalk!"));
+  console.log(chalk.green.inverse("Note was added!"));
 }
 
 async function getNotes() {
