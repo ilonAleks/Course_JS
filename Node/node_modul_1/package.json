@@ -4,7 +4,8 @@
   "description": "this is simple NodeJS application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "serve": "nodemon index.js"
   },
   "keywords": [
     "node",
@@ -13,9 +14,12 @@
   "author": "ilonaleks <rogilona@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^18.11.17",
-    "@types/yargs": "^17.0.17",
     "chalk": "^4.1.2",
     "yargs": "^17.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "@types/yargs": "^17.0.17",
+    "@types/node": "^18.11.17"
   }
 }
