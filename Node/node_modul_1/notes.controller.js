@@ -45,6 +45,6 @@ async function saveNotes(notes) {
 
 module.exports = {
   addNote,
-  printNotes,
   removeNoteById,
+  getNotes,
 };
