@@ -37,14 +37,24 @@ async function removeNoteById(id) {
   await saveNotes(fiteredNotes);
   console.log(chalk.red(`Note with id='${id}' has been removed`));
 }
-// node index remove --id=1671717357755 => Note with id='1671717357755' has been removed
 
 async function saveNotes(notes) {
   await fs.writeFile(notesPath, JSON.stringify(notes));
+}
+
+async function updateNote(noteData) {
+  const notes = await getNotes();
+  const index = notes.findIndex((note) => note.id === noteData.id);
+  if (index >= 0) {
+    notes[index] = { ...notes[index], ...noteData };
+    await saveNotes(notes);
+    console.log(chalk.bgBlue(`Note with id=${noteData.id} has been updated`));
+  }
 }
 
 module.exports = {
   addNote,
   removeNoteById,
   getNotes,
+  updateNote,
 };

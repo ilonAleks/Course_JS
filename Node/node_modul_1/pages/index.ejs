@@ -31,16 +31,26 @@
         <ul class="list-group">
           <% for (let i = 0; i < notes.length; i++) { %>
           <li
-            class="list-group-item d-flex justify-content-between align-items-end"
+            class="list-group-item d-flex justify-content-between align-items-center"
           >
-            <%= notes[i].title %>
-            <button
-              class="btn btn-danger"
-              data-type="remove"
-              data-id="<%= notes[i].id %> "
-            >
-              &times;
-            </button>
+            <span> <%= notes[i].title %></span>
+            <div class="justify-content-end">
+              <button
+                class="btn btn-primary"
+                data-type="edit"
+                data-id="<%= notes[i].id %>"
+                data-title="<%= notes[i].title %> "
+              >
+                Edit
+              </button>
+              <button
+                class="btn btn-danger"
+                data-type="remove"
+                data-id="<%= notes[i].id %> "
+              >
+                &times;
+              </button>
+            </div>
           </li>
 
           <% } %>
