@@ -2,12 +2,12 @@ const { Schema, model } = require("mongoose");
 
 const schema = new Schema(
   {
-    name: String,
+    name: { type: String },
     email: { type: String, required: true, unique: true },
-    password: String,
-    completedMeetings: Number,
-    image: String,
-    rate: Number,
+    password: { type: String },
+    completedMeetings: { type: Number },
+    image: { type: String },
+    rate: { type: Number },
     sex: { type: String, enum: ["male", "female", "other"] },
     profession: { type: Schema.Types.ObjectId, ref: "Profession" },
     qualities: [{ type: Schema.Types.ObjectId, ref: "Quality" }],

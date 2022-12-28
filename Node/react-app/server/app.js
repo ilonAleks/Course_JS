@@ -22,6 +22,7 @@ const PORT = config.get("port") ?? 8080;
 
 async function start() {
   try {
+    mongoose.set("strictQuery", false);
     mongoose.connection.once("open", () => {
       initDatabase();
     });
