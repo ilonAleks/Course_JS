@@ -16,6 +16,16 @@ const PORT = config.get("port") ?? 8080;
 //   console.log("development");
 // }
 
-app.listen(PORT, () => {
-  console.log(chalk.green("Server has been started"));
-});
+async function start() {
+  try {
+    await mongoose.connect(config.get("mongoUri"));
+    app.listen(PORT, () => {
+      console.log(chalk.green("Server has been started"));
+    });
+  } catch (error) {
+    console.log(chalk.red(error.message));
+    process.exit(1);
+  }
+}
+
+start();
