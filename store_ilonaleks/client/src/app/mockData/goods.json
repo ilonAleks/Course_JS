@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "123",
+    "name": "Tomatoes",
+    "manufacturer": "vegetable base",
+    "category": "63ad931b6bdf61eacfa99644",
+    "price": 88,
+    "amount": 160
+  },
+  {
+    "_id": "456",
+    "name": "cucumbers",
+    "manufacturer": "vegetable base",
+    "category": "63ad931b6bdf61eacfa99644",
+    "price": 67,
+    "amount": 180
+  },
+  {
+    "_id": "159",
+    "name": "oat milk",
+    "manufacturer": "NeMoloko",
+    "category": "63ad931b6bdf61eacfa99645",
+    "price": 120,
+    "amount": 45
+  },
+  {
+    "_id": "753",
+    "name": "rice milk",
+    "manufacturer": "NeMoloko",
+    "category": "63ad931b6bdf61eacfa99645",
+    "price": 130,
+    "amount": 65
+  },
+  {
+    "_id": "987",
+    "name": "crisps",
+    "manufacturer": "Lays",
+    "category": "63ad931b6bdf61eacfa99646",
+    "price": 50,
+    "amount": 38
+  },
+  {
+    "_id": "789",
+    "name": "asparagus",
+    "manufacturer": "Soya",
+    "category": "63ad931b6bdf61eacfa99646",
+    "price": 150,
+    "amount": 22
+  }
+]
