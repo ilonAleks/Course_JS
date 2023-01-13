@@ -9,6 +9,7 @@ const { validationResult } = require("express-validator");
 const { generateUserData } = require("../utils/helpers");
 const tokenService = require("../services/token.service");
 const { check } = require("express-validator");
+const Token = require("../models/Token");
 const router = express.Router({ mergeParams: true });
 
 // api/auth/singUp
@@ -116,6 +117,27 @@ router.post("/signInWithPassword", [
   },
 ]);
 
-router.post("/token", async (req, res) => {});
+function isTokenInvalid(data, dbToken) {
+  !data || !dbToken || data._id !== dbToken?.user?.toString();
+}
+router.post("/token", async (req, res) => {
+  try {
+    const { refresh_token: refreshToken } = req.body;
+    const data = tokenService.validateRefresh(refreshToken);
+    const dbToken = tokenService.findToken(refreshToken);
+
+    if (isTokenInvalid(data, dbToken)) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+
+    const tokens = tokenService.generate({ id: data._id });
+    await tokenService.save(data._id, tokens.refreshToken);
+    res.status(200).send({ ...tokens, userId: data._id });
+  } catch (e) {
+    res
+      .status(500)
+      .json({ message: "На сервере произошла ошибка. Попробуйте позже" });
+  }
+});
 
 module.exports = router;
