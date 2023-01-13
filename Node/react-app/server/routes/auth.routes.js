@@ -65,7 +65,56 @@ router.post("/signUp", [
   },
 ]);
 
-router.post("/signInWithPassword", async (req, res) => {});
+router.post("/signInWithPassword", [
+  // 1. validate
+  check("email", "Email is not correct").normalizeEmail().isEmail(),
+  check("password", "The password cannot be empty").exists(),
+
+  async (req, res) => {
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({
+          message: "INVALID_DATA",
+          code: 400,
+        });
+      }
+
+      const { email, password } = req.body;
+
+      // 2. find user
+      const existingUser = await User.findOne({ email });
+      if (!existingUser) {
+        return res.status(400).send({
+          error: { message: "EMAIL_NOT_FOUND", code: 400 },
+        });
+      }
+
+      // 3. compare hashed password
+      const isPasswordEqual = await bcrypt.compare(
+        password,
+        existingUser.password
+      );
+
+      if (!isPasswordEqual) {
+        return res.status(400).send({
+          error: { message: "INVALID_PASSWORD", code: 400 },
+        });
+      }
+
+      // 4. generate token
+      const tokens = tokenService.generate({ _id: existingUser._id });
+      await tokenService.save(existingUser._id, tokens.refreshToken);
+
+      // 5. return data
+      res.status(200).send({ ...tokens, userId: existingUser._id });
+    } catch (e) {
+      res
+        .status(500)
+        .json({ message: "На сервере произошла ошибка. Попробуйте позже" });
+    }
+  },
+]);
 
 router.post("/token", async (req, res) => {});
 
