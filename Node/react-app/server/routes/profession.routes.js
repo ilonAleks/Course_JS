@@ -1,5 +1,5 @@
 const express = require("express");
-const Profession = require("../models/Profession.js");
+const Profession = require("../models/Profession");
 const router = express.Router({ mergeParams: true });
 
 router.get("/", async (req, res) => {
@@ -7,9 +7,9 @@ router.get("/", async (req, res) => {
     const list = await Profession.find();
     res.status(200).send(list);
   } catch (e) {
-    res
-      .status(500)
-      .json({ message: "На сервере произошла ошибка. Попробуйте позже" });
+    res.status(500).json({
+      message: "An error occurred on the server. Try it later",
+    });
   }
 });
 

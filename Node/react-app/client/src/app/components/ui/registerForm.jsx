@@ -23,13 +23,13 @@ const RegisterForm = () => {
     });
 
     const qualities = useSelector(getQualities());
-    const qualitiesList = qualities.map((q) => ({
+    const qualitiesList = qualities?.map((q) => ({
         label: q.name,
         value: q._id
     }));
     const professions = useSelector(getProfessions());
 
-    const professionsList = professions.map((p) => ({
+    const professionsList = professions?.map((p) => ({
         label: p.name,
         value: p._id
     }));
@@ -44,45 +44,45 @@ const RegisterForm = () => {
     const validatorConfog = {
         email: {
             isRequired: {
-                message: "Электронная почта обязательна для заполнения"
+                message: "Email is required to fill out"
             },
             isEmail: {
-                message: "Email введен некорректно"
+                message: "Email introduced incorrectly"
             }
         },
         name: {
             isRequired: {
-                message: "Имя обязательно для заполнения"
+                message: "The name is mandatory for filling"
             },
             min: {
-                message: "Имя должено состаять миниму из 3 символов",
+                message: "The name should consist of at least 3 characters",
                 value: 3
             }
         },
         password: {
             isRequired: {
-                message: "Пароль обязательна для заполнения"
+                message: "The password is required to fill out"
             },
             isCapitalSymbol: {
-                message: "Пароль должен содержать хотя бы одну заглавную букву"
+                message: "The password must contain at least one capital letter"
             },
             isContainDigit: {
-                message: "Пароль должен содержать хотя бы одно число"
+                message: "The password must contain at least one number"
             },
             min: {
-                message: "Пароль должен состаять миниму из 8 символов",
+                message: "The password should consist of at least 8 characters",
                 value: 8
             }
         },
         profession: {
             isRequired: {
-                message: "Обязательно выберите вашу профессию"
+                message: "Be sure to choose your profession"
             }
         },
         licence: {
             isRequired: {
                 message:
-                    "Вы не можете использовать наш сервис без подтреврждения лицензионного соглашения"
+                    "You cannot use our service without the subcontracting of the license agreement"
             }
         }
     };
@@ -110,21 +110,21 @@ const RegisterForm = () => {
     return (
         <form onSubmit={handleSubmit}>
             <TextField
-                label="Электронная почта"
+                label="Email"
                 name="email"
                 value={data.email}
                 onChange={handleChange}
                 error={errors.email}
             />
             <TextField
-                label="Имя"
+                label="Name"
                 name="name"
                 value={data.name}
                 onChange={handleChange}
                 error={errors.name}
             />
             <TextField
-                label="Пароль"
+                label="Password"
                 type="password"
                 name="password"
                 value={data.password}
@@ -132,7 +132,7 @@ const RegisterForm = () => {
                 error={errors.password}
             />
             <SelectField
-                label="Выбери свою профессию"
+                label="Choose your profession"
                 defaultOption="Choose..."
                 name="profession"
                 options={professionsList}
@@ -149,13 +149,13 @@ const RegisterForm = () => {
                 value={data.sex}
                 name="sex"
                 onChange={handleChange}
-                label="Выберите ваш пол"
+                label="Choose your gender"
             />
             <MultiSelectField
                 options={qualitiesList}
                 onChange={handleChange}
                 name="qualities"
-                label="Выберите ваши качесвта"
+                label="Choose your qualities"
             />
             <CheckBoxField
                 value={data.licence}
@@ -163,7 +163,7 @@ const RegisterForm = () => {
                 name="licence"
                 error={errors.licence}
             >
-                Подтвердить <a>лицензионное соглашение</a>
+                Confirm <a> license agreement</a>
             </CheckBoxField>
             <button
                 type="submit"

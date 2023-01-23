@@ -19,7 +19,6 @@ http.interceptors.request.use(
             const containSlash = /\/$/gi.test(config.url);
             config.url =
                 (containSlash ? config.url.slice(0, -1) : config.url) + ".json";
-
             if (isExpired) {
                 const data = await authService.refresh();
 
@@ -37,7 +36,6 @@ http.interceptors.request.use(
         } else {
             if (isExpired) {
                 const data = await authService.refresh();
-
                 localStorageService.setTokens(data);
             }
             const accessToken = localStorageService.getAccessToken();
@@ -54,6 +52,7 @@ http.interceptors.request.use(
         return Promise.reject(error);
     }
 );
+
 function transormData(data) {
     return data && !data._id
         ? Object.keys(data).map((key) => ({
@@ -61,6 +60,7 @@ function transormData(data) {
           }))
         : data;
 }
+
 http.interceptors.response.use(
     (res) => {
         if (configFile.isFireBase) {
@@ -76,7 +76,7 @@ http.interceptors.response.use(
             error.response.status < 500;
 
         if (!expectedErrors) {
-            console.log(error);
+            // console.log(error);
             toast.error("Something was wrong. Try it later");
         }
         return Promise.reject(error);

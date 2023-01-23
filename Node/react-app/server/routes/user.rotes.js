@@ -22,7 +22,7 @@ router.patch("/:userId", auth, async (req, res) => {
   } catch (e) {
     res
       .status(500)
-      .json({ message: "An error occurred on the server.try later" });
+      .json({ message: "An error occurred on the server. Try it later" });
   }
 });
 
@@ -33,7 +33,7 @@ router.get("/", auth, async (req, res) => {
   } catch (e) {
     res
       .status(500)
-      .json({ message: "An error occurred on the server.try later" });
+      .json({ message: "An error occurred on the server. Try it later" });
   }
 });
 

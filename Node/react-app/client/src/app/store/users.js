@@ -117,7 +117,6 @@ export const logOut = () => (dispatch) => {
     dispatch(userLoggedOut());
     history.push("/");
 };
-
 export const loadUsersList = () => async (dispatch) => {
     dispatch(usersRequested());
     try {

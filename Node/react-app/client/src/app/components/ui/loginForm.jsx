@@ -27,12 +27,12 @@ const LoginForm = () => {
     const validatorConfog = {
         email: {
             isRequired: {
-                message: "Электронная почта обязательна для заполнения"
+                message: "Email is required to fill out"
             }
         },
         password: {
             isRequired: {
-                message: "Пароль обязателкн для заполнения"
+                message: "The password is required to fill out"
             }
         }
     };
@@ -59,14 +59,14 @@ const LoginForm = () => {
     return (
         <form onSubmit={handleSubmit}>
             <TextField
-                label="Электронная почта"
+                label="Email"
                 name="email"
                 value={data.email}
                 onChange={handleChange}
                 error={errors.email}
             />
             <TextField
-                label="Пароль"
+                label="Password"
                 type="password"
                 name="password"
                 value={data.password}
@@ -78,7 +78,7 @@ const LoginForm = () => {
                 onChange={handleChange}
                 name="stayOn"
             >
-                Оставаться в системе
+                Remain in the system
             </CheckBoxField>
             {loginError && <p className="text-danger">{loginError}</p>}
 

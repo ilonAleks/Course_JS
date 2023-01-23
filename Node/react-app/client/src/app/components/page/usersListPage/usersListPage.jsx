@@ -24,10 +24,6 @@ const UsersListPage = () => {
     const [sortBy, setSortBy] = useState({ path: "name", order: "asc" });
     const pageSize = 8;
 
-    const handleDelete = (userId) => {
-        console.log("delete user");
-        // setUsers(users.filter((user) => user._id !== userId));
-    };
     const handleToggleBookMark = (id) => {
         const newArray = users.map((user) => {
             if (user._id === id) {
@@ -35,7 +31,7 @@ const UsersListPage = () => {
             }
             return user;
         });
-        // setUsers(newArray);
+        // users(newArray);
         console.log(newArray);
     };
 
@@ -93,7 +89,7 @@ const UsersListPage = () => {
                         className="btn btn-secondary mt-2"
                         onClick={clearFilter}
                     >
-                        Очиститть
+                        Clear
                     </button>
                 </div>
             )}
@@ -111,7 +107,6 @@ const UsersListPage = () => {
                         users={usersCrop}
                         onSort={handleSort}
                         selectedSort={sortBy}
-                        onDelete={handleDelete}
                         onToggleBookMark={handleToggleBookMark}
                     />
                 )}

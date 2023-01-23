@@ -84,16 +84,16 @@ const EditUserPage = () => {
     const validatorConfog = {
         email: {
             isRequired: {
-                message: "Электронная почта обязательна для заполнения"
+                message: "Email is required to fill out"
             },
             isEmail: {
-                message: "Email введен некорректно"
+                message: "Email is introduced incorrectly"
             }
         },
 
         name: {
             isRequired: {
-                message: "Введите ваше имя"
+                message: "Enter your name"
             }
         }
     };
@@ -118,21 +118,21 @@ const EditUserPage = () => {
                     {!isLoading && Object.keys(professions).length > 0 ? (
                         <form onSubmit={handleSubmit}>
                             <TextField
-                                label="Имя"
+                                label="Name"
                                 name="name"
                                 value={data.name}
                                 onChange={handleChange}
                                 error={errors.name}
                             />
                             <TextField
-                                label="Электронная почта"
+                                label="Email"
                                 name="email"
                                 value={data.email}
                                 onChange={handleChange}
                                 error={errors.email}
                             />
                             <SelectField
-                                label="Выбери свою профессию"
+                                label="Choose your profession"
                                 defaultOption="Choose..."
                                 name="profession"
                                 options={professionsList}
@@ -149,21 +149,21 @@ const EditUserPage = () => {
                                 value={data.sex}
                                 name="sex"
                                 onChange={handleChange}
-                                label="Выберите ваш пол"
+                                label="Choose your gender"
                             />
                             <MultiSelectField
                                 defaultValue={data.qualities}
                                 options={qualitiesList}
                                 onChange={handleChange}
                                 name="qualities"
-                                label="Выберите ваши качесвта"
+                                label="Choose your qualities"
                             />
                             <button
                                 type="submit"
                                 disabled={!isValid}
                                 className="btn btn-primary w-100 mx-auto"
                             >
-                                Обновить
+                                Update
                             </button>
                         </form>
                     ) : (

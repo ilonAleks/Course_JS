@@ -15,7 +15,7 @@ const AddCommentForm = ({ onSubmit }) => {
     const validatorConfog = {
         content: {
             isRequired: {
-                message: "Сообщение не может быть пустым"
+                message: "The message cannot be empty"
             }
         }
     };
@@ -36,7 +36,7 @@ const AddCommentForm = ({ onSubmit }) => {
         const isValid = validate();
         if (!isValid) return;
         onSubmit(data);
-        console.log(data);
+        // console.log(data);
         clearForm();
     };
 
@@ -48,11 +48,11 @@ const AddCommentForm = ({ onSubmit }) => {
                     value={data.content || ""}
                     onChange={handleChange}
                     name="content"
-                    label="Сообщение"
+                    label="Message"
                     error={errors.content}
                 />
                 <div className="d-flex justify-content-end">
-                    <button className="btn btn-primary">Опубликовать</button>
+                    <button className="btn btn-primary">Publish</button>
                 </div>
             </form>
         </div>
